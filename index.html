@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles.css?v=20261006j" />
+  <link rel="stylesheet" href="css/styles.css?v=20261006k" />
 
   <link rel="icon" href="images/marca/icono.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="images/favicon.png" type="image/png" />
@@ -449,12 +449,23 @@
 <section class="seccion videos" id="videos">
   <div class="container">
     <div class="seccion-cabecera reveal">
-      <span class="etiqueta">Videos</span>
+      <span class="etiqueta">Videos y podcast</span>
       <h2>El doctor explica</h2>
-      <p>Respuestas breves a las dudas más frecuentes sobre las enfermedades reumáticas y la consulta.</p>
+      <p>Su presentación en Médica Campestre y los episodios de <strong>Articulación Sonora</strong>, su podcast sobre enfermedades reumáticas para el público en general.</p>
     </div>
     <div class="bento" id="videos-grid">
       <!-- Los videos se generan desde la lista VIDEOS del script (abajo). -->
+    </div>
+    <div class="bento" style="margin-top:16px">
+      <a class="tile tile-tinte podcast c-12 reveal" href="https://www.youtube.com/@articulacionsonora1860" target="_blank" rel="noopener">
+        <img src="images/web/podcast-articulacion-sonora.jpg" alt="Portada del podcast Articulación Sonora" width="400" height="400" loading="lazy" decoding="async" />
+        <div class="podcast-texto">
+          <span class="etiqueta">Podcast</span>
+          <h3>Articulación Sonora</h3>
+          <p>Podcast para la difusión de información sobre enfermedades reumáticas, dirigido al público en general. Contenidos y producción a cargo del Dr. Daniel Mora.</p>
+        </div>
+        <span class="btn btn-primario"><i class="fa-brands fa-youtube" aria-hidden="true"></i> Ver el canal en YouTube</span>
+      </a>
     </div>
   </div>
 </section>
@@ -614,15 +625,18 @@
     instagram: { url: '', usuario: '' },
     facebook:  { url: '', usuario: '' },
     tiktok:    { url: '', usuario: '' },
-    youtube:   { url: '', usuario: '' }
+    youtube:   { url: 'https://www.youtube.com/@articulacionsonora1860', usuario: '@articulacionsonora1860' }
   };
   // Videos: "id" es el identificador del video en YouTube (lo que va después
   // de v= en la liga). Con id vacío se muestra la portada sin reproducir.
   // Los títulos son temas sugeridos; cambiarlos por los de los videos reales.
   const VIDEOS = [
     { id: 'lKNq-FuYCRQ', titulo: 'Conoce al Dr. Daniel Mora', tema: 'Presentación · Médica Campestre', grande: true },
-    { id: '', titulo: '¿Cuándo acudir con un reumatólogo?', tema: 'Señales de alerta' },
-    { id: '', titulo: 'Qué esperar en tu primera consulta', tema: 'La consulta' }
+    { id: 'mNg73mhSi84', titulo: 'Tú puedes necesitar un reumatólogo: escucha y averígualo', tema: 'Podcast · Articulación Sonora' },
+    { id: 'rAE9PpOspxA', titulo: 'Fármacos', tema: 'Podcast · Articulación Sonora' },
+    { id: '5ZIemNDB3bA', titulo: 'Necesidades no cumplidas: complejidad diagnóstica', tema: 'Podcast · Articulación Sonora' },
+    { id: 'Tw666pxnJHQ', titulo: 'Necesidades no cumplidas: acondicionamiento físico', tema: 'Podcast · Articulación Sonora' },
+    { id: '5yswlgOP-7I', titulo: 'Necesidades no cumplidas: teorías', tema: 'Podcast · Articulación Sonora' }
   ];
   // =====================================================================
 
@@ -635,7 +649,7 @@
     instagram: { nombre: 'Instagram', icono: 'fa-brands fa-instagram', texto: 'Historias, consejos y avisos del consultorio.' },
     facebook:  { nombre: 'Facebook',  icono: 'fa-brands fa-facebook-f', texto: 'Publicaciones de divulgación y comunidad.' },
     tiktok:    { nombre: 'TikTok',    icono: 'fa-brands fa-tiktok', texto: 'Videos cortos con respuestas rápidas.' },
-    youtube:   { nombre: 'YouTube',   icono: 'fa-brands fa-youtube', texto: 'Videos completos sobre enfermedades reumáticas.' }
+    youtube:   { nombre: 'YouTube',   icono: 'fa-brands fa-youtube', texto: 'Articulación Sonora, el podcast del doctor sobre enfermedades reumáticas.' }
   };
   (function renderRedes() {
     const grid = $('#redes-grid'), foot = $('#footer-redes');
@@ -667,10 +681,12 @@
   (function renderVideos() {
     const grid = $('#videos-grid');
     if (!grid) return;
+    let chicos = 0;
     VIDEOS.forEach((v, i) => {
+      const span = v.grande ? 'c-7 r-2 grande' : (chicos++ < 2 ? 'c-5' : 'c-4');
       const poster = v.id ? `https://i.ytimg.com/vi/${v.id}/maxresdefault.jpg` : 'images/web/consultorio2.jpg';
       const fig = document.createElement('figure');
-      fig.className = `tile tile-video ${v.grande ? 'c-7 r-2 grande' : 'c-5'} reveal` + (v.id ? '' : ' pendiente');
+      fig.className = `tile tile-video ${span} reveal` + (v.id ? '' : ' pendiente');
       fig.innerHTML = `
         <img src="${poster}" alt="" loading="lazy" decoding="async" ${v.id ? `onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${v.id}/hqdefault.jpg'"` : ''} />
         <button class="video-play" type="button" aria-label="Reproducir: ${v.titulo}" ${v.id ? '' : 'disabled'}>
