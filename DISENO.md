@@ -44,9 +44,9 @@ Retícula de 12 columnas (`.bento`), tiles con radio 20px (`.tile`) y spans `.c-
 
 Aparición escalonada de los tiles (`--retraso` por posición en la retícula), cinta de padecimientos en desplazamiento continuo (se pausa al pasar el cursor), contador animado en la cifra del héroe, latido del nodo ámbar del logo, resplandor flotante en los bloques saturados, brillo en botones, acercamiento de fotos y onda en el botón de reproducir. Todo se desactiva con `prefers-reduced-motion`.
 
-## Videos y redes
+## Videos, podcast y redes
 
-El contenido se captura en el bloque `CONFIGURACIÓN DE CONTENIDO` al inicio del script de `index.html`: `REDES` (URL y usuario por red) y `VIDEOS` (id de YouTube, título y tema). Los videos usan una fachada ligera: se muestra la portada y el iframe de YouTube (`youtube-nocookie`) solo se carga al dar clic. Sin id, el tile muestra "Próximamente"; sin URL de red, la tarjeta no enlaza y el icono del pie de página se oculta.
+El contenido se captura en el bloque `CONFIGURACIÓN DE CONTENIDO` al inicio del script de `index.html`: `REDES` (URL y usuario por red), `VIDEOS` (id de YouTube, título y tema) y `PODCAST` (nombre, url, portada, descripción y episodios con id, número y título; el primero de la lista se muestra en grande). El podcast del doctor es **Articulación Sonora** (YouTube @articulacionsonora1860) y tiene su sección propia, separada de Videos. Los videos usan una fachada ligera: se muestra la portada y el iframe de YouTube (`youtube-nocookie`) solo se carga al dar clic. Sin id, el tile muestra "Próximamente"; sin URL de red, la tarjeta no enlaza y el icono del pie de página se oculta.
 
 ## Retrato del doctor
 

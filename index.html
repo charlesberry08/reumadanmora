@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles.css?v=20261006k" />
+  <link rel="stylesheet" href="css/styles.css?v=20261006m" />
 
   <link rel="icon" href="images/marca/icono.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="images/favicon.png" type="image/png" />
@@ -102,6 +102,7 @@
       <li><a href="/#padecimientos" class="nav-link">Padecimientos</a></li>
       <li><a href="/#sintomas" class="nav-link">Síntomas</a></li>
       <li><a href="/#videos" class="nav-link">Videos</a></li>
+      <li><a href="/#podcast" class="nav-link">Podcast</a></li>
       <li><a href="/#consultorio" class="nav-link">Consultorio</a></li>
       <li><a href="/#contacto" class="nav-link">Contacto</a></li>
     </ul>
@@ -128,6 +129,7 @@
       <li><a href="/#padecimientos" class="drawer-link">Padecimientos</a></li>
       <li><a href="/#sintomas" class="drawer-link">Síntomas</a></li>
       <li><a href="/#videos" class="drawer-link">Videos</a></li>
+      <li><a href="/#podcast" class="drawer-link">Podcast</a></li>
       <li><a href="/#consultorio" class="drawer-link">Consultorio</a></li>
       <li><a href="/#redes" class="drawer-link">Redes sociales</a></li>
       <li><a href="/#contacto" class="drawer-link">Contacto</a></li>
@@ -449,23 +451,26 @@
 <section class="seccion videos" id="videos">
   <div class="container">
     <div class="seccion-cabecera reveal">
-      <span class="etiqueta">Videos y podcast</span>
+      <span class="etiqueta">Videos</span>
       <h2>El doctor explica</h2>
-      <p>Su presentación en Médica Campestre y los episodios de <strong>Articulación Sonora</strong>, su podcast sobre enfermedades reumáticas para el público en general.</p>
+      <p>Respuestas breves a las dudas más frecuentes sobre las enfermedades reumáticas y la consulta.</p>
     </div>
     <div class="bento" id="videos-grid">
       <!-- Los videos se generan desde la lista VIDEOS del script (abajo). -->
     </div>
-    <div class="bento" style="margin-top:16px">
-      <a class="tile tile-tinte podcast c-12 reveal" href="https://www.youtube.com/@articulacionsonora1860" target="_blank" rel="noopener">
-        <img src="images/web/podcast-articulacion-sonora.jpg" alt="Portada del podcast Articulación Sonora" width="400" height="400" loading="lazy" decoding="async" />
-        <div class="podcast-texto">
-          <span class="etiqueta">Podcast</span>
-          <h3>Articulación Sonora</h3>
-          <p>Podcast para la difusión de información sobre enfermedades reumáticas, dirigido al público en general. Contenidos y producción a cargo del Dr. Daniel Mora.</p>
-        </div>
-        <span class="btn btn-primario"><i class="fa-brands fa-youtube" aria-hidden="true"></i> Ver el canal en YouTube</span>
-      </a>
+  </div>
+</section>
+
+<!-- ============ PODCAST ============ -->
+<section class="seccion podcast" id="podcast">
+  <div class="container">
+    <div class="seccion-cabecera reveal">
+      <span class="etiqueta">Podcast</span>
+      <h2>Articulación Sonora</h2>
+      <p>Episodios en audio para entender las enfermedades reumáticas con calma y en lenguaje claro.</p>
+    </div>
+    <div class="bento" id="podcast-grid">
+      <!-- El canal y los episodios se generan desde PODCAST en el script (abajo). -->
     </div>
   </div>
 </section>
@@ -632,12 +637,23 @@
   // Los títulos son temas sugeridos; cambiarlos por los de los videos reales.
   const VIDEOS = [
     { id: 'lKNq-FuYCRQ', titulo: 'Conoce al Dr. Daniel Mora', tema: 'Presentación · Médica Campestre', grande: true },
-    { id: 'mNg73mhSi84', titulo: 'Tú puedes necesitar un reumatólogo: escucha y averígualo', tema: 'Podcast · Articulación Sonora' },
-    { id: 'rAE9PpOspxA', titulo: 'Fármacos', tema: 'Podcast · Articulación Sonora' },
-    { id: '5ZIemNDB3bA', titulo: 'Necesidades no cumplidas: complejidad diagnóstica', tema: 'Podcast · Articulación Sonora' },
-    { id: 'Tw666pxnJHQ', titulo: 'Necesidades no cumplidas: acondicionamiento físico', tema: 'Podcast · Articulación Sonora' },
-    { id: '5yswlgOP-7I', titulo: 'Necesidades no cumplidas: teorías', tema: 'Podcast · Articulación Sonora' }
+    { id: '', titulo: '¿Cuándo acudir con un reumatólogo?', tema: 'Señales de alerta' },
+    { id: '', titulo: 'Qué esperar en tu primera consulta', tema: 'La consulta' }
   ];
+  // Podcast del doctor: canal, descripción y episodios (del más reciente al más antiguo).
+  const PODCAST = {
+    nombre: 'Articulación Sonora',
+    url: 'https://www.youtube.com/@articulacionsonora1860',
+    portada: 'images/web/podcast-articulacion-sonora.jpg',
+    descripcion: 'Podcast para la difusión de información sobre enfermedades reumáticas, dirigido al público en general. Contenidos y producción a cargo del Dr. Daniel Mora.',
+    episodios: [
+      { id: 'mNg73mhSi84', numero: 5, titulo: 'Tú puedes necesitar un reumatólogo: escucha y averígualo' },
+      { id: 'Tw666pxnJHQ', numero: 4, titulo: 'Necesidades no cumplidas: acondicionamiento físico' },
+      { id: '5ZIemNDB3bA', numero: 3, titulo: 'Necesidades no cumplidas: complejidad diagnóstica' },
+      { id: 'rAE9PpOspxA', numero: 2, titulo: 'Fármacos' },
+      { id: '5yswlgOP-7I', numero: 1, titulo: 'Necesidades no cumplidas: teorías' }
+    ]
+  };
   // =====================================================================
 
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
@@ -677,38 +693,56 @@
     });
   })();
 
-  // ---- Videos (fachada ligera: el iframe de YouTube se carga al dar clic) ----
+  // ---- Fachada ligera de YouTube: portada + botón; el iframe se carga al dar clic ----
+  function crearVideo(v, span, etiqueta) {
+    const poster = v.id ? `https://i.ytimg.com/vi/${v.id}/maxresdefault.jpg` : 'images/web/consultorio2.jpg';
+    const fig = document.createElement('figure');
+    fig.className = `tile tile-video ${span} reveal` + (v.id ? '' : ' pendiente');
+    fig.innerHTML = `
+      <img src="${poster}" alt="" loading="lazy" decoding="async" ${v.id ? `onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${v.id}/hqdefault.jpg'"` : ''} />
+      <button class="video-play" type="button" aria-label="Reproducir: ${v.titulo}" ${v.id ? '' : 'disabled'}>
+        <i class="fa-solid fa-play" aria-hidden="true"></i>
+      </button>
+      <figcaption class="video-pie">
+        <span class="video-tema">${etiqueta}</span>
+        <strong>${v.titulo}</strong>
+        ${v.id ? '' : '<span class="video-nota">Próximamente</span>'}
+      </figcaption>`;
+    if (v.id) {
+      fig.querySelector('.video-play').addEventListener('click', () => {
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube-nocookie.com/embed/${v.id}?autoplay=1&rel=0`;
+        iframe.title = v.titulo;
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.allowFullscreen = true;
+        fig.classList.add('reproduciendo');
+        fig.appendChild(iframe);
+      });
+    }
+    return fig;
+  }
   (function renderVideos() {
     const grid = $('#videos-grid');
     if (!grid) return;
-    let chicos = 0;
-    VIDEOS.forEach((v, i) => {
-      const span = v.grande ? 'c-7 r-2 grande' : (chicos++ < 2 ? 'c-5' : 'c-4');
-      const poster = v.id ? `https://i.ytimg.com/vi/${v.id}/maxresdefault.jpg` : 'images/web/consultorio2.jpg';
-      const fig = document.createElement('figure');
-      fig.className = `tile tile-video ${span} reveal` + (v.id ? '' : ' pendiente');
-      fig.innerHTML = `
-        <img src="${poster}" alt="" loading="lazy" decoding="async" ${v.id ? `onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${v.id}/hqdefault.jpg'"` : ''} />
-        <button class="video-play" type="button" aria-label="Reproducir: ${v.titulo}" ${v.id ? '' : 'disabled'}>
-          <i class="fa-solid fa-play" aria-hidden="true"></i>
-        </button>
-        <figcaption class="video-pie">
-          <span class="video-tema">${v.tema}</span>
-          <strong>${v.titulo}</strong>
-          ${v.id ? '' : '<span class="video-nota">Próximamente</span>'}
-        </figcaption>`;
-      grid.appendChild(fig);
-      if (v.id) {
-        fig.querySelector('.video-play').addEventListener('click', () => {
-          const iframe = document.createElement('iframe');
-          iframe.src = `https://www.youtube-nocookie.com/embed/${v.id}?autoplay=1&rel=0`;
-          iframe.title = v.titulo;
-          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-          iframe.allowFullscreen = true;
-          fig.classList.add('reproduciendo');
-          fig.appendChild(iframe);
-        });
-      }
+    VIDEOS.forEach(v => grid.appendChild(crearVideo(v, v.grande ? 'c-7 r-2 grande' : 'c-5', v.tema)));
+  })();
+  (function renderPodcast() {
+    const grid = $('#podcast-grid');
+    if (!grid) return;
+    const canal = document.createElement('a');
+    canal.className = 'tile tile-marca podcast-canal c-5 r-2 reveal';
+    canal.href = PODCAST.url; canal.target = '_blank'; canal.rel = 'noopener';
+    canal.innerHTML = `
+      <img src="${PODCAST.portada}" alt="Portada de ${PODCAST.nombre}" width="400" height="400" loading="lazy" decoding="async" />
+      <span class="etiqueta">Podcast del doctor</span>
+      <h3>${PODCAST.nombre}</h3>
+      <p>${PODCAST.descripcion}</p>
+      <span class="podcast-datos"><i class="fa-solid fa-headphones" aria-hidden="true"></i> ${PODCAST.episodios.length} episodios · YouTube</span>
+      <span class="btn btn-blanco"><i class="fa-brands fa-youtube" aria-hidden="true"></i> Ver el canal</span>`;
+    grid.appendChild(canal);
+    PODCAST.episodios.forEach((e, i) => {
+      const num = String(e.numero).padStart(2, '0');
+      grid.appendChild(crearVideo(e, i === 0 ? 'c-7 r-2 grande' : 'c-3', `Episodio ${num}`));
     });
   })();
 
