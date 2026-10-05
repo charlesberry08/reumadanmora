@@ -648,3 +648,6 @@ footer{padding:36px 0 40px;border-top:1px solid var(--borde);margin-top:24px}
 }
 /* Portadas del podcast traen texto propio: oscurecido más fuerte para que lea el título */
 .podcast .tile-video::before{background:linear-gradient(180deg,rgba(22,35,111,0) 30%,rgba(22,35,111,.94) 100%)}
+
+/* Las anclas del menú dejan espacio para la barra fija */
+.seccion,.hero{scroll-margin-top:84px}
