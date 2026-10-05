@@ -595,3 +595,26 @@ footer{padding:36px 0 40px;border-top:1px solid var(--borde);margin-top:24px}
   .ed-entrada{font-size:1.18rem !important}
   .ed-cita p{font-size:1.28rem !important}
 }
+
+/* =========================================================
+   Espacios para imágenes
+   ========================================================= */
+.tile-imagen{min-height:260px}
+.tile-imagen img{object-position:center 22%}
+.tile-imagen.pendiente{
+  background:
+    repeating-linear-gradient(135deg,rgba(26,167,236,.06) 0 10px,transparent 10px 22px),
+    var(--celeste);
+  border:1.5px dashed var(--celeste-borde);box-shadow:none;
+  display:grid;place-items:center;text-align:center;padding:28px;
+}
+.tile-imagen.pendiente:hover{transform:none;box-shadow:none;border-color:var(--azul)}
+.imagen-pendiente{display:flex;flex-direction:column;align-items:center;gap:8px;max-width:30ch}
+.imagen-pendiente i{font-size:1.8rem;color:var(--azul);margin-bottom:4px}
+.imagen-pendiente strong{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--azul-tinta)}
+.imagen-pendiente span{font-size:.9rem;color:var(--tinta-suave);line-height:1.45}
+.contacto .tile-imagen{min-height:360px}
+@media (max-width:640px){
+  .tile-imagen{min-height:200px}
+  .contacto .tile-imagen{min-height:240px}
+}

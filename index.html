@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles.css?v=20261006i" />
+  <link rel="stylesheet" href="css/styles.css?v=20261006j" />
 
   <link rel="icon" href="images/marca/icono.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="images/favicon.png" type="image/png" />
@@ -238,6 +238,9 @@
         </dl>
       </div>
 
+      <figure class="tile tile-foto tile-imagen c-4 reveal" data-imagen="images/web/doctor-color.jpg" data-alt="El Dr. Daniel Mora en su consultorio" data-sugerencia="" data-pie="El Dr. Daniel Mora" data-pie2="En su consultorio de Médica Campestre"></figure>
+      <figure class="tile tile-foto tile-imagen c-4 reveal" data-imagen="" data-alt="" data-sugerencia="El doctor en consulta con un paciente, explicando un diagnóstico"></figure>
+      <figure class="tile tile-foto tile-imagen c-4 reveal" data-imagen="" data-alt="" data-sugerencia="Exploración articular de manos o rodilla durante la consulta"></figure>
     </div>
   </div>
 </section>
@@ -328,6 +331,8 @@
         <p class="pad-nota"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Requiere valoración sin demora.</p>
       </article>
 
+      <figure class="tile tile-foto tile-imagen c-6 reveal" data-imagen="" data-alt="" data-sugerencia="Manos con artritis o articulación inflamada, en acercamiento y con buena luz"></figure>
+      <figure class="tile tile-foto tile-imagen c-6 reveal" data-imagen="" data-alt="" data-sugerencia="Estudios de apoyo: ultrasonido articular o laboratorio de autoinmunidad"></figure>
       <div class="tile tile-tinte pad-otros c-8 reveal">
         <h3>También atiende</h3>
         <p>Otras enfermedades reumáticas frecuentes en consulta.</p>
@@ -408,7 +413,7 @@
         </ul>
       </div>
 
-      <div class="tile sintoma-tile c-6 reveal">
+      <div class="tile sintoma-tile c-4 reveal">
         <h3><span class="ico"><i class="fa-solid fa-vial" aria-hidden="true"></i></span> Hemato-inmunológicos</h3>
         <ul>
           <li><strong>Abortos recurrentes o trombosis</strong><span>Característicos del síndrome antifosfolípido, especialmente en mujeres jóvenes.</span></li>
@@ -416,7 +421,7 @@
         </ul>
       </div>
 
-      <div class="tile sintoma-tile c-6 reveal">
+      <div class="tile sintoma-tile c-4 reveal">
         <h3><span class="ico"><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i></span> Otros criterios</h3>
         <ul>
           <li><strong>Diagnóstico previo de enfermedad reumática autoinmune</strong><span>El seguimiento regular con el reumatólogo es parte del tratamiento.</span></li>
@@ -424,6 +429,7 @@
         </ul>
       </div>
 
+      <figure class="tile tile-foto tile-imagen c-4 reveal" data-imagen="" data-alt="" data-sugerencia="Paciente mostrando rigidez o dolor en manos; ilustra cuándo consultar"></figure>
       <div class="tile tile-tinte tile-aviso c-12 reveal">
         <div>
           <h3>¿Reconoces alguno de estos signos?</h3>
@@ -489,6 +495,9 @@
           <i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i> Abrir en Google Maps
         </a>
       </div>
+      <figure class="tile tile-foto tile-imagen c-6 reveal" data-imagen="" data-alt="" data-sugerencia="Sala de espera o recepción de la torre"></figure>
+      <figure class="tile tile-foto tile-imagen c-6 reveal" data-imagen="" data-alt="" data-sugerencia="Área de toma de signos o el doctor recibiendo a un paciente"></figure>
+
     </div>
   </div>
 </section>
@@ -543,12 +552,14 @@
         <p class="nota">Consulta con cita previa. Si necesitas otro horario, escríbenos y buscamos una opción.</p>
       </div>
 
-      <div class="tile tile-mapa c-12 reveal">
+      <div class="tile tile-mapa c-7 reveal">
         <iframe
           title="Mapa: consultorio del Dr. Daniel Mora en Médica Campestre, León"
           src="https://www.google.com/maps?q=Torre+M%C3%A9dica+Campestre,+Calle+Manantial+114,+Le%C3%B3n,+Guanajuato&output=embed"
           allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
+      <figure class="tile tile-foto tile-imagen c-5 reveal" data-imagen="" data-alt="" data-sugerencia="Entrada de Torre Médica Campestre desde la calle, para ubicar el acceso"></figure>
+
     </div>
   </div>
 </section>
@@ -684,6 +695,32 @@
       }
     });
   })();
+
+  // ---- Espacios para imágenes ----
+  // Cada <figure class="tile-imagen"> se llena con data-imagen (ruta del archivo),
+  // data-alt (texto alternativo) y, opcionalmente, data-pie / data-pie2 (pie de foto).
+  // Sin data-imagen se muestra el espacio con la sugerencia de qué fotografiar.
+  $$('.tile-imagen').forEach(fig => {
+    const src = fig.dataset.imagen;
+    if (src) {
+      const img = new Image();
+      img.src = src; img.alt = fig.dataset.alt || ''; img.loading = 'lazy'; img.decoding = 'async';
+      fig.prepend(img);
+      if (fig.dataset.pie) {
+        const cap = document.createElement('figcaption');
+        cap.className = 'pie';
+        cap.innerHTML = `<strong>${fig.dataset.pie}</strong>${fig.dataset.pie2 ? `<span>${fig.dataset.pie2}</span>` : ''}`;
+        fig.appendChild(cap);
+      }
+    } else {
+      fig.classList.add('pendiente');
+      fig.innerHTML = `<div class="imagen-pendiente">
+        <i class="fa-regular fa-image" aria-hidden="true"></i>
+        <strong>Espacio para imagen</strong>
+        <span>${fig.dataset.sugerencia || ''}</span>
+      </div>`;
+    }
+  });
 
   // ---- Aparición escalonada de los bloques ----
   $$('.bento').forEach(grid => {

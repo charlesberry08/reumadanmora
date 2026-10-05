@@ -53,3 +53,7 @@ El contenido se captura en el bloque `CONFIGURACIÓN DE CONTENIDO` al inicio del
 El héroe usa `images/web/doctor-bn.png`: el retrato **en blanco y negro** (Carlos descartó el duotono azul) recortado sin fondo. La máscara se obtiene con Vision de macOS (`VNGenerateForegroundInstanceMaskRequest`) y se refina en el borde del cabello con una banda de luminancia contra el fondo gris, para no perder mechones. La figura va **sin contenedor**, anclada abajo y contenida en la altura del héroe (altura 100 %; con más se metía bajo la barra de navegación y se cortaba el cabello), con sombra proyectada. Un oscurecido inferior neutro recortado a la silueta (`mask` con el mismo PNG) permite leer la ficha.
 
 **Ficha editorial** (`.ficha`): etiqueta en Manrope mayúsculas con tracking amplio en cielo, nombre en **Fraunces** 500 a dos líneas con el "Dr." en itálica cielo, regla fina de 44px y cédulas en Manrope pequeña con separador en cielo. Fraunces solo se usa para este nombre.
+
+## Espacios para imágenes
+
+Nueve huecos repartidos en el sitio (3 en Sobre el doctor, 2 en Padecimientos, 1 en Síntomas, 2 en Consultorio, 1 en Contacto), como `<figure class="tile tile-foto tile-imagen …">`. Se llenan con atributos: `data-imagen` (ruta, ideal en `images/web/`, máx. 1800px), `data-alt` (texto alternativo) y opcionalmente `data-pie` / `data-pie2` (pie de foto). Sin `data-imagen` el tile muestra "Espacio para imagen" con la sugerencia de qué fotografiar (`data-sugerencia`). El primero ya tiene la foto a color del doctor (`doctor-color.jpg`).
