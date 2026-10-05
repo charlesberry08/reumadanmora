@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles.css?v=20261005d" />
+  <link rel="stylesheet" href="css/styles.css?v=20261005e" />
 
   <link rel="icon" href="images/marca/icono.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="images/favicon.png" type="image/png" />
@@ -78,7 +78,7 @@
         <rect width="64" height="64" rx="16" fill="url(#gm-nav)"/>
         <path d="M17 46 L28 27" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
         <path d="M36 27 L47 46" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
-        <circle cx="32" cy="21" r="7" fill="#e2a85f" stroke="#fff" stroke-width="2.5"/>
+        <circle class="nodo" cx="32" cy="21" r="7" fill="#e2a85f" stroke="#fff" stroke-width="2.5"/>
       </svg>
       <span class="brand-texto">
         <span class="brand-nombre">Dr. Daniel Mora</span>
@@ -89,6 +89,7 @@
     <ul class="nav-links">
       <li><a href="/#sobre-mi" class="nav-link">Sobre mí</a></li>
       <li><a href="/#sintomas" class="nav-link">Síntomas</a></li>
+      <li><a href="/#videos" class="nav-link">Videos</a></li>
       <li><a href="/#consultorio" class="nav-link">Consultorio</a></li>
       <li><a href="/#contacto" class="nav-link">Contacto</a></li>
     </ul>
@@ -113,7 +114,9 @@
     <ul class="drawer-links">
       <li><a href="/#sobre-mi" class="drawer-link">Sobre mí</a></li>
       <li><a href="/#sintomas" class="drawer-link">Síntomas</a></li>
+      <li><a href="/#videos" class="drawer-link">Videos</a></li>
       <li><a href="/#consultorio" class="drawer-link">Consultorio</a></li>
+      <li><a href="/#redes" class="drawer-link">Redes sociales</a></li>
       <li><a href="/#contacto" class="drawer-link">Contacto</a></li>
       <li><a href="/aviso-de-privacidad.html" class="drawer-link">Aviso de privacidad</a></li>
     </ul>
@@ -163,7 +166,7 @@
       <p>10:00 a 13:00 h y 18:00 a 20:00 h.</p>
     </div>
     <div class="tile tile-dato c-3 reveal">
-      <span class="cifra">+10<em>&nbsp;años</em></span>
+      <span class="cifra">+<span class="contador" data-meta="10">0</span><em>&nbsp;años</em></span>
       <p>de experiencia clínica en el diagnóstico y manejo de enfermedades autoinmunes.</p>
     </div>
     <div class="tile tile-dato c-3 reveal">
@@ -173,6 +176,14 @@
     </div>
   </div>
 </header>
+
+<!-- ============ CINTA ============ -->
+<div class="cinta" aria-hidden="true">
+  <div class="cinta-pista">
+    <span>Artritis reumatoide</span><span>Lupus eritematoso sistémico</span><span>Síndrome de Sjögren</span><span>Espondiloartritis</span><span>Vasculitis</span><span>Gota</span><span>Osteoartritis</span><span>Fibromialgia</span><span>Esclerosis sistémica</span><span>Síndrome antifosfolípido</span><span>Miopatías inflamatorias</span><span>Artritis psoriásica</span>
+    <span>Artritis reumatoide</span><span>Lupus eritematoso sistémico</span><span>Síndrome de Sjögren</span><span>Espondiloartritis</span><span>Vasculitis</span><span>Gota</span><span>Osteoartritis</span><span>Fibromialgia</span><span>Esclerosis sistémica</span><span>Síndrome antifosfolípido</span><span>Miopatías inflamatorias</span><span>Artritis psoriásica</span>
+  </div>
+</div>
 
 <!-- ============ SOBRE MÍ ============ -->
 <section class="seccion sobre" id="sobre-mi">
@@ -328,6 +339,20 @@
   </div>
 </section>
 
+<!-- ============ VIDEOS ============ -->
+<section class="seccion videos" id="videos">
+  <div class="container">
+    <div class="seccion-cabecera reveal">
+      <span class="etiqueta">Videos</span>
+      <h2>El doctor explica</h2>
+      <p>Respuestas breves a las dudas más frecuentes sobre las enfermedades reumáticas y la consulta.</p>
+    </div>
+    <div class="bento" id="videos-grid">
+      <!-- Los videos se generan desde la lista VIDEOS del script (abajo). -->
+    </div>
+  </div>
+</section>
+
 <!-- ============ CONSULTORIO ============ -->
 <section class="seccion consultorio" id="consultorio">
   <div class="container">
@@ -364,6 +389,20 @@
           <i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i> Abrir en Google Maps
         </a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REDES ============ -->
+<section class="seccion redes" id="redes">
+  <div class="container">
+    <div class="seccion-cabecera reveal">
+      <span class="etiqueta">Redes sociales</span>
+      <h2>Sigue al doctor</h2>
+      <p>Contenido de divulgación, avisos del consultorio y respuestas a preguntas frecuentes.</p>
+    </div>
+    <div class="bento" id="redes-grid">
+      <!-- Las tarjetas se generan desde el objeto REDES del script (abajo). -->
     </div>
   </div>
 </section>
@@ -423,13 +462,14 @@
         <rect width="64" height="64" rx="16" fill="url(#gm-foot)"/>
         <path d="M17 46 L28 27" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
         <path d="M36 27 L47 46" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
-        <circle cx="32" cy="21" r="7" fill="#e2a85f" stroke="#fff" stroke-width="2.5"/>
+        <circle class="nodo" cx="32" cy="21" r="7" fill="#e2a85f" stroke="#fff" stroke-width="2.5"/>
       </svg>
       <span class="brand-texto">
         <span class="brand-nombre">Dr. Daniel Mora</span>
         <span class="brand-sub">Reumatología</span>
       </span>
     </a>
+    <ul class="footer-redes" id="footer-redes"></ul>
     <ul class="footer-links">
       <li><a href="/#sobre-mi">Sobre mí</a></li>
       <li><a href="/#sintomas">Síntomas</a></li>
@@ -442,14 +482,123 @@
 </footer>
 
 <script>
+  // =====================================================================
+  //  CONFIGURACIÓN DE CONTENIDO (llenar con los datos reales del doctor)
+  // =====================================================================
+  // Redes: pegar la URL completa del perfil. Si se deja vacía, la tarjeta
+  // se muestra sin liga (y la del pie de página se oculta).
+  const REDES = {
+    instagram: { url: '', usuario: '' },
+    facebook:  { url: '', usuario: '' },
+    tiktok:    { url: '', usuario: '' },
+    youtube:   { url: '', usuario: '' }
+  };
+  // Videos: "id" es el identificador del video en YouTube (lo que va después
+  // de v= en la liga). Con id vacío se muestra la portada sin reproducir.
+  // Los títulos son temas sugeridos; cambiarlos por los de los videos reales.
+  const VIDEOS = [
+    { id: '', titulo: '¿Cuándo acudir con un reumatólogo?', tema: 'Señales de alerta', grande: true },
+    { id: '', titulo: 'Qué esperar en tu primera consulta', tema: 'La consulta' },
+    { id: '', titulo: 'Artritis reumatoide: por qué importa el diagnóstico temprano', tema: 'Padecimientos' }
+  ];
+  // =====================================================================
+
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Aparición suave de los bloques
+  // ---- Redes sociales ----
+  const REDES_META = {
+    instagram: { nombre: 'Instagram', icono: 'fa-brands fa-instagram', texto: 'Historias, consejos y avisos del consultorio.' },
+    facebook:  { nombre: 'Facebook',  icono: 'fa-brands fa-facebook-f', texto: 'Publicaciones de divulgación y comunidad.' },
+    tiktok:    { nombre: 'TikTok',    icono: 'fa-brands fa-tiktok', texto: 'Videos cortos con respuestas rápidas.' },
+    youtube:   { nombre: 'YouTube',   icono: 'fa-brands fa-youtube', texto: 'Videos completos sobre enfermedades reumáticas.' }
+  };
+  (function renderRedes() {
+    const grid = $('#redes-grid'), foot = $('#footer-redes');
+    if (!grid) return;
+    Object.entries(REDES_META).forEach(([clave, meta]) => {
+      const cfg = REDES[clave] || {};
+      const tiene = !!cfg.url;
+      const a = document.createElement('a');
+      a.className = `tile tile-red red-${clave} c-3 reveal` + (tiene ? '' : ' pendiente');
+      a.href = tiene ? cfg.url : '#redes';
+      if (tiene) { a.target = '_blank'; a.rel = 'noopener'; }
+      a.setAttribute('aria-label', `${meta.nombre}${cfg.usuario ? ' ' + cfg.usuario : ''}`);
+      a.innerHTML = `
+        <span class="ico"><i class="${meta.icono}" aria-hidden="true"></i></span>
+        <span class="red-nombre">${meta.nombre}</span>
+        <span class="red-usuario">${cfg.usuario || 'Perfil del doctor'}</span>
+        <span class="red-texto">${meta.texto}</span>
+        <span class="red-flecha"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>`;
+      grid.appendChild(a);
+      if (tiene && foot) {
+        const li = document.createElement('li');
+        li.innerHTML = `<a href="${cfg.url}" target="_blank" rel="noopener" aria-label="${meta.nombre}"><i class="${meta.icono}" aria-hidden="true"></i></a>`;
+        foot.appendChild(li);
+      }
+    });
+  })();
+
+  // ---- Videos (fachada ligera: el iframe de YouTube se carga al dar clic) ----
+  (function renderVideos() {
+    const grid = $('#videos-grid');
+    if (!grid) return;
+    VIDEOS.forEach((v, i) => {
+      const poster = v.id ? `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg` : 'images/web/consultorio2.jpg';
+      const fig = document.createElement('figure');
+      fig.className = `tile tile-video ${v.grande ? 'c-7 r-2 grande' : 'c-5'} reveal` + (v.id ? '' : ' pendiente');
+      fig.innerHTML = `
+        <img src="${poster}" alt="" loading="lazy" decoding="async" />
+        <button class="video-play" type="button" aria-label="Reproducir: ${v.titulo}" ${v.id ? '' : 'disabled'}>
+          <i class="fa-solid fa-play" aria-hidden="true"></i>
+        </button>
+        <figcaption class="video-pie">
+          <span class="video-tema">${v.tema}</span>
+          <strong>${v.titulo}</strong>
+          ${v.id ? '' : '<span class="video-nota">Próximamente</span>'}
+        </figcaption>`;
+      grid.appendChild(fig);
+      if (v.id) {
+        fig.querySelector('.video-play').addEventListener('click', () => {
+          const iframe = document.createElement('iframe');
+          iframe.src = `https://www.youtube-nocookie.com/embed/${v.id}?autoplay=1&rel=0`;
+          iframe.title = v.titulo;
+          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+          iframe.allowFullscreen = true;
+          fig.classList.add('reproduciendo');
+          fig.appendChild(iframe);
+        });
+      }
+    });
+  })();
+
+  // ---- Aparición escalonada de los bloques ----
+  $$('.bento').forEach(grid => {
+    $$('.reveal', grid).forEach((el, i) => el.style.setProperty('--retraso', `${Math.min(i, 8) * 70}ms`));
+  });
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); } });
   }, { threshold: 0.12 });
   $$('.reveal').forEach(el => io.observe(el));
+
+  // ---- Contador animado ----
+  const ioContador = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target, meta = +el.dataset.meta || 0;
+      ioContador.unobserve(el);
+      if (reduceMotion) { el.textContent = meta; return; }
+      const inicio = performance.now(), dur = 1100;
+      const paso = (t) => {
+        const p = Math.min(1, (t - inicio) / dur), e = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(meta * e);
+        if (p < 1) requestAnimationFrame(paso);
+      };
+      requestAnimationFrame(paso);
+    });
+  }, { threshold: 0.6 });
+  $$('.contador').forEach(el => ioContador.observe(el));
 
   // Topbar con sombra al hacer scroll
   const topbar = $('.topbar');
