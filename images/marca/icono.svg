@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Isotipo Dr. Daniel Mora">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Isotipo Dr. Daniel Mora: anticuerpo">
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#5FA896"/>
@@ -6,7 +6,10 @@
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="16" fill="url(#g)"/>
-  <path d="M17 46 L28 27" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
-  <path d="M36 27 L47 46" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
-  <circle cx="32" cy="21" r="7" fill="#E2A85F" stroke="#fff" stroke-width="2.5"/>
+  <g stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M28.4 56 V38 L15.5 14.5" stroke="#fff"/>
+    <path d="M35.6 56 V38 L48.5 14.5" stroke="#fff"/>
+    <path class="ligera" d="M20.6 37.2 L10 18" stroke="#E2A85F"/>
+    <path class="ligera" d="M43.4 37.2 L54 18" stroke="#E2A85F"/>
+  </g>
 </svg>

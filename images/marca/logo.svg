@@ -6,9 +6,12 @@
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="16" fill="url(#g)"/>
-  <path d="M17 46 L28 27" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
-  <path d="M36 27 L47 46" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
-  <circle cx="32" cy="21" r="7" fill="#E2A85F" stroke="#fff" stroke-width="2.5"/>
+  <g stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M28.4 56 V38 L15.5 14.5" stroke="#fff"/>
+    <path d="M35.6 56 V38 L48.5 14.5" stroke="#fff"/>
+    <path d="M20.6 37.2 L10 18" stroke="#E2A85F"/>
+    <path d="M43.4 37.2 L54 18" stroke="#E2A85F"/>
+  </g>
   <text x="80" y="31" font-family="Manrope, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="800" font-size="27" letter-spacing="-0.5" fill="#0F1F2E">Dr. Daniel Mora</text>
   <text x="81" y="53" font-family="Manrope, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="600" font-size="13" letter-spacing="2.6" fill="#2F7F70">REUMATOLOGÍA</text>
 </svg>

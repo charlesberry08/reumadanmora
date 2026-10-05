@@ -353,8 +353,10 @@ footer{padding:36px 0 40px;border-top:1px solid var(--borde);margin-top:24px}
   0%,100%{transform:scale(1)}
   50%{transform:scale(1.18)}
 }
-.brand svg .nodo{transform-origin:32px 21px;animation:latido 2.8s ease-in-out infinite}
-.brand:hover svg .nodo{animation-duration:.9s}
+.brand svg .ligera{transform-origin:32px 32px;animation:respirar 3.2s ease-in-out infinite}
+.brand svg .ligera:last-child{animation-delay:.4s}
+.brand:hover svg .ligera{animation-duration:1.1s}
+@keyframes respirar{0%,100%{opacity:1}50%{opacity:.55}}
 
 /* Botones: brillo al pasar */
 .btn{position:relative;overflow:hidden}
@@ -466,6 +468,6 @@ footer{padding:36px 0 40px;border-top:1px solid var(--borde);margin-top:24px}
   .video-play{width:62px;height:62px}
 }
 @media (prefers-reduced-motion:reduce){
-  .tile-marca::after,.brand svg .nodo,.cinta-pista,.video-play::before{animation:none}
+  .tile-marca::after,.brand svg .ligera,.cinta-pista,.video-play::before{animation:none}
   .tile:hover,.tile-foto:hover img,.tile-video:hover img{transform:none}
 }

@@ -23,9 +23,9 @@ Tipografía: Manrope (400–800), títulos 800 con tracking −0.02em. Iconos Fo
 
 ## Logo
 
-Isotipo "articulación": dos barras blancas con remate redondo que forman un ángulo abierto (como una rodilla o un dedo flexionado) y un nodo ámbar con anillo blanco en el vértice, sobre un cuadrado con radio 25 % relleno del gradiente de marca. Archivos en `images/marca/`: `icono.svg` (isotipo), `logo.svg` (isotipo + wordmark "Dr. Daniel Mora / REUMATOLOGÍA"), `icono-512.png`. Favicon y apple-touch-icon generados del mismo SVG.
+Isotipo "anticuerpo" (referencia: inmunoglobulina en Y, elegida por Carlos el 2026-10-05). Dos cadenas pesadas blancas que suben desde el tallo y se abren en Y, y dos cadenas ligeras ámbar paralelas por fuera de cada brazo; remates redondos, sobre un cuadrado con radio 25 % relleno del gradiente de marca. Archivos en `images/marca/`: `icono.svg` (isotipo), `logo.svg` (isotipo + wordmark "Dr. Daniel Mora / REUMATOLOGÍA"), `icono-512.png`. Favicon y apple-touch-icon generados del mismo SVG. En el sitio las cadenas ligeras "respiran" (opacidad) y aceleran al pasar el cursor.
 
-Reglas: no cambiar el color del nodo, no cerrar el ángulo, no usar el isotipo sin el gradiente sobre fondos claros.
+Reglas: las cadenas ligeras siempre en ámbar y por fuera; no cerrar los brazos ni separar los tallos; no usar el isotipo sin el gradiente sobre fondos claros.
 
 ## Bento
 
