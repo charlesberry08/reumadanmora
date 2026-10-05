@@ -1,17 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 64" width="420" height="64" role="img" aria-label="Dr. Daniel Mora, Reumatología">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#5FA896"/>
-      <stop offset="1" stop-color="#0F4C5C"/>
-    </linearGradient>
-  </defs>
-  <rect width="64" height="64" rx="16" fill="url(#g)"/>
-  <g stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <path d="M28.4 56 V38 L15.5 14.5" stroke="#fff"/>
-    <path d="M35.6 56 V38 L48.5 14.5" stroke="#fff"/>
-    <path d="M20.6 37.2 L10 18" stroke="#E2A85F"/>
-    <path d="M43.4 37.2 L54 18" stroke="#E2A85F"/>
-  </g>
-  <text x="80" y="31" font-family="Manrope, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="800" font-size="27" letter-spacing="-0.5" fill="#0F1F2E">Dr. Daniel Mora</text>
-  <text x="81" y="53" font-family="Manrope, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="600" font-size="13" letter-spacing="2.6" fill="#2F7F70">REUMATOLOGÍA</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 64" width="430" height="64" role="img" aria-label="Dr. Daniel Mora, Reumatología">
+  <svg viewBox="0 0 100 100" x="0" y="-8" width="80" height="80">
+    <defs>
+      <linearGradient id="gp" gradientUnits="userSpaceOnUse" x1="50" y1="92" x2="50" y2="22"><stop offset="0" stop-color="#1e2f97"/><stop offset=".55" stop-color="#1aa7ec"/><stop offset="1" stop-color="#4adfdd"/></linearGradient>
+      <linearGradient id="gl" gradientUnits="userSpaceOnUse" x1="50" y1="62" x2="50" y2="26"><stop offset="0" stop-color="#797ef6"/><stop offset="1" stop-color="#7dd6f8"/></linearGradient>
+    </defs>
+    <g transform="rotate(-12 50 58)">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="9">
+        <path class="pesada" d="M43 92 V62 C43 54 40 49 35 42 L23 24" stroke="url(#gp)"/>
+        <path class="pesada" d="M57 92 V62 C57 54 60 49 65 42 L77 24" stroke="url(#gp)"/>
+        <path class="ligera" d="M30.5 59 L12.5 30" stroke="url(#gl)"/>
+        <path class="ligera" d="M69.5 59 L87.5 30" stroke="url(#gl)"/>
+      </g>
+      <g fill="none" stroke="#fff" stroke-linecap="round" stroke-opacity=".42" stroke-width="2.2">
+        <path d="M40.6 86 V64 C40.6 56 38 51 33 44"/><path d="M54.6 86 V64"/>
+        <path d="M27.6 55 L13 31.5"/><path d="M66.6 55 L81 31.5"/>
+      </g>
+    </g>
+  </svg>
+  <text x="86" y="31" font-family="Manrope, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="800" font-size="27" letter-spacing="-0.5" fill="#121a45">Dr. Daniel Mora</text>
+  <text x="87" y="53" font-family="Manrope, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="600" font-size="13" letter-spacing="2.6" fill="#0b6fb0">REUMATOLOGÍA</text>
 </svg>

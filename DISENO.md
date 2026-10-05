@@ -4,28 +4,33 @@ Rediseño 2026-10-05 (CB.Design). Base clara, tinta navy, paleta de marca solo e
 
 ## Paleta
 
+Referencia entregada por Carlos (2026-10-05): cinco tonos de azul.
+
 | Token | Valor | Uso |
 |---|---|---|
-| `--fondo` | `#f4f7f8` | Fondo de página |
+| `--fondo` | `#f3f7fc` | Fondo de página |
 | `--tarjeta` | `#ffffff` | Tiles |
-| `--tinta` | `#0f1f2e` | Texto principal (navy) |
-| `--tinta-suave` | `#56687a` | Texto secundario |
-| `--borde` | `#e2e9ec` | Bordes |
-| `--salvia` | `#5fa896` | Color de marca, tomado de la pared del consultorio |
-| `--salvia-tinta` | `#2f7f70` | Enlaces y etiquetas sobre blanco (contraste AA) |
-| `--petroleo` | `#0f4c5c` | Botón primario, fin del gradiente |
-| `--petroleo-oscuro` | `#0a3542` | Hover, títulos dentro de tintes |
-| `--menta` | `#e3f1ed` | Bloque de tinte (máx. uno por sección) |
-| `--ambar` | `#e2a85f` | Acento cálido: nodo del logo, cifra destacada |
-| `--grad-marca` | salvia → `#2a7a7c` → petróleo (135°) | Bloque saturado (héroe y contacto), texto blanco |
+| `--tinta` | `#121a45` | Texto principal (navy) |
+| `--tinta-suave` | `#5a6487` | Texto secundario |
+| `--borde` | `#e2e8f3` | Bordes |
+| `--cielo` | `#7dd6f8` | Punta de las cadenas ligeras, gradiente claro |
+| `--lavanda` | `#797ef6` | Base de las cadenas ligeras, acento |
+| `--turquesa` | `#4adfdd` | Punta de las cadenas pesadas; etiquetas sobre el bloque saturado |
+| `--azul` | `#1aa7ec` | Color de marca: puntos, iconos, inicio del gradiente |
+| `--marino` | `#1e2f97` | Botón primario, fin del gradiente, tallo del isotipo |
+| `--azul-tinta` | `#0b6fb0` | Enlaces y etiquetas sobre blanco (contraste AA) |
+| `--lavanda-tinta` | `#5559d6` | Cifra destacada sobre blanco |
+| `--celeste` | `#e9f6fd` | Bloque de tinte (máx. uno por sección) |
+| `--grad-marca` | azul → `#2457c4` → marino (135°) | Bloque saturado (héroe y contacto), texto blanco |
+| `--grad-suave` | cielo → lavanda | Iconos al pasar el cursor |
 
 Tipografía: Manrope (400–800), títulos 800 con tracking −0.02em. Iconos Font Awesome 6.
 
 ## Logo
 
-Isotipo "anticuerpo" (referencia: inmunoglobulina en Y, elegida por Carlos el 2026-10-05). Dos cadenas pesadas blancas que suben desde el tallo y se abren en Y, y dos cadenas ligeras ámbar paralelas por fuera de cada brazo; remates redondos, sobre un cuadrado con radio 25 % relleno del gradiente de marca. Archivos en `images/marca/`: `icono.svg` (isotipo), `logo.svg` (isotipo + wordmark "Dr. Daniel Mora / REUMATOLOGÍA"), `icono-512.png`. Favicon y apple-touch-icon generados del mismo SVG. En el sitio las cadenas ligeras "respiran" (opacidad) y aceleran al pasar el cursor.
+Isotipo "anticuerpo" **sin contenedor** (Carlos rechazó el recuadro el 2026-10-05). Inmunoglobulina en Y inclinada −12°, como flotando: dos cadenas pesadas con tallo recto, codo curvo y brazo, en gradiente marino → azul → turquesa de abajo hacia arriba; dos cadenas ligeras más cortas por fuera de cada brazo, flotando con un hueco, en gradiente lavanda → cielo. Remates redondos y un filo de luz blanco al 42 % en cada tubo para dar volumen. Archivos en `images/marca/`: `icono.svg` (color), `icono-blanco.svg` (monocromo para fondos saturados), `logo.svg` (isotipo + wordmark "Dr. Daniel Mora / REUMATOLOGÍA"), `icono-512.png` y `apple-touch-icon.png` (versión blanca sobre cuadrado azul → marino, solo para iconos de app) y `muestra-logo.png` (hoja de muestra). En el sitio las cadenas ligeras "respiran" (opacidad) y aceleran al pasar el cursor.
 
-Reglas: las cadenas ligeras siempre en ámbar y por fuera; no cerrar los brazos ni separar los tallos; no usar el isotipo sin el gradiente sobre fondos claros.
+Reglas: nunca meter el isotipo en un recuadro; mantener la inclinación y el hueco entre cadenas; sobre fondos saturados usar la versión blanca; no recolorear los gradientes.
 
 ## Bento
 
