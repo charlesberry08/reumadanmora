@@ -50,4 +50,8 @@ El contenido se captura en el bloque `CONFIGURACIÓN DE CONTENIDO` al inicio del
 
 ## Retrato del doctor
 
-El héroe usa `images/web/doctor-duotono.png`: el retrato en blanco y negro recortado sin fondo (máscara de sujeto generada con Vision de macOS, script en el historial) y un mapa de degradado con la paleta: sombras marino oscuro → marino → medios azul → luces cielo → blanco, con gamma 0.72 para levantar los medios tonos. Va sobre un resplandor celeste y asoma por arriba del tile (`.tile-retrato`). Para regenerarlo con otra foto: máscara con `VNGenerateForegroundInstanceMaskRequest`, luego el mapa de degradado con PIL.
+El héroe usa `images/web/doctor-duotono.png`: el retrato en blanco y negro recortado sin fondo (máscara de sujeto con Vision de macOS) y un mapa de degradado oscuro: casi negro azulado `#060b36` → `#101b62` → marino `#1e2f97` → `#2457c4`, y las luces no pasan de azul `#3aa8ee` (gamma 0.88). La figura va **sin contenedor** (Carlos pidió quitar el recuadro), anclada abajo y asomando por arriba del bloque del héroe (`.retrato`), con sombra proyectada. Un oscurecido inferior recortado a la silueta (`mask` con el mismo PNG) permite leer la ficha.
+
+**Ficha editorial** (`.ficha`): etiqueta en Manrope mayúsculas con tracking amplio en cielo, nombre en **Fraunces** 500 a dos líneas con el "Dr." en itálica cielo, regla fina de 44px y cédulas en Manrope pequeña con separador en cielo. Fraunces solo se usa para este nombre.
+
+Para regenerar con otra foto: máscara con `VNGenerateForegroundInstanceMaskRequest`, luego el mapa de degradado con PIL (paleta y gamma arriba).
