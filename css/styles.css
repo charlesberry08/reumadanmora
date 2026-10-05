@@ -216,16 +216,16 @@ body.menu-open-fixed{overflow:hidden}
 /* Retrato recortado en duotono, sin contenedor, con ficha editorial sobre la figura */
 .retrato{position:relative;min-height:440px;overflow:visible}
 .retrato img{
-  position:absolute;left:50%;bottom:0;width:auto;height:112%;max-width:none;
+  position:absolute;left:50%;bottom:0;width:auto;height:100%;max-width:none;
   transform:translateX(-50%);object-fit:contain;object-position:bottom center;
-  filter:drop-shadow(0 24px 34px rgba(6,11,54,.30));
+  filter:drop-shadow(0 24px 34px rgba(18,26,69,.28));
 }
 /* Oscurecido inferior recortado a la silueta, para que la ficha lea sobre la camisa */
 .retrato::after{
-  content:"";position:absolute;left:50%;bottom:0;height:112%;aspect-ratio:1027/1265;transform:translateX(-50%);
-  background:linear-gradient(180deg,rgba(6,11,54,0) 52%,rgba(6,11,54,.78) 100%);
-  -webkit-mask:url("../images/web/doctor-duotono.png") center bottom/contain no-repeat;
-  mask:url("../images/web/doctor-duotono.png") center bottom/contain no-repeat;
+  content:"";position:absolute;left:50%;bottom:0;height:100%;aspect-ratio:1027/1269;transform:translateX(-50%);
+  background:linear-gradient(180deg,rgba(10,14,30,0) 50%,rgba(10,14,30,.72) 100%);
+  -webkit-mask:url("../images/web/doctor-bn.png") center bottom/contain no-repeat;
+  mask:url("../images/web/doctor-bn.png") center bottom/contain no-repeat;
   pointer-events:none;
 }
 .ficha{position:absolute;left:8%;right:8%;bottom:26px;z-index:1;color:#fff;display:flex;flex-direction:column;gap:8px}
@@ -240,7 +240,6 @@ body.menu-open-fixed{overflow:hidden}
 .ficha-datos i{font-style:normal;color:var(--cielo);margin:0 .35em}
 @media (max-width:980px){
   .retrato{min-height:460px}
-  .retrato img,.retrato::after{height:100%}
 }
 @media (max-width:640px){
   .retrato{min-height:400px}
