@@ -1,0 +1,5 @@
+.DS_Store
+.nova/
+node_modules/
+dist/
+.env
