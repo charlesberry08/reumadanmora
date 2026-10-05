@@ -702,5 +702,5 @@ footer{padding:36px 0 40px;border-top:1px solid var(--borde);margin-top:24px}
   .guia-item{grid-template-columns:1fr;gap:4px}
   .guia-cuerpo{padding:4px 20px}
   .guia-cap{padding:22px 0}
-  .guia-cap-cabeza{flex-wrap:wrap}
+  .guia-cap-cabeza i{display:none}
 }
