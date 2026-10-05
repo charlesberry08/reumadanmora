@@ -620,9 +620,9 @@
   // de v= en la liga). Con id vacío se muestra la portada sin reproducir.
   // Los títulos son temas sugeridos; cambiarlos por los de los videos reales.
   const VIDEOS = [
-    { id: '', titulo: '¿Cuándo acudir con un reumatólogo?', tema: 'Señales de alerta', grande: true },
-    { id: '', titulo: 'Qué esperar en tu primera consulta', tema: 'La consulta' },
-    { id: '', titulo: 'Artritis reumatoide: por qué importa el diagnóstico temprano', tema: 'Padecimientos' }
+    { id: 'lKNq-FuYCRQ', titulo: 'Conoce al Dr. Daniel Mora', tema: 'Presentación · Médica Campestre', grande: true },
+    { id: '', titulo: '¿Cuándo acudir con un reumatólogo?', tema: 'Señales de alerta' },
+    { id: '', titulo: 'Qué esperar en tu primera consulta', tema: 'La consulta' }
   ];
   // =====================================================================
 
@@ -668,11 +668,11 @@
     const grid = $('#videos-grid');
     if (!grid) return;
     VIDEOS.forEach((v, i) => {
-      const poster = v.id ? `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg` : 'images/web/consultorio2.jpg';
+      const poster = v.id ? `https://i.ytimg.com/vi/${v.id}/maxresdefault.jpg` : 'images/web/consultorio2.jpg';
       const fig = document.createElement('figure');
       fig.className = `tile tile-video ${v.grande ? 'c-7 r-2 grande' : 'c-5'} reveal` + (v.id ? '' : ' pendiente');
       fig.innerHTML = `
-        <img src="${poster}" alt="" loading="lazy" decoding="async" />
+        <img src="${poster}" alt="" loading="lazy" decoding="async" ${v.id ? `onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${v.id}/hqdefault.jpg'"` : ''} />
         <button class="video-play" type="button" aria-label="Reproducir: ${v.titulo}" ${v.id ? '' : 'disabled'}>
           <i class="fa-solid fa-play" aria-hidden="true"></i>
         </button>
