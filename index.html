@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles.css?v=20261006n" />
+  <link rel="stylesheet" href="css/styles.css?v=20261006p" />
 
   <link rel="icon" href="images/marca/icono.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="images/favicon.png" type="image/png" />
@@ -361,77 +361,118 @@
   </div>
 </section>
 
-<!-- ============ SÍNTOMAS ============ -->
+<!-- ============ SÍNTOMAS (guía editorial) ============ -->
 <section class="seccion sintomas" id="sintomas">
   <div class="container">
-    <div class="seccion-cabecera">
-      <span class="etiqueta">Guía para el paciente</span>
-      <h2>¿Cuándo acudir con un reumatólogo?</h2>
-      <p>
-        Las enfermedades reumáticas pueden afectar articulaciones, músculos, piel, vasos sanguíneos, órganos internos
-        y el sistema inmune. Estos son los principales signos clínicos, agrupados por tipo.
-      </p>
+    <div class="ed-cabecera ed-cabecera-seccion reveal">
+      <span>Guía para el paciente</span>
+      <span class="ed-cabecera-num">N.º 02</span>
+      <span>Signos clínicos por tipo</span>
     </div>
 
-    <div class="bento">
-      <div class="tile sintoma-tile c-6 reveal">
-        <h3><span class="ico"><i class="fa-solid fa-bone" aria-hidden="true"></i></span> Síntomas articulares</h3>
-        <ul>
-          <li><strong>Dolor articular inflamatorio</strong><span>Empeora con el reposo y mejora con la actividad. Frecuente en artritis reumatoide y espondiloartritis.</span></li>
-          <li><strong>Rigidez matutina mayor a 30 minutos</strong><span>Afecta manos, rodillas o espalda baja y cede con el movimiento progresivo.</span></li>
-          <li><strong>Hinchazón articular</strong><span>Inflamación persistente sin una causa traumática evidente.</span></li>
-        </ul>
+    <div class="bento guia">
+      <aside class="guia-lateral c-4">
+        <div class="tile guia-indice reveal">
+          <h2 class="guia-titulo">¿Cuándo acudir con un <em>reumatólogo</em>?</h2>
+          <p class="guia-lead">Las enfermedades reumáticas pueden afectar articulaciones, músculos, piel, vasos sanguíneos, órganos internos
+        y el sistema inmune. Estos son los principales signos clínicos, agrupados por tipo.</p>
+          <ol class="guia-nav" aria-label="Índice de la guía">
+          <li><a href="#guia-sintomas-articulares"><span class="guia-num">01</span><span>Síntomas articulares</span></a></li>
+          <li><a href="#guia-sintomas-sistemicos"><span class="guia-num">02</span><span>Síntomas sistémicos</span></a></li>
+          <li><a href="#guia-musculares"><span class="guia-num">03</span><span>Musculares</span></a></li>
+          <li><a href="#guia-cutaneos"><span class="guia-num">04</span><span>Cutáneos</span></a></li>
+          <li><a href="#guia-oculares-y-glandulares"><span class="guia-num">05</span><span>Oculares y glandulares</span></a></li>
+          <li><a href="#guia-hemato-inmunologicos"><span class="guia-num">06</span><span>Hemato-inmunológicos</span></a></li>
+          <li><a href="#guia-otros-criterios"><span class="guia-num">07</span><span>Otros criterios</span></a></li>
+        </ol>
+          <a href="https://wa.me/524774011085?text=Hola%20doctor,%20quisiera%20agendar%20una%20cita" class="btn btn-primario" target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Agendar valoración
+          </a>
+        </div>
+      <figure class="tile tile-foto tile-imagen c-12 reveal" data-imagen="" data-alt="" data-sugerencia="Paciente mostrando rigidez o dolor en manos; ilustra cuándo consultar"></figure>
+      </aside>
+
+      <div class="tile guia-cuerpo c-8 reveal">
+        <article class="guia-cap" id="guia-sintomas-articulares">
+          <header class="guia-cap-cabeza">
+            <span class="guia-num">01</span>
+            <h3>Síntomas articulares</h3>
+            <i class="fa-solid fa-bone" aria-hidden="true"></i>
+          </header>
+          <dl class="guia-lista">
+            <div class="guia-item"><dt>Dolor articular inflamatorio</dt><dd>Empeora con el reposo y mejora con la actividad. Frecuente en artritis reumatoide y espondiloartritis.</dd></div>
+            <div class="guia-item"><dt>Rigidez matutina mayor a 30 minutos</dt><dd>Afecta manos, rodillas o espalda baja y cede con el movimiento progresivo.</dd></div>
+            <div class="guia-item"><dt>Hinchazón articular</dt><dd>Inflamación persistente sin una causa traumática evidente.</dd></div>
+          </dl>
+        </article>
+        <article class="guia-cap" id="guia-sintomas-sistemicos">
+          <header class="guia-cap-cabeza">
+            <span class="guia-num">02</span>
+            <h3>Síntomas sistémicos</h3>
+            <i class="fa-solid fa-temperature-high" aria-hidden="true"></i>
+          </header>
+          <dl class="guia-lista">
+            <div class="guia-item"><dt>Fiebre sin causa aparente</dt><dd>Puede indicar lupus, vasculitis u otra enfermedad autoinmune sistémica.</dd></div>
+            <div class="guia-item"><dt>Pérdida de peso involuntaria</dt><dd>Común en procesos inflamatorios crónicos o activos.</dd></div>
+            <div class="guia-item"><dt>Fatiga severa</dt><dd>Síntoma frecuente en lupus, artritis reumatoide y síndrome de Sjögren.</dd></div>
+          </dl>
+        </article>
+        <article class="guia-cap" id="guia-musculares">
+          <header class="guia-cap-cabeza">
+            <span class="guia-num">03</span>
+            <h3>Musculares</h3>
+            <i class="fa-solid fa-dumbbell" aria-hidden="true"></i>
+          </header>
+          <dl class="guia-lista">
+            <div class="guia-item"><dt>Debilidad muscular proximal</dt><dd>Dificultad para levantarse de una silla o subir escaleras. Se asocia a dermatomiositis y polimiositis.</dd></div>
+          </dl>
+        </article>
+        <article class="guia-cap" id="guia-cutaneos">
+          <header class="guia-cap-cabeza">
+            <span class="guia-num">04</span>
+            <h3>Cutáneos</h3>
+            <i class="fa-solid fa-hand" aria-hidden="true"></i>
+          </header>
+          <dl class="guia-lista">
+            <div class="guia-item"><dt>Fenómeno de Raynaud</dt><dd>Dedos que se tornan blancos o azules con el frío. Puede anteceder a lupus o esclerosis.</dd></div>
+            <div class="guia-item"><dt>Erupciones y púrpura</dt><dd>Manchas rojizas o violáceas, enrojecimiento en mejillas u otras lesiones inflamatorias.</dd></div>
+          </dl>
+        </article>
+        <article class="guia-cap" id="guia-oculares-y-glandulares">
+          <header class="guia-cap-cabeza">
+            <span class="guia-num">05</span>
+            <h3>Oculares y glandulares</h3>
+            <i class="fa-solid fa-eye" aria-hidden="true"></i>
+          </header>
+          <dl class="guia-lista">
+            <div class="guia-item"><dt>Uveítis o escleritis</dt><dd>Inflamación ocular recurrente relacionada con espondiloartritis o lupus.</dd></div>
+            <div class="guia-item"><dt>Sequedad ocular o bucal</dt><dd>Característica principal del síndrome de Sjögren.</dd></div>
+          </dl>
+        </article>
+        <article class="guia-cap" id="guia-hemato-inmunologicos">
+          <header class="guia-cap-cabeza">
+            <span class="guia-num">06</span>
+            <h3>Hemato-inmunológicos</h3>
+            <i class="fa-solid fa-vial" aria-hidden="true"></i>
+          </header>
+          <dl class="guia-lista">
+            <div class="guia-item"><dt>Abortos recurrentes o trombosis</dt><dd>Característicos del síndrome antifosfolípido, especialmente en mujeres jóvenes.</dd></div>
+            <div class="guia-item"><dt>Anemia o plaquetas bajas</dt><dd>Signos frecuentes en lupus, artritis avanzada o vasculitis activa.</dd></div>
+          </dl>
+        </article>
+        <article class="guia-cap" id="guia-otros-criterios">
+          <header class="guia-cap-cabeza">
+            <span class="guia-num">07</span>
+            <h3>Otros criterios</h3>
+            <i class="fa-solid fa-clipboard-check" aria-hidden="true"></i>
+          </header>
+          <dl class="guia-lista">
+            <div class="guia-item"><dt>Diagnóstico previo de enfermedad reumática autoinmune</dt><dd>El seguimiento regular con el reumatólogo es parte del tratamiento.</dd></div>
+            <div class="guia-item"><dt>Recomendación de otro especialista</dt><dd>Si te indican valoración reumatológica, conviene atenderla a tiempo.</dd></div>
+          </dl>
+        </article>
       </div>
 
-      <div class="tile sintoma-tile c-6 reveal">
-        <h3><span class="ico"><i class="fa-solid fa-temperature-high" aria-hidden="true"></i></span> Síntomas sistémicos</h3>
-        <ul>
-          <li><strong>Fiebre sin causa aparente</strong><span>Puede indicar lupus, vasculitis u otra enfermedad autoinmune sistémica.</span></li>
-          <li><strong>Pérdida de peso involuntaria</strong><span>Común en procesos inflamatorios crónicos o activos.</span></li>
-          <li><strong>Fatiga severa</strong><span>Síntoma frecuente en lupus, artritis reumatoide y síndrome de Sjögren.</span></li>
-        </ul>
-      </div>
-
-      <div class="tile sintoma-tile c-4 reveal">
-        <h3><span class="ico"><i class="fa-solid fa-dumbbell" aria-hidden="true"></i></span> Musculares</h3>
-        <ul>
-          <li><strong>Debilidad muscular proximal</strong><span>Dificultad para levantarse de una silla o subir escaleras. Se asocia a dermatomiositis y polimiositis.</span></li>
-        </ul>
-      </div>
-
-      <div class="tile sintoma-tile c-4 reveal">
-        <h3><span class="ico"><i class="fa-solid fa-hand" aria-hidden="true"></i></span> Cutáneos</h3>
-        <ul>
-          <li><strong>Fenómeno de Raynaud</strong><span>Dedos que se tornan blancos o azules con el frío. Puede anteceder a lupus o esclerosis.</span></li>
-          <li><strong>Erupciones y púrpura</strong><span>Manchas rojizas o violáceas, enrojecimiento en mejillas u otras lesiones inflamatorias.</span></li>
-        </ul>
-      </div>
-
-      <div class="tile sintoma-tile c-4 reveal">
-        <h3><span class="ico"><i class="fa-solid fa-eye" aria-hidden="true"></i></span> Oculares y glandulares</h3>
-        <ul>
-          <li><strong>Uveítis o escleritis</strong><span>Inflamación ocular recurrente relacionada con espondiloartritis o lupus.</span></li>
-          <li><strong>Sequedad ocular o bucal</strong><span>Característica principal del síndrome de Sjögren.</span></li>
-        </ul>
-      </div>
-
-      <div class="tile sintoma-tile c-4 reveal">
-        <h3><span class="ico"><i class="fa-solid fa-vial" aria-hidden="true"></i></span> Hemato-inmunológicos</h3>
-        <ul>
-          <li><strong>Abortos recurrentes o trombosis</strong><span>Característicos del síndrome antifosfolípido, especialmente en mujeres jóvenes.</span></li>
-          <li><strong>Anemia o plaquetas bajas</strong><span>Signos frecuentes en lupus, artritis avanzada o vasculitis activa.</span></li>
-        </ul>
-      </div>
-
-      <div class="tile sintoma-tile c-4 reveal">
-        <h3><span class="ico"><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i></span> Otros criterios</h3>
-        <ul>
-          <li><strong>Diagnóstico previo de enfermedad reumática autoinmune</strong><span>El seguimiento regular con el reumatólogo es parte del tratamiento.</span></li>
-          <li><strong>Recomendación de otro especialista</strong><span>Si te indican valoración reumatológica, conviene atenderla a tiempo.</span></li>
-        </ul>
-      </div>
-
-      <figure class="tile tile-foto tile-imagen c-4 reveal" data-imagen="" data-alt="" data-sugerencia="Paciente mostrando rigidez o dolor en manos; ilustra cuándo consultar"></figure>
       <div class="tile tile-tinte tile-aviso c-12 reveal">
         <div>
           <h3>¿Reconoces alguno de estos signos?</h3>
@@ -771,6 +812,16 @@
       </div>`;
     }
   });
+
+  // ---- Índice de la guía: resalta el capítulo visible ----
+  (function guiaIndice() {
+    const enlaces = $$('.guia-nav a'); if (!enlaces.length) return;
+    const porId = Object.fromEntries(enlaces.map(a => [a.getAttribute('href').slice(1), a]));
+    const ioGuia = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { enlaces.forEach(a => a.classList.remove('activo')); porId[e.target.id]?.classList.add('activo'); } });
+    }, { rootMargin: '-40% 0px -50% 0px' });
+    $$('.guia-cap').forEach(c => ioGuia.observe(c));
+  })();
 
   // ---- Aparición escalonada de los bloques ----
   $$('.bento').forEach(grid => {

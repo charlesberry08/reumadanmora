@@ -651,3 +651,56 @@ footer{padding:36px 0 40px;border-top:1px solid var(--borde);margin-top:24px}
 
 /* Las anclas del menú dejan espacio para la barra fija */
 .seccion,.hero{scroll-margin-top:84px}
+
+/* =========================================================
+   Guía editorial: ¿Cuándo acudir con un reumatólogo?
+   ========================================================= */
+.ed-cabecera-seccion{margin-bottom:22px;border-bottom-color:var(--tinta)}
+.guia{align-items:start}
+.guia-lateral{display:flex;flex-direction:column;gap:16px;position:sticky;top:88px}
+.guia-lateral .tile-imagen{min-height:220px}
+.guia-indice{display:flex;flex-direction:column;gap:16px;padding:30px}
+.guia-titulo{
+  font-family:'Fraunces',Georgia,'Times New Roman',serif;font-optical-sizing:auto;font-weight:500;
+  font-size:clamp(1.7rem,2.4vw,2.2rem);line-height:1.08;letter-spacing:-0.015em;color:var(--tinta);
+}
+.guia-titulo em{font-style:italic;color:var(--azul-tinta)}
+.guia-lead{font-size:.95rem;line-height:1.6}
+.guia-nav{list-style:none;display:flex;flex-direction:column;border-top:1px solid var(--borde)}
+.guia-nav li{border-bottom:1px solid var(--borde)}
+.guia-nav a{
+  display:flex;align-items:baseline;gap:12px;padding:10px 4px;font-size:.92rem;font-weight:600;color:var(--tinta-suave);
+  transition:color .2s ease,padding-left .2s ease;
+}
+.guia-nav a:hover,.guia-nav a.activo{color:var(--tinta);padding-left:8px}
+.guia-nav a.activo .guia-num{color:var(--azul-tinta)}
+.guia-num{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:500;font-size:1rem;color:var(--borde);min-width:1.6em;transition:color .2s ease}
+.guia-indice .btn{align-self:flex-start;margin-top:4px}
+
+.guia-cuerpo{padding:14px 40px 10px}
+.guia-cap{padding:28px 0 26px;border-bottom:1px solid var(--borde);scroll-margin-top:96px}
+.guia-cap:last-child{border-bottom:0}
+.guia-cap-cabeza{display:flex;align-items:baseline;gap:14px;margin-bottom:14px}
+.guia-cap-cabeza .guia-num{font-size:1.6rem;color:var(--azul-tinta)}
+.guia-cap-cabeza h3{font-size:1.3rem;letter-spacing:-0.02em;color:var(--tinta)}
+.guia-cap-cabeza i{margin-left:auto;color:var(--celeste-borde);font-size:1.1rem;align-self:center}
+.guia-lista{display:flex;flex-direction:column}
+.guia-item{
+  display:grid;grid-template-columns:minmax(0,15rem) 1fr;gap:6px 28px;padding:12px 0;
+  border-top:1px dashed var(--borde);
+}
+.guia-item:first-child{border-top:0}
+.guia-item dt{font-weight:700;color:var(--tinta);font-size:.98rem;line-height:1.35}
+.guia-item dd{font-size:.92rem;color:var(--tinta-suave);line-height:1.55;margin:0}
+
+@media (max-width:980px){
+  .guia-lateral{position:static;grid-column:span 6}
+  .guia-cuerpo{grid-column:span 6;padding:8px 26px}
+  .guia-lateral .tile-imagen{grid-column:span 6}
+}
+@media (max-width:640px){
+  .guia-item{grid-template-columns:1fr;gap:4px}
+  .guia-cuerpo{padding:4px 20px}
+  .guia-cap{padding:22px 0}
+  .guia-cap-cabeza{flex-wrap:wrap}
+}
