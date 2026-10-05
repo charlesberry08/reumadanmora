@@ -47,3 +47,7 @@ Aparición escalonada de los tiles (`--retraso` por posición en la retícula), 
 ## Videos y redes
 
 El contenido se captura en el bloque `CONFIGURACIÓN DE CONTENIDO` al inicio del script de `index.html`: `REDES` (URL y usuario por red) y `VIDEOS` (id de YouTube, título y tema). Los videos usan una fachada ligera: se muestra la portada y el iframe de YouTube (`youtube-nocookie`) solo se carga al dar clic. Sin id, el tile muestra "Próximamente"; sin URL de red, la tarjeta no enlaza y el icono del pie de página se oculta.
+
+## Retrato del doctor
+
+El héroe usa `images/web/doctor-duotono.png`: el retrato en blanco y negro recortado sin fondo (máscara de sujeto generada con Vision de macOS, script en el historial) y un mapa de degradado con la paleta: sombras marino oscuro → marino → medios azul → luces cielo → blanco, con gamma 0.72 para levantar los medios tonos. Va sobre un resplandor celeste y asoma por arriba del tile (`.tile-retrato`). Para regenerarlo con otra foto: máscara con `VNGenerateForegroundInstanceMaskRequest`, luego el mapa de degradado con PIL.
