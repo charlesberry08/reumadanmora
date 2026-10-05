@@ -541,3 +541,40 @@ footer{padding:36px 0 40px;border-top:1px solid var(--borde);margin-top:24px}
 @media (max-width:980px){
   .tile-marca.pad-tile h3{font-size:1.45rem}
 }
+
+/* =========================================================
+   Texto editorial (Sobre el doctor)
+   ========================================================= */
+.editorial{padding:36px 40px;gap:18px}
+.editorial p{font-size:1.02rem;line-height:1.7;max-width:62ch}
+.editorial strong{color:var(--tinta)}
+.ed-entrada{
+  font-family:'Fraunces',Georgia,'Times New Roman',serif;font-optical-sizing:auto;
+  font-size:1.32rem !important;line-height:1.45 !important;color:var(--tinta) !important;font-weight:400;letter-spacing:-0.005em;
+}
+.ed-entrada strong{font-weight:600}
+.capitular{
+  float:left;font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:4.6rem;line-height:.78;
+  margin:9px 10px 0 0;color:var(--azul-tinta);
+}
+.ed-cita{
+  margin:6px 0 4px;padding:6px 0 6px 22px;border-left:3px solid var(--azul);
+  position:relative;
+}
+.ed-cita::before{
+  content:"\201C";position:absolute;left:18px;top:-26px;font-family:'Fraunces',Georgia,serif;font-size:4rem;line-height:1;
+  color:var(--celeste-borde);
+}
+.ed-cita p{
+  font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:400;font-size:1.42rem !important;line-height:1.3 !important;
+  color:var(--marino) !important;max-width:30ch;
+}
+.ed-firma{display:flex;flex-direction:column;gap:4px;margin-top:8px}
+.ed-firma-regla{display:block;width:36px;height:1px;background:var(--azul);margin-bottom:6px}
+.ed-firma-nombre{font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:1.35rem;color:var(--tinta);line-height:1}
+.ed-firma-rol{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--azul-tinta)}
+@media (max-width:640px){
+  .editorial{padding:26px 22px}
+  .capitular{font-size:3.8rem;margin-top:7px}
+  .ed-cita p{font-size:1.25rem !important}
+}
