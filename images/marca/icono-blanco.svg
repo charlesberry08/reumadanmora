@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="Isotipo Dr. Daniel Mora: anticuerpo">
     
-    <g transform="rotate(-12 50 58)">
+    <g>
       <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="9">
         <path class="pesada" d="M43 92 V62 C43 54 40 49 35 42 L23 24" stroke="#fff"/>
         <path class="pesada" d="M57 92 V62 C57 54 60 49 65 42 L77 24" stroke="#fff"/>

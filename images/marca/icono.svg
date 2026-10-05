@@ -3,7 +3,7 @@
       <linearGradient id="gp" gradientUnits="userSpaceOnUse" x1="50" y1="92" x2="50" y2="22"><stop offset="0" stop-color="#1e2f97"/><stop offset=".55" stop-color="#1aa7ec"/><stop offset="1" stop-color="#4adfdd"/></linearGradient>
       <linearGradient id="gl" gradientUnits="userSpaceOnUse" x1="50" y1="62" x2="50" y2="26"><stop offset="0" stop-color="#797ef6"/><stop offset="1" stop-color="#7dd6f8"/></linearGradient>
     </defs>
-    <g transform="rotate(-12 50 58)">
+    <g>
       <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="9">
         <path class="pesada" d="M43 92 V62 C43 54 40 49 35 42 L23 24" stroke="url(#gp)"/>
         <path class="pesada" d="M57 92 V62 C57 54 60 49 65 42 L77 24" stroke="url(#gp)"/>

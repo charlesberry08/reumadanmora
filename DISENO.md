@@ -28,9 +28,9 @@ Tipografía: Manrope (400–800), títulos 800 con tracking −0.02em. Iconos Fo
 
 ## Logo
 
-Isotipo "anticuerpo" **sin contenedor** (Carlos rechazó el recuadro el 2026-10-05). Inmunoglobulina en Y inclinada −12°, como flotando: dos cadenas pesadas con tallo recto, codo curvo y brazo, en gradiente marino → azul → turquesa de abajo hacia arriba; dos cadenas ligeras más cortas por fuera de cada brazo, flotando con un hueco, en gradiente lavanda → cielo. Remates redondos y un filo de luz blanco al 42 % en cada tubo para dar volumen. Archivos en `images/marca/`: `icono.svg` (color), `icono-blanco.svg` (monocromo para fondos saturados), `logo.svg` (isotipo + wordmark "Dr. Daniel Mora / REUMATOLOGÍA"), `icono-512.png` y `apple-touch-icon.png` (versión blanca sobre cuadrado azul → marino, solo para iconos de app) y `muestra.html` y `muestra-logo.jpg` (hoja de muestra). En el sitio las cadenas ligeras "respiran" (opacidad) y aceleran al pasar el cursor.
+Isotipo "anticuerpo" **sin contenedor** (Carlos rechazó el recuadro el 2026-10-05). Inmunoglobulina en Y, vertical (Carlos pidió quitar la inclinación): dos cadenas pesadas con tallo recto, codo curvo y brazo, en gradiente marino → azul → turquesa de abajo hacia arriba; dos cadenas ligeras más cortas por fuera de cada brazo, flotando con un hueco, en gradiente lavanda → cielo. Remates redondos y un filo de luz blanco al 42 % en cada tubo para dar volumen. Archivos en `images/marca/`: `icono.svg` (color), `icono-blanco.svg` (monocromo para fondos saturados), `logo.svg` (isotipo + wordmark "Dr. Daniel Mora / REUMATOLOGÍA"), `icono-512.png` y `apple-touch-icon.png` (versión blanca sobre cuadrado azul → marino, solo para iconos de app) y `muestra.html` y `muestra-logo.jpg` (hoja de muestra). En el sitio las cadenas ligeras "respiran" (opacidad) y aceleran al pasar el cursor.
 
-Reglas: nunca meter el isotipo en un recuadro; mantener la inclinación y el hueco entre cadenas; sobre fondos saturados usar la versión blanca; no recolorear los gradientes.
+Reglas: nunca meter el isotipo en un recuadro; mantenerla vertical y conservar el hueco entre cadenas; sobre fondos saturados usar la versión blanca; no recolorear los gradientes.
 
 ## Bento
 
