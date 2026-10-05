@@ -259,14 +259,6 @@ body.menu-open-fixed{overflow:hidden}
 .formacion dt{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--azul-tinta)}
 .formacion dd{font-weight:700;color:var(--tinta);margin-top:2px}
 
-.padecimientos{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:18px}
-.padecimiento{
-  display:flex;flex-direction:column;gap:10px;padding:16px;border-radius:var(--radio-sm);
-  border:1px solid var(--borde);background:var(--fondo);
-}
-.padecimiento .ico{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:#fff;color:var(--azul-tinta);border:1px solid var(--borde)}
-.padecimiento strong{font-size:.95rem;color:var(--tinta)}
-.padecimiento span{font-size:.82rem;color:var(--tinta-suave);line-height:1.4}
 
 /* ================= Síntomas ================= */
 .sintoma-tile h3{display:flex;align-items:center;gap:12px;margin-bottom:16px;color:var(--tinta)}
@@ -333,9 +325,6 @@ footer{padding:36px 0 40px;border-top:1px solid var(--borde);margin-top:24px}
 }
 
 /* ================= Responsivo ================= */
-@media (max-width:1100px){
-  .padecimientos{grid-template-columns:repeat(3,1fr)}
-}
 @media (max-width:980px){
   .nav-links,.nav-cta{display:none}
   .menu-toggle{display:flex}
@@ -355,13 +344,11 @@ footer{padding:36px 0 40px;border-top:1px solid var(--borde);margin-top:24px}
   .hero{padding-top:16px}
   .hero .tile-marca{padding:26px}
   .hero h1{max-width:none}
-  .padecimientos{grid-template-columns:1fr 1fr}
   .tile-foto .pie{font-size:.78rem}
   .consultorio .tile-foto.grande{min-height:300px}
   .horarios li{flex-direction:column;gap:2px}
 }
 @media (max-width:420px){
-  .padecimientos{grid-template-columns:1fr}
   .btn{width:100%;justify-content:center}
 }
 
@@ -409,11 +396,8 @@ footer{padding:36px 0 40px;border-top:1px solid var(--borde);margin-top:24px}
 .tile-foto:hover img{transform:scale(1.04)}
 
 /* Ícono de tiles de dato y padecimientos */
-.tile-dato .ico,.padecimiento .ico,.sintoma-tile h3 .ico{transition:transform .3s ease,background .3s ease,color .3s ease}
+.tile-dato .ico,.sintoma-tile h3 .ico{transition:transform .3s ease,background .3s ease,color .3s ease}
 .tile-dato:hover .ico,.sintoma-tile:hover h3 .ico{transform:rotate(-8deg) scale(1.08);background:var(--grad-suave);color:#fff}
-.padecimiento{transition:transform .25s ease,border-color .25s ease,background .25s ease}
-.padecimiento:hover{transform:translateY(-3px);border-color:var(--celeste-borde);background:#fff}
-.padecimiento:hover .ico{background:var(--celeste)}
 
 /* Cinta de padecimientos */
 .cinta{
@@ -507,4 +491,53 @@ footer{padding:36px 0 40px;border-top:1px solid var(--borde);margin-top:24px}
 @media (prefers-reduced-motion:reduce){
   .tile-marca::after,.brand svg .ligera,.cinta-pista,.video-play::before{animation:none}
   .tile:hover,.tile-foto:hover img,.tile-video:hover img{transform:none}
+}
+
+/* =========================================================
+   Padecimientos (sección propia)
+   ========================================================= */
+.pad-tile{display:flex;flex-direction:column;gap:12px}
+.pad-cabeza{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+.pad-cabeza .ico{
+  width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:1.15rem;
+  background:var(--celeste);color:var(--azul-tinta);
+}
+.pad-num{font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:1.25rem;color:var(--borde);font-weight:500}
+.pad-tile h3{font-size:1.35rem;letter-spacing:-0.02em;color:var(--tinta)}
+.pad-desc{font-size:.95rem;line-height:1.55}
+.pad-senales{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+.pad-senales li{
+  font-size:.82rem;font-weight:600;padding:7px 12px;border-radius:999px;
+  background:var(--fondo);border:1px solid var(--borde);color:var(--tinta);
+  display:inline-flex;align-items:center;gap:7px;
+}
+.pad-senales li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--azul)}
+.pad-nota{margin-top:auto;padding-top:10px;font-size:.84rem;color:var(--tinta-suave);display:flex;gap:8px;align-items:flex-start;line-height:1.45}
+.pad-nota i{color:var(--azul-tinta);margin-top:3px}
+
+/* Variante sobre el bloque saturado */
+.tile-marca.pad-tile .pad-cabeza .ico{background:rgba(255,255,255,.16);color:#fff}
+.tile-marca.pad-tile .pad-num{color:rgba(255,255,255,.45)}
+.tile-marca.pad-tile h3{color:#fff;font-size:1.7rem}
+.tile-marca.pad-tile .pad-desc{color:rgba(255,255,255,.9);font-size:1.02rem;max-width:56ch}
+.tile-marca.pad-tile .pad-senales li{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.28);color:#fff}
+.tile-marca.pad-tile .pad-senales li::before{background:var(--turquesa)}
+.tile-marca.pad-tile .pad-nota{color:rgba(255,255,255,.85)}
+.tile-marca.pad-tile .pad-nota i{color:var(--turquesa)}
+
+.pad-otros h3{color:var(--marino-oscuro);margin-bottom:4px}
+.pad-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.pad-chips li{
+  display:inline-flex;align-items:center;gap:9px;padding:10px 14px;border-radius:var(--radio-sm);
+  background:#fff;border:1px solid var(--celeste-borde);font-weight:700;font-size:.9rem;color:var(--tinta);
+  transition:transform .2s ease,border-color .2s ease;
+}
+.pad-chips li i{color:var(--azul-tinta)}
+.pad-chips li:hover{transform:translateY(-2px);border-color:var(--azul)}
+.pad-cta{display:flex;flex-direction:column;gap:12px;justify-content:center}
+.pad-cta h3{font-size:1.25rem;color:var(--marino-oscuro)}
+.pad-cta .btn{align-self:flex-start;margin-top:6px}
+
+@media (max-width:980px){
+  .tile-marca.pad-tile h3{font-size:1.45rem}
 }
