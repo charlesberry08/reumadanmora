@@ -1015,3 +1015,16 @@ html.sin-precarga #precarga{display:none}
 .retrato-foto .ficha{left:30px;right:30px;width:auto;max-width:none}
 @media (max-width:980px){ .retrato-foto{min-height:460px} .retrato-foto img{object-position:center top} }
 @media (max-width:640px){ .retrato-foto{min-height:400px} .retrato-foto .ficha{left:18px;right:18px} .retrato-foto img{object-position:center top} }
+
+/* Ficha del héroe sobre la foto a color: panel de cristal oscuro para legibilidad garantizada */
+.retrato-foto .ficha{
+  left:22px;right:22px;bottom:22px;padding:14px 18px 16px;border-radius:14px;
+  background:linear-gradient(180deg,rgba(10,14,30,.42),rgba(10,14,30,.62));
+  backdrop-filter:blur(12px) saturate(120%);-webkit-backdrop-filter:blur(12px) saturate(120%);
+  border:1px solid rgba(255,255,255,.14);box-shadow:0 12px 30px -16px rgba(0,0,0,.6);
+}
+.retrato-foto .ficha-nombre{font-size:clamp(1.7rem,2.6vw,2.2rem);text-shadow:0 1px 2px rgba(0,0,0,.35)}
+.retrato-foto .ficha-etiqueta{color:#9fe3ff}
+.retrato-foto .ficha-datos{color:rgba(255,255,255,.9)}
+.retrato-foto::after{background:linear-gradient(180deg,rgba(10,14,30,0) 55%,rgba(10,14,30,.45) 100%)}
+@media (max-width:640px){ .retrato-foto .ficha{left:14px;right:14px;bottom:14px;padding:12px 14px 14px} }
