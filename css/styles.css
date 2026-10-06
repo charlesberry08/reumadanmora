@@ -855,3 +855,37 @@ footer{padding:36px 0 40px;border-top:1px solid var(--borde);margin-top:24px}
 .guia-nav a{position:relative}
 .guia-nav a.activo{color:var(--marino);font-weight:800;background:var(--celeste);border-radius:10px;padding-left:12px}
 .guia-nav a.activo::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:3px;border-radius:3px;background:var(--azul)}
+
+/* =========================================================
+   Precarga de marca (se muestra una vez por visita)
+   ========================================================= */
+#precarga{
+  position:fixed;inset:0;z-index:1000;display:grid;place-items:center;
+  background:radial-gradient(80% 60% at 50% 40%,#ffffff 0%,#f3f7fc 70%,#e9f1fb 100%);
+  transition:opacity .55s ease,visibility 0s linear .55s;
+}
+#precarga.fuera{opacity:0;visibility:hidden;pointer-events:none}
+html.sin-precarga #precarga{display:none}
+.precarga-logo{display:flex;align-items:center;gap:22px}
+.precarga-logo svg{width:112px;height:112px;overflow:visible}
+.precarga-logo path{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:9;stroke-dasharray:140;stroke-dashoffset:140;animation:trazo .9s cubic-bezier(.4,0,.2,1) forwards}
+.precarga-logo .p1{animation-delay:.1s}.precarga-logo .p2{animation-delay:.25s}
+.precarga-logo .l1{stroke-dasharray:60;stroke-dashoffset:60;animation-delay:.65s}
+.precarga-logo .l2{stroke-dasharray:60;stroke-dashoffset:60;animation-delay:.8s}
+@keyframes trazo{to{stroke-dashoffset:0}}
+.precarga-texto{display:flex;flex-direction:column;line-height:1.05;overflow:hidden}
+.precarga-nombre{font-weight:800;font-size:1.9rem;letter-spacing:-0.02em;color:var(--tinta);opacity:0;transform:translateY(14px);animation:subir .6s ease forwards 1.05s}
+.precarga-sub{font-size:.78rem;font-weight:700;letter-spacing:.42em;text-transform:uppercase;color:var(--azul-tinta);margin-top:6px;opacity:0;animation:abrir .7s ease forwards 1.3s}
+@keyframes subir{to{opacity:1;transform:none}}
+@keyframes abrir{from{opacity:0;letter-spacing:.42em}to{opacity:1;letter-spacing:.22em}}
+.precarga-barra{position:absolute;left:50%;bottom:14vh;width:120px;height:2px;border-radius:2px;background:var(--celeste-borde);transform:translateX(-50%);overflow:hidden}
+.precarga-barra::after{content:"";position:absolute;inset:0;background:var(--grad-marca);transform:translateX(-100%);animation:barra 1.9s ease forwards .2s}
+@keyframes barra{to{transform:translateX(0)}}
+@media (max-width:640px){
+  .precarga-logo{flex-direction:column;gap:14px;text-align:center}
+  .precarga-logo svg{width:96px;height:96px}
+  .precarga-nombre{font-size:1.6rem}
+}
+@media (prefers-reduced-motion:reduce){
+  #precarga{display:none}
+}

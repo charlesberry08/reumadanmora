@@ -72,10 +72,11 @@ def pagina(p):
   <link rel="alternate" hreflang="x-default" href="{url}" />
   <link rel="preload" as="font" href="fonts/manrope-variable.woff2" type="font/woff2" crossorigin />
   <link rel="preload" as="font" href="fonts/fraunces-variable.woff2" type="font/woff2" crossorigin />
+  <script>try{{if(sessionStorage.getItem('precarga'))document.documentElement.classList.add('sin-precarga')}}catch(e){{}}</script>
   <link rel="stylesheet" href="fonts/fuentes.css?v=1" />
   <link rel="stylesheet" href="css/styles.css?v={version}" />
   <script src="js/contenido.js?v=2" defer></script>
-  <script src="js/comun.js?v=4" defer></script>
+  <script src="js/comun.js?v=5" defer></script>
   <link rel="icon" href="images/marca/icono.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="images/favicon.png" type="image/png" />
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
@@ -98,6 +99,25 @@ def pagina(p):
 </head>
 <body class="pag" data-raiz="">
 <a class="saltar" href="#contenido">Ir al contenido</a>
+<div id="precarga" aria-hidden="true">
+  <div class="precarga-logo">
+    <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="gp-pre" gradientUnits="userSpaceOnUse" x1="50" y1="92" x2="50" y2="22"><stop offset="0" stop-color="#1e2f97"/><stop offset=".55" stop-color="#1aa7ec"/><stop offset="1" stop-color="#4adfdd"/></linearGradient>
+        <linearGradient id="gl-pre" gradientUnits="userSpaceOnUse" x1="50" y1="62" x2="50" y2="26"><stop offset="0" stop-color="#797ef6"/><stop offset="1" stop-color="#7dd6f8"/></linearGradient>
+      </defs>
+      <path class="p1" d="M43 92 V62 C43 54 40 49 35 42 L23 24" stroke="url(#gp-pre)"/>
+      <path class="p2" d="M57 92 V62 C57 54 60 49 65 42 L77 24" stroke="url(#gp-pre)"/>
+      <path class="l1" d="M30.5 59 L12.5 30" stroke="url(#gl-pre)"/>
+      <path class="l2" d="M69.5 59 L87.5 30" stroke="url(#gl-pre)"/>
+    </svg>
+    <div class="precarga-texto">
+      <span class="precarga-nombre">Dr. Daniel Mora</span>
+      <span class="precarga-sub">Reumatología</span>
+    </div>
+  </div>
+  <div class="precarga-barra"></div>
+</div>
 {nav}
 
 <main id="contenido">

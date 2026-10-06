@@ -139,6 +139,21 @@
   };
 
   // ---- Arranque: lo específico de cada página corre antes (window.renderPagina) ----
+  // ---- Precarga de marca: se retira cuando termina la animación y la página cargó ----
+  (function precarga() {
+    const el = document.getElementById('precarga'); if (!el) return;
+    if (document.documentElement.classList.contains('sin-precarga')) { el.remove(); return; }
+    const inicio = performance.now(), MINIMO = 2000, MAXIMO = 3500;
+    let cargado = document.readyState === 'complete';
+    window.addEventListener('load', () => { cargado = true; });
+    const quitar = () => { el.classList.add('fuera'); try { sessionStorage.setItem('precarga', '1'); } catch (e) {} setTimeout(() => el.remove(), 700); };
+    const revisar = () => {
+      const t = performance.now() - inicio;
+      if ((cargado && t >= MINIMO) || t >= MAXIMO) quitar(); else setTimeout(revisar, 100);
+    };
+    revisar();
+  })();
+
   document.addEventListener('DOMContentLoaded', () => {
     if (typeof window.renderPagina === 'function') window.renderPagina();
     espaciosImagen();

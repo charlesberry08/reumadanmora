@@ -93,3 +93,7 @@ Menú: El doctor · Padecimientos · ¿Cuándo acudir? · Consultorio y contacto
 - `herramientas/agrupar-paginas.py` hizo la agrupación una vez (no volver a correrlo). Las páginas se editan directo; las de padecimientos se regeneran con `generar-padecimientos.py`, que toma barra y pie de `index.html`.
 - `.htaccess` redirige con 301 las rutas que existieron brevemente (sobre-mi, reumatologia, sintomas, preguntas, videos, podcast, consultorio).
 - `js/contenido.js`: redes, videos y podcast. `js/comun.js`: comportamiento común.
+
+## Precarga de marca
+
+Cortina clara con el isotipo dibujándose trazo a trazo (cadenas pesadas y luego ligeras, con los gradientes de marca), el nombre que sube y "REUMATOLOGÍA" que se abre; una barra de progreso fina abajo. Dura 2 s como mínimo y 3.5 s como máximo, se retira cuando la página terminó de cargar, y **solo se muestra una vez por visita** (bandera en `sessionStorage`; un script en `<head>` añade `html.sin-precarga` para que las páginas siguientes no la muestren ni parpadeen). Con `prefers-reduced-motion` no aparece. Marcado `#precarga` al inicio del `<body>` de cada página (lo incluye también el generador de padecimientos); estilos en la sección "Precarga de marca" de `styles.css`; lógica en `js/comun.js`.
