@@ -792,7 +792,7 @@ footer{padding:36px 0 40px;border-top:1px solid var(--borde);margin-top:24px}
 .faq-item summary:focus-visible{outline:2px solid var(--azul-tinta);outline-offset:4px;border-radius:8px}
 .faq-num{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:500;color:#6b7794}
 .faq-item summary .ico-svg,.faq-item summary i{color:var(--celeste-borde);transition:transform .25s ease,color .25s ease}
-.faq-item[open] summary .ico-svg,.faq-item[open] summary i{color:var(--azul-tinta);transform:rotate(180deg)}
+.faq-item[open] summary .ico-svg,.faq-item[open] summary i{color:var(--azul-tinta);transform:scale(1.18)}
 .faq-a{padding:0 4px 18px 3.4rem}
 .faq-a p{max-width:62ch;line-height:1.65}
 @media (max-width:980px){ .faq-lateral{grid-column:span 6} .faq-lateral .tile-imagen{grid-column:span 6} }
