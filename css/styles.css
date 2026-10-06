@@ -837,3 +837,16 @@ footer{padding:36px 0 40px;border-top:1px solid var(--borde);margin-top:24px}
 .pag-404 svg.anticuerpo{width:110px;height:110px;animation:flotar404 4s ease-in-out infinite}
 @keyframes flotar404{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-10px) rotate(4deg)}}
 @media (prefers-reduced-motion:reduce){.pag-404 svg.anticuerpo{animation:none}}
+
+/* =========================================================
+   Portada: tarjetas de exploración
+   ========================================================= */
+.explora{display:flex;flex-direction:column;gap:8px;padding:24px;color:var(--tinta);min-height:200px}
+.explora .ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:1.15rem;background:var(--celeste);color:var(--azul-tinta);margin-bottom:6px;transition:transform .3s ease,background .3s ease,color .3s ease}
+.explora:hover .ico{transform:rotate(-6deg) scale(1.08);background:var(--grad-suave);color:#fff}
+.explora-titulo{font-weight:800;font-size:1.08rem;letter-spacing:-0.01em}
+.explora-texto{font-size:.88rem;color:var(--tinta-suave);line-height:1.45}
+.explora-ir{margin-top:auto;padding-top:8px;font-size:.85rem;font-weight:700;color:var(--azul-tinta);display:inline-flex;align-items:center;gap:6px}
+.explora:hover .explora-ir{text-decoration:underline}
+.pag .migas{padding-top:18px}
+.pag .seccion:first-of-type{padding-top:28px}

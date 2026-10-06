@@ -14,8 +14,8 @@ index = open('index.html', encoding='utf-8').read()
 nav = re.search(r'<nav class="topbar".*?</nav>', index, re.S).group(0)
 footer = re.search(r'<footer>.*?</footer>', index, re.S).group(0)
 # enlaces de la portada -> index.html#...
-nav = nav.replace('href="#top"', 'href="index.html"').replace('href="#', 'href="index.html#')
-footer = footer.replace('href="#top"', 'href="index.html"').replace('href="#', 'href="index.html#')
+nav = nav.replace('href="#top"', 'href="index.html"')
+footer = footer.replace('href="#top"', 'href="index.html"')
 # ids de gradiente únicos por página se mantienen (gm-nav/gm-foot); el pie no debe repetir el listado de redes dinámico
 footer = footer.replace('<ul class="footer-redes" id="footer-redes"></ul>', '')
 version = re.search(r'styles\.css\?v=([\w]+)', index).group(1)
@@ -50,7 +50,7 @@ def pagina(p):
          "relevantSpecialty": "Rheumatology"},
         {"@type": "BreadcrumbList", "@id": url + "#migas", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Inicio", "item": BASE},
-            {"@type": "ListItem", "position": 2, "name": "Padecimientos", "item": BASE + "#padecimientos"},
+            {"@type": "ListItem", "position": 2, "name": "Padecimientos", "item": BASE + "padecimientos.html"},
             {"@type": "ListItem", "position": 3, "name": p['nombre'], "item": url}]},
         {"@type": "FAQPage", "@id": url + "#faq", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in p['faq']]},
         {"@type": "Physician", "@id": BASE + "#physician", "name": "Dr. Gildardo Daniel Mora Saucedo", "url": BASE, "medicalSpecialty": "Rheumatology",
@@ -74,6 +74,7 @@ def pagina(p):
   <link rel="preload" as="font" href="fonts/fraunces-variable.woff2" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="fonts/fuentes.css?v=1" />
   <link rel="stylesheet" href="css/styles.css?v={version}" />
+  <script src="js/contenido.js?v=2" defer></script>
   <script src="js/comun.js?v=2" defer></script>
   <link rel="icon" href="images/marca/icono.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="images/favicon.png" type="image/png" />
@@ -104,7 +105,7 @@ def pagina(p):
   <div class="container">
     <nav class="migas" aria-label="Ruta">
       <a href="index.html">Inicio</a><i class="fa-solid fa-play" aria-hidden="true"></i>
-      <a href="index.html#padecimientos">Padecimientos</a><i class="fa-solid fa-play" aria-hidden="true"></i>
+      <a href="padecimientos.html">Padecimientos</a><i class="fa-solid fa-play" aria-hidden="true"></i>
       <span aria-current="page">{p['nombre']}</span>
     </nav>
   </div>
@@ -188,7 +189,7 @@ def pagina(p):
         <span class="etiqueta">Otros padecimientos</span>
         <h3>También te puede interesar</h3>
         <div class="pag-otros">
-{otros_html}          <a href="index.html#padecimientos"><i class="fa-solid fa-list-check" aria-hidden="true"></i> Todos los padecimientos</a>
+{otros_html}          <a href="padecimientos.html"><i class="fa-solid fa-list-check" aria-hidden="true"></i> Todos los padecimientos</a>
         </div>
         <p class="pag-revision">Última revisión del contenido: {HOY}.</p>
       </div>
