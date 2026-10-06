@@ -73,6 +73,14 @@
     $$('.contador').forEach(el => io.observe(el));
   }
 
+  // ---- Retrato del héroe: ancho real de la foto para colocar la ficha ----
+  function retrato() {
+    const fig = $('.retrato'), img = fig && fig.querySelector('img'); if (!img) return;
+    const medir = () => { const w = img.getBoundingClientRect().width; if (w) fig.style.setProperty('--foto-w', w + 'px'); };
+    medir(); img.addEventListener('load', medir); window.addEventListener('resize', medir);
+    if (document.fonts) document.fonts.ready.then(medir);
+  }
+
   // ---- Topbar y menú móvil ----
   function menu() {
     const topbar = $('.topbar'), toggle = $('.menu-toggle'), drawer = $('#mobile-drawer'), overlay = $('.drawer-overlay'), closeBtn = $('.drawer-close');
@@ -143,7 +151,7 @@
   (function precarga() {
     const el = document.getElementById('precarga'); if (!el) return;
     if (document.documentElement.classList.contains('sin-precarga')) { el.remove(); return; }
-    const inicio = performance.now(), MINIMO = 2000, MAXIMO = 3500;
+    const inicio = performance.now(), MINIMO = 3200, MAXIMO = 4800;
     let cargado = document.readyState === 'complete';
     window.addEventListener('load', () => { cargado = true; });
     const quitar = () => { el.classList.add('fuera'); try { sessionStorage.setItem('precarga', '1'); } catch (e) {} setTimeout(() => el.remove(), 700); };
@@ -158,6 +166,7 @@
     if (typeof window.renderPagina === 'function') window.renderPagina();
     espaciosImagen();
     iconos();
+    retrato();
     menu();
     contadores();
     guiaIndice();

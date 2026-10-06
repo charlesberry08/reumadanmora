@@ -76,7 +76,7 @@ def pagina(p):
   <link rel="stylesheet" href="fonts/fuentes.css?v=1" />
   <link rel="stylesheet" href="css/styles.css?v={version}" />
   <script src="js/contenido.js?v=2" defer></script>
-  <script src="js/comun.js?v=5" defer></script>
+  <script src="js/comun.js?v=7" defer></script>
   <link rel="icon" href="images/marca/icono.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="images/favicon.png" type="image/png" />
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
