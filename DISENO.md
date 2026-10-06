@@ -57,3 +57,11 @@ El héroe usa `images/web/doctor-bn.png`: el retrato **en blanco y negro** (Carl
 ## Espacios para imágenes
 
 Once huecos repartidos en el sitio (3 en Sobre el doctor, 2 en ¿Qué es la reumatología?, 2 en Padecimientos, 1 en Síntomas, 2 en Consultorio, 1 en Contacto), como `<figure class="tile tile-foto tile-imagen …">`. Se llenan con atributos: `data-imagen` (ruta, ideal en `images/web/`, máx. 1800px), `data-alt` (texto alternativo) y opcionalmente `data-pie` / `data-pie2` (pie de foto). Sin `data-imagen` el tile muestra "Espacio para imagen" con la sugerencia de qué fotografiar (`data-sugerencia`). El primero ya tiene la foto a color del doctor (`doctor-color.jpg`).
+
+## SEO y motores de IA (2026-10-06)
+
+- `<head>`: título de 51 caracteres con la intención principal ("Reumatólogo en León, Gto."), descripción ≤160, canónico y hreflang `es-MX` con `www`, robots con `max-snippet/-image-preview/-video-preview`, meta geo (21.1504, -101.6878, MX-GUA), Open Graph y Twitter completos con dimensiones de imagen, preload del retrato y dns-prefetch a YouTube.
+- Datos estructurados (un solo grafo JSON-LD con `@id`): WebSite, WebPage (con `speakable` para asistentes de voz/IA), ImageObject, BreadcrumbList, Physician+Person (cédulas como `hasCredential`, `alumniOf`, `knowsAbout`, `sameAs` a Instagram y YouTube, horario, geo, contactos), MedicalClinic (Médica Campestre, CP 37180), ItemList de MedicalCondition con `signOrSymptom`, FAQPage (8 preguntas tomadas del contenido visible), VideoObject (presentación, fecha 2022-01-04, 34 s), PodcastSeries + 5 PodcastEpisode.
+- Semántica: un solo `h1`, `h2` por sección, `<main>`, alt de imágenes con entidad y lugar, `rel="noopener noreferrer"` en externos, dirección y cédulas en el pie.
+- Archivos: `robots.txt` (permite GPTBot, ClaudeBot, PerplexityBot, Google-Extended, etc. y bloquea archivos internos), `sitemap.xml` (con imágenes y video), `llms.txt` (ficha para motores de IA con datos verificables y cómo citar), `.htaccess` (301 a https+www, compresión, caché, cabeceras).
+- Al publicar: enviar el sitemap en Google Search Console y Bing Webmaster, crear/reclamar el Perfil de Negocio de Google con la misma dirección y horario, y verificar los datos con la prueba de resultados enriquecidos de Google.

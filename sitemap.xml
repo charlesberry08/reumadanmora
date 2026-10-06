@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://www.reumadanmora.com/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.reumadanmora.com/images/web/doctor.jpg</image:loc>
+      <image:title>Dr. Gildardo Daniel Mora Saucedo, reumatólogo en León, Guanajuato</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.reumadanmora.com/images/og-consultorio.jpg</image:loc>
+      <image:title>Consultorio del Dr. Daniel Mora en Médica Campestre, León</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.reumadanmora.com/images/web/consultorio3.jpg</image:loc>
+      <image:title>Torre Médica Campestre I, León, Guanajuato</image:title>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/lKNq-FuYCRQ/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Conoce al Dr. Daniel Mora, reumatólogo en León</video:title>
+      <video:description>Presentación del Dr. Gildardo Daniel Mora Saucedo, reumatólogo, en Médica Campestre, León, Guanajuato.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/lKNq-FuYCRQ</video:player_loc>
+      <video:duration>34</video:duration>
+      <video:publication_date>2022-01-04T12:09:37-08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://www.reumadanmora.com/aviso-de-privacidad.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>
