@@ -107,3 +107,7 @@ Se auditaron las once páginas a 375, 768 y 1024 px con un script que busca desb
 ## Menú móvil
 
 Panel lateral (`#mobile-drawer`) con el sistema del sitio: cabecera con isotipo y wordmark bajo doble filete, cuatro páginas principales numeradas en Fraunces itálica con filetes (la página actual en marino y azul), grupo "También" con iconos para las secciones secundarias, bloque saturado con horario, botón de WhatsApp y teléfono, y redes al pie. Los elementos entran escalonados. El panel y el velo se mueven al `body` al cargar (la barra tiene backdrop-filter) y el bloqueo de scroll se aplica en `html`. Si cambia el menú, editar el `<aside id="mobile-drawer">` en cada página (o en index.html y regenerar las de padecimientos).
+
+## Aviso de privacidad (rediseño 2026-10-06)
+
+Misma estructura que el resto: migas, cabecera corrida, bloque saturado con el h1, el fundamento y el párrafo del responsable (nombre legal completo, a propósito), tile celeste con los datos de contacto y botón "Solicitar derechos ARCO", y diez secciones con cabecera editorial numerada (N.º 01–10) y tiles `.aviso-tile` con listas de filete. El texto legal no cambió; fecha de última actualización 25 de agosto de 2025. Al final, bloque de contacto y el pie del sitio. Las listas (`.aviso-lista`, `.pag-senales`) usan viñeta absoluta en vez de retícula, para que el texto con negritas no se parta.

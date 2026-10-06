@@ -820,9 +820,9 @@ footer{padding:36px 0 40px;border-top:1px solid var(--borde);margin-top:24px}
 .pag-bloque .etiqueta{margin-bottom:0}
 .pag-bloque p{line-height:1.65}
 .pag-senales{display:flex;flex-direction:column;margin-top:4px}
-.pag-senales li{display:grid;grid-template-columns:18px 1fr;gap:10px;padding:10px 0;border-top:1px dashed var(--borde);font-size:.97rem;color:var(--tinta);line-height:1.45}
+.pag-senales li{position:relative;padding:10px 0 10px 24px;border-top:1px dashed var(--borde);font-size:.97rem;color:var(--tinta);line-height:1.45}
 .pag-senales li:first-child{border-top:0}
-.pag-senales li::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--azul);box-shadow:0 0 0 4px var(--celeste);margin-top:7px}
+.pag-senales li::before{content:"";position:absolute;left:2px;top:17px;width:10px;height:10px;border-radius:50%;background:var(--azul);box-shadow:0 0 0 4px var(--celeste)}
 .pag-tuparte li{display:grid;grid-template-columns:22px 1fr;gap:10px;padding:9px 0;font-size:.95rem;color:var(--tinta);line-height:1.5}
 .pag-tuparte li .ico-svg,.pag-tuparte li i{color:var(--azul-tinta);margin-top:3px}
 .pag-otros{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
@@ -1045,3 +1045,34 @@ html.sin-precarga #precarga{display:none}
   .nav-cta .btn{padding:10px 14px;font-size:.86rem}
   .brand-nombre{font-size:.96rem}
 }
+
+/* =========================================================
+   Aviso de privacidad
+   ========================================================= */
+.aviso-intro{display:flex;flex-direction:column;gap:12px;padding:36px}
+.aviso-intro h1{font-size:clamp(1.8rem,3.2vw,2.5rem);color:#fff;letter-spacing:-0.02em}
+.aviso-intro .lead{font-size:1.02rem;color:rgba(255,255,255,.9)}
+.aviso-intro p{color:rgba(255,255,255,.88);line-height:1.6}
+.aviso-intro strong{color:#fff}
+.aviso-intro .kicker{color:var(--cielo);font-weight:700}
+.aviso-contacto{display:flex;flex-direction:column;gap:12px}
+.aviso-contacto h2{font-size:1.25rem;color:var(--marino-oscuro)}
+.aviso-datos{display:flex;flex-direction:column;gap:8px}
+.aviso-datos li{display:flex;gap:10px;align-items:flex-start;font-size:.92rem;color:var(--tinta);line-height:1.45}
+.aviso-datos .ico-svg,.aviso-datos i{color:var(--azul-tinta);margin-top:3px;flex:none}
+.aviso-datos a{color:var(--azul-tinta);font-weight:600;word-break:break-all}
+.aviso-contacto .btn{align-self:flex-start;margin-top:4px}
+.aviso-bento{margin-bottom:28px}
+.aviso-tile h3{font-size:1.08rem;color:var(--tinta);margin-top:6px}
+.aviso-tile h3:first-child{margin-top:0}
+.aviso-tile p{font-size:.95rem;line-height:1.65}
+.aviso-tile a{color:var(--azul-tinta);font-weight:600}
+.aviso-tile a:hover{text-decoration:underline}
+.aviso-lista{display:flex;flex-direction:column}
+.aviso-lista li{position:relative;padding:8px 0 8px 22px;border-top:1px dashed var(--borde);font-size:.94rem;color:var(--tinta);line-height:1.5}
+.aviso-lista li:first-child{border-top:0}
+.aviso-lista li::before{content:"";position:absolute;left:2px;top:15px;width:8px;height:8px;border-radius:50%;background:var(--azul);box-shadow:0 0 0 3px var(--celeste)}
+.aviso-nota{font-size:.86rem !important;color:var(--tinta-suave) !important;border-top:1px dashed var(--borde);padding-top:10px;margin-top:4px}
+.aviso-tile .chip{display:inline-block;padding:3px 10px;border-radius:999px;background:var(--celeste);border:1px solid var(--celeste-borde);color:var(--marino);font-weight:700;font-size:.82rem}
+.aviso-tile .kicker{font-weight:700;color:var(--tinta)}
+@media (max-width:640px){ .aviso-intro{padding:26px} }
