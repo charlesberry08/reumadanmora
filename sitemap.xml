@@ -9,7 +9,7 @@
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://www.reumadanmora.com/images/web/doctor-hero.jpg</image:loc>
-      <image:title>Dr. Gildardo Daniel Mora Saucedo, reumatólogo en León, Guanajuato</image:title>
+      <image:title>Dr. Daniel Mora, reumatólogo en León, Guanajuato</image:title>
     </image:image>
     <image:image>
       <image:loc>https://www.reumadanmora.com/images/og-consultorio.jpg</image:loc>
@@ -22,7 +22,7 @@
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/lKNq-FuYCRQ/hqdefault.jpg</video:thumbnail_loc>
       <video:title>Conoce al Dr. Daniel Mora, reumatólogo en León</video:title>
-      <video:description>Presentación del Dr. Gildardo Daniel Mora Saucedo, reumatólogo, en Médica Campestre, León, Guanajuato.</video:description>
+      <video:description>Presentación del Dr. Daniel Mora, reumatólogo, en Médica Campestre, León, Guanajuato.</video:description>
       <video:player_loc>https://www.youtube-nocookie.com/embed/lKNq-FuYCRQ</video:player_loc>
       <video:duration>34</video:duration>
       <video:publication_date>2022-01-04T12:09:37-08:00</video:publication_date>

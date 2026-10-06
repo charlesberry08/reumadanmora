@@ -53,7 +53,7 @@ def pagina(p):
             {"@type": "ListItem", "position": 2, "name": "Padecimientos", "item": BASE + "padecimientos.html"},
             {"@type": "ListItem", "position": 3, "name": p['nombre'], "item": url}]},
         {"@type": "FAQPage", "@id": url + "#faq", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in p['faq']]},
-        {"@type": "Physician", "@id": BASE + "#physician", "name": "Dr. Gildardo Daniel Mora Saucedo", "url": BASE, "medicalSpecialty": "Rheumatology",
+        {"@type": "Physician", "@id": BASE + "#physician", "name": "Dr. Daniel Mora", "alternateName": "Gildardo Daniel Mora Saucedo", "url": BASE, "medicalSpecialty": "Rheumatology",
          "telephone": "+52-477-717-3939", "address": {"@type": "PostalAddress", "streetAddress": "Calle Manantial 114, Consultorio 107, Médica Campestre", "addressLocality": "León", "addressRegion": "Guanajuato", "postalCode": "37180", "addressCountry": "MX"}}
     ]}
     return f'''<!DOCTYPE html>
@@ -65,7 +65,7 @@ def pagina(p):
   <meta name="theme-color" content="#1e2f97" />
   <title>{p['titulo']}</title>
   <meta name="description" content="{p['descripcion']}" />
-  <meta name="author" content="Dr. Gildardo Daniel Mora Saucedo" />
+  <meta name="author" content="Dr. Daniel Mora" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
   <link rel="canonical" href="{url}" />
   <link rel="alternate" hreflang="es-MX" href="{url}" />
@@ -189,7 +189,7 @@ def pagina(p):
         <h3>¿Te suena? Agenda una valoración</h3>
         <p>Trae tus estudios previos y la lista de lo que tomas. Si aún no tienes estudios, el doctor te indica cuáles hacer.</p>
         <a href="https://wa.me/524774011085?text=Hola%20doctor,%20quisiera%20agendar%20una%20cita" class="btn btn-primario" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Agendar por WhatsApp</a>
-        <p class="pag-nota-medica">Información de divulgación general; no sustituye la valoración médica. Contenido elaborado para el consultorio del Dr. Gildardo Daniel Mora Saucedo, reumatólogo (céd. esp. 10508486).</p>
+        <p class="pag-nota-medica">Información de divulgación general; no sustituye la valoración médica. Contenido elaborado para el consultorio del Dr. Daniel Mora, reumatólogo (céd. esp. 10508486).</p>
       </div>
     </div>
   </div>
