@@ -1,0 +1,15 @@
+---
+# Despliegue en cPanel (Jetthost): al hacer "Deploy HEAD Commit" copia el sitio a public_html.
+# Solo se publican los archivos que el sitio necesita; herramientas, originales y documentación se quedan en el repo.
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/bspycoic/public_html
+    - /bin/mkdir -p $DEPLOYPATH/css $DEPLOYPATH/js $DEPLOYPATH/fonts $DEPLOYPATH/images/web $DEPLOYPATH/images/marca
+    - /bin/cp -f *.html $DEPLOYPATH/
+    - /bin/cp -f robots.txt sitemap.xml llms.txt .htaccess $DEPLOYPATH/
+    - /bin/cp -f css/styles.css $DEPLOYPATH/css/
+    - /bin/cp -f js/*.js $DEPLOYPATH/js/
+    - /bin/cp -f fonts/*.woff2 fonts/fuentes.css $DEPLOYPATH/fonts/
+    - /bin/cp -f images/web/*.webp images/web/*.jpg $DEPLOYPATH/images/web/
+    - /bin/cp -f images/marca/icono.svg images/marca/icono-blanco.svg images/marca/logo.svg images/marca/iconos.svg images/marca/icono-512.png $DEPLOYPATH/images/marca/
+    - /bin/cp -f images/favicon.png images/apple-touch-icon.png images/og-consultorio.jpg $DEPLOYPATH/images/
