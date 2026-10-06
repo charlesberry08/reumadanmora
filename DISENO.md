@@ -97,3 +97,7 @@ Menú: El doctor · Padecimientos · ¿Cuándo acudir? · Consultorio y contacto
 ## Precarga de marca
 
 Cortina clara con el isotipo dibujándose trazo a trazo (cadenas pesadas y luego ligeras, con los gradientes de marca), el nombre que sube y "REUMATOLOGÍA" que se abre; una barra de progreso fina abajo. Dura 3.2 s como mínimo y 4.8 s como máximo, se retira cuando la página terminó de cargar, y **solo se muestra una vez por visita** (bandera en `sessionStorage`; un script en `<head>` añade `html.sin-precarga` para que las páginas siguientes no la muestren ni parpadeen). Con `prefers-reduced-motion` no aparece. Marcado `#precarga` al inicio del `<body>` de cada página (lo incluye también el generador de padecimientos); estilos en la sección "Precarga de marca" de `styles.css`; lógica en `js/comun.js`.
+
+## Móvil y tableta (auditoría 2026-10-06)
+
+Se auditaron las once páginas a 375, 768 y 1024 px con un script que busca desbordes horizontales, elementos fuera del viewport, zonas táctiles menores a 40 px y textos menores a 11.5 px. Ajustes: rótulos con tamaño mínimo legible, enlaces de texto con área táctil ≥ 40 px (pie, migas, teléfonos, "leer más", índice de la guía, acordeón), tiles de dato, redes y episodios del podcast a dos por fila en teléfonos (una por fila por debajo de 340 px), índice de la guía a dos columnas en tableta, fichas de padecimientos a dos por fila en tableta, títulos del héroe y de página reducidos en teléfonos. La cinta de padecimientos es el único elemento que sale del viewport, por diseño.

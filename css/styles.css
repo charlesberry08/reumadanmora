@@ -893,3 +893,66 @@ html.sin-precarga #precarga{display:none}
 @media (prefers-reduced-motion:reduce){
   #precarga{display:none}
 }
+
+/* =========================================================
+   Afinado para móviles y tabletas
+   ========================================================= */
+/* Tamaños mínimos legibles en rótulos */
+.brand-sub{font-size:.68rem}
+.ficha-etiqueta{font-size:.72rem}
+.ed-firma-rol{font-size:.74rem}
+.ed-cabecera{font-size:.72rem}
+/* Zonas táctiles de al menos 40 px en enlaces de texto */
+.footer-links a,.migas a{display:inline-block;padding:10px 2px}
+.contacto-list a{display:inline-block;padding:8px 0}
+.pad-mas{padding-top:14px;padding-bottom:6px}
+.faq-item summary{min-height:48px}
+.guia-nav a{min-height:44px;align-items:center}
+.explora-ir,.red-usuario{padding:4px 0}
+
+@media (min-width:641px) and (max-width:980px){
+  /* Tableta: héroe a dos columnas (texto 4/6 + retrato 2/6 no cabe; se apila pero con retrato más compacto) */
+  .retrato{min-height:420px}
+  .hero .tile-marca{min-height:0}
+  .tile-dato{grid-column:span 3}
+  .tile-red{grid-column:span 3}
+  .explora{grid-column:span 3}
+  .podcast .tile-video.c-3{grid-column:span 3}
+  .pad-tile.c-4{grid-column:span 3}
+  .pad-tile.c-4:nth-of-type(5){grid-column:span 6}
+  .reuma-dato{grid-column:span 2}
+  .guia-indice{padding:24px}
+  .guia-nav{display:grid;grid-template-columns:1fr 1fr;border-top:0;gap:0 16px}
+  .guia-nav li{border-bottom:1px solid var(--borde)}
+}
+@media (max-width:640px){
+  .ed-cabecera{letter-spacing:.12em;gap:8px}
+  .ed-cabecera-num{font-size:.9rem}
+  /* Dos por fila en tiles pequeños para no alargar la página */
+  .tile-dato{grid-column:span 3;padding:18px}
+  .tile-dato h4{font-size:.92rem}
+  .tile-dato p{font-size:.84rem}
+  .tile-dato .cifra{font-size:1.7rem}
+  .tile-red{grid-column:span 3;padding:18px}
+  .tile-red .ico{width:42px;height:42px;font-size:1.1rem}
+  .red-nombre{font-size:1rem}
+  .red-texto{display:none}
+  .podcast .tile-video.c-3{grid-column:span 3;min-height:190px}
+  .podcast .c-3.tile-video .video-pie{left:14px;right:14px;bottom:12px}
+  .podcast .c-3.tile-video .video-pie strong{font-size:.84rem}
+  .podcast .c-3.tile-video .video-play{width:48px;height:48px;font-size:1rem}
+  .hero h1{font-size:1.9rem}
+  .hero .lead{font-size:1rem}
+  .seccion-cabecera p{font-size:.98rem}
+  h2{font-size:1.6rem}
+  .pad-senales li{font-size:.8rem;padding:6px 10px}
+  .pag-hero{padding:26px;min-height:0}
+  .pag-hero h1{font-size:1.8rem}
+  .pag-hero .pag-sub{font-size:1.1rem}
+  .migas{font-size:.78rem}
+  .footer-inner{gap:12px}
+  .footer-links{gap:4px 14px}
+}
+@media (max-width:340px){
+  .tile-dato,.tile-red,.podcast .tile-video.c-3{grid-column:span 6}
+}
