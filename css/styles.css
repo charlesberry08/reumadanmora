@@ -1036,3 +1036,12 @@ html.sin-precarga #precarga{display:none}
 .retrato-foto .ficha-nombre em{color:var(--cielo)}
 .retrato-foto .ficha-etiqueta,.retrato-foto .ficha-datos{text-shadow:0 1px 4px rgba(0,0,0,.6)}
 @media (max-width:640px){ .retrato-foto .ficha{left:18px;right:18px;bottom:18px;padding:0} }
+
+/* Barra: nada se parte en dos líneas entre 981 y 1120 px */
+.nav-link,.brand-nombre,.brand-sub,.nav-cta .btn{white-space:nowrap}
+@media (min-width:981px) and (max-width:1120px){
+  .topbar-inner{gap:16px}
+  .nav-link{font-size:.86rem;padding:8px 10px}
+  .nav-cta .btn{padding:10px 14px;font-size:.86rem}
+  .brand-nombre{font-size:.96rem}
+}
