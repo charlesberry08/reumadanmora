@@ -40,7 +40,7 @@
         }
       } else {
         fig.classList.add('pendiente');
-        fig.innerHTML = `<div class="imagen-pendiente"><i class="fa-regular fa-image" aria-hidden="true"></i><strong>Espacio para imagen</strong><span>${fig.dataset.sugerencia || ''}</span></div>`;
+        fig.innerHTML = `<div class="imagen-pendiente"><i class="fa-regular fa-image" aria-hidden="true"></i><strong>Espacio para poner imagen</strong></div>`;
       }
     });
   }
