@@ -1008,9 +1008,10 @@ html.sin-precarga #precarga{display:none}
    Retrato del héroe como fotografía (foto a color del doctor)
    ========================================================= */
 .retrato-foto{min-height:440px;overflow:hidden}
-.retrato-foto img{object-position:62% center;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.retrato-foto img{object-position:center top;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
 .retrato-foto:hover img{transform:scale(1.03)}
-.retrato-foto::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,30,0) 48%,rgba(10,14,30,.72) 100%);pointer-events:none}
+.retrato-foto::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,30,0) 38%,rgba(10,14,30,.55) 62%,rgba(10,14,30,.9) 100%);pointer-events:none}
+.retrato-foto .ficha-nombre{text-shadow:0 2px 14px rgba(10,14,30,.6)}
 .retrato-foto .ficha{left:30px;right:30px;width:auto;max-width:none}
-@media (max-width:980px){ .retrato-foto{min-height:460px} .retrato-foto img{object-position:60% center} }
-@media (max-width:640px){ .retrato-foto{min-height:400px} .retrato-foto .ficha{left:18px;right:18px} .retrato-foto img{object-position:58% center} }
+@media (max-width:980px){ .retrato-foto{min-height:460px} .retrato-foto img{object-position:center top} }
+@media (max-width:640px){ .retrato-foto{min-height:400px} .retrato-foto .ficha{left:18px;right:18px} .retrato-foto img{object-position:center top} }
