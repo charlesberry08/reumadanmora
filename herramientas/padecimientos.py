@@ -1,0 +1,105 @@
+# -*- coding: utf-8 -*-
+"""Contenido de las páginas de padecimientos. Edita aquí y corre generar-padecimientos.py"""
+
+PADECIMIENTOS = [
+ dict(
+  slug='artritis-reumatoide', nombre='Artritis reumatoide', icono='fa-solid fa-hand-dots',
+  titulo='Artritis reumatoide en León, Gto. | Dr. Daniel Mora, reumatólogo',
+  descripcion='Artritis reumatoide: señales, diagnóstico y tratamiento con el Dr. Daniel Mora, reumatólogo en León, Guanajuato. Tratarla a tiempo evita daño en las articulaciones.',
+  h1='Artritis reumatoide', sub='Cuando tus manos amanecen tiesas y no es "por la edad"',
+  lead='Es una enfermedad autoinmune: las defensas, que deberían cuidarte, se confunden y atacan el revestimiento de tus articulaciones. Suele empezar en manos, muñecas y pies, y casi siempre de los dos lados a la vez. La buena noticia: hoy se controla muy bien si se atiende a tiempo.',
+  en_corto=[
+   ('No es desgaste, es inflamación', 'La osteoartritis es "uso y desgaste"; la artritis reumatoide es tu sistema inmune trabajando de más, en el lugar equivocado.'),
+   ('Le gusta la simetría', 'Si duele la mano derecha, casi siempre también la izquierda. Esa pista vale oro para el diagnóstico.'),
+   ('Tiene ventana de oportunidad', 'Los primeros meses son clave. Tratarla temprano cambia el pronóstico y evita deformidades.'),
+  ],
+  senales=['Rigidez al despertar que dura más de 30 minutos','Dolor e hinchazón en los nudillos y las muñecas, de ambos lados','Cansancio que no se explica y malestar general','Dificultad para cerrar el puño o abrir un frasco','Nódulos (bolitas) bajo la piel en codos o manos'],
+  diagnostico='El doctor revisa tus articulaciones una por una y pide estudios de sangre (factor reumatoide, anticuerpos anti-CCP, marcadores de inflamación) y, según el caso, radiografías o ultrasonido articular. No existe "una prueba" que lo diga todo: el diagnóstico junta la historia, la exploración y los estudios.',
+  tratamiento='Se usan medicamentos que calman la inflamación y, sobre todo, fármacos que frenan la enfermedad (los llamados modificadores de la enfermedad y, cuando hacen falta, biológicos). El plan se ajusta a tu caso y se revisa en cada consulta. El objetivo no es "aguantar", es que la enfermedad quede en remisión.',
+  tu_parte=['Mueve las articulaciones todos los días, aunque sea poco: la rigidez empeora con el reposo.','No dejes el tratamiento cuando te sientas bien; así es como se mantiene la mejoría.','Si fumas, dejarlo ayuda más de lo que parece: el tabaco empeora la artritis reumatoide.','Trae tus estudios previos y una lista de lo que tomas a cada consulta.'],
+  faq=[
+   ('¿La artritis reumatoide se cura?','Hoy no se cura, pero sí se controla. Con tratamiento muchas personas llegan a remisión: sin dolor, sin inflamación y haciendo su vida normal.'),
+   ('¿Es hereditaria?','Hay cierta predisposición familiar, pero tener un pariente con artritis reumatoide no significa que te vaya a dar. Influyen también el tabaco y otros factores.'),
+   ('¿Puedo hacer ejercicio?','Sí, y conviene. Caminar, nadar o bicicleta sin impacto ayudan a conservar el movimiento. El doctor te dice cuánto y cuándo, según cómo esté la inflamación.'),
+  ]),
+ dict(
+  slug='lupus', nombre='Lupus eritematoso sistémico', icono='fa-solid fa-sun',
+  titulo='Lupus en León, Gto. | Dr. Daniel Mora, reumatólogo',
+  descripcion='Lupus eritematoso sistémico: señales, diagnóstico y tratamiento con el Dr. Daniel Mora, reumatólogo en León, Guanajuato. Seguimiento cercano para controlar los brotes.',
+  h1='Lupus eritematoso sistémico', sub='La enfermedad de las mil caras (y por eso se tarda en reconocer)',
+  lead='El lupus es una enfermedad autoinmune que puede afectar la piel, las articulaciones, el riñón, la sangre y otros órganos. Va y viene por brotes. No hay dos casos iguales, y por eso el seguimiento cercano con un reumatólogo es parte del tratamiento, no un extra.',
+  en_corto=[
+   ('Es más frecuente en mujeres jóvenes', 'Nueve de cada diez personas con lupus son mujeres, y suele empezar entre los 15 y los 45 años.'),
+   ('El sol no es su amigo', 'La exposición al sol puede desencadenar brotes en la piel y en el resto del cuerpo. Protector solar todos los días, llueva o truene.'),
+   ('Se controla, con constancia', 'Con tratamiento y revisiones periódicas, la gran mayoría de las personas con lupus hace una vida activa.'),
+  ],
+  senales=['Enrojecimiento en mejillas y nariz "en forma de mariposa"','Dolor en varias articulaciones, a veces con hinchazón','Fiebre o cansancio extremo sin una causa clara','Llagas en la boca que no duelen y caída de cabello','Manchas en la piel después de estar en el sol','Orina con espuma o hinchazón de piernas (señal de que hay que revisar el riñón)'],
+  diagnostico='Se combinan la historia clínica, la exploración y estudios de sangre y orina: anticuerpos antinucleares y otros más específicos, conteo de células, función del riñón. El reumatólogo arma el rompecabezas; ninguna prueba aislada da el diagnóstico.',
+  tratamiento='Depende de qué órganos estén involucrados y qué tan activo esté el lupus. Se usan desde antipalúdicos (muy útiles y bien tolerados) hasta inmunosupresores y biológicos cuando hace falta proteger el riñón u otro órgano. El plan se ajusta en cada consulta.',
+  tu_parte=['Protector solar y sombra: en serio, es parte del tratamiento.','Lleva un registro de tus síntomas para que el doctor vea el patrón de los brotes.','No suspendas medicamentos por tu cuenta, aunque te sientas bien.','Si planeas un embarazo, platícalo antes con el doctor: se puede, con planeación.'],
+  faq=[
+   ('¿El lupus es contagioso?','No. Es una enfermedad de las defensas, no una infección. No se transmite de persona a persona.'),
+   ('¿Puedo embarazarme si tengo lupus?','Sí, con planeación. Lo ideal es que la enfermedad esté controlada y ajustar los medicamentos antes. El reumatólogo y el ginecólogo trabajan en equipo.'),
+   ('¿Por qué me piden tantos estudios?','Porque el lupus puede afectar órganos sin dar síntomas al principio, sobre todo el riñón. Revisarlos a tiempo evita daños.'),
+  ]),
+ dict(
+  slug='sindrome-de-sjogren', nombre='Síndrome de Sjögren', icono='fa-solid fa-droplet',
+  titulo='Síndrome de Sjögren en León, Gto. | Dr. Daniel Mora, reumatólogo',
+  descripcion='Síndrome de Sjögren: ojos y boca secos, fatiga y dolor articular. Diagnóstico y tratamiento con el Dr. Daniel Mora, reumatólogo en León, Guanajuato.',
+  h1='Síndrome de Sjögren', sub='Cuando ni las lágrimas ni la saliva alcanzan',
+  lead='Es una enfermedad autoinmune que ataca las glándulas que producen lágrimas y saliva. El resultado: ojos secos como si tuvieran arena y boca seca que hace difícil tragar o hablar. Puede presentarse solo o acompañar a la artritis reumatoide o al lupus.',
+  en_corto=[
+   ('No es "falta de agua"', 'Tomar más líquidos no lo resuelve; el problema está en las glándulas, no en la sed.'),
+   ('Va más allá de la sequedad', 'Puede causar fatiga, dolor en articulaciones y, en algunos casos, afectar otros órganos. Por eso se atiende con reumatólogo.'),
+   ('Se trabaja en equipo', 'Oftalmólogo para los ojos, dentista para la boca y reumatólogo para la enfermedad de fondo.'),
+  ],
+  senales=['Ojos secos, irritados, con sensación de arena','Boca seca: dificultad para tragar pan sin agua, caries frecuentes','Cansancio que no se quita con descanso','Dolor o rigidez en articulaciones','Sequedad en piel, nariz o garganta','Hinchazón de las glándulas a los lados de la cara'],
+  diagnostico='Se evalúa la sequedad con pruebas sencillas de ojos y boca, se piden anticuerpos en sangre (anti-Ro y anti-La, entre otros) y, en algunos casos, una pequeña biopsia del labio. El reumatólogo descarta que la sequedad sea por medicamentos u otra causa.',
+  tratamiento='Alivio de la sequedad (lágrimas artificiales, sustitutos de saliva, medicamentos que estimulan las glándulas) y, cuando la enfermedad afecta más allá de las glándulas, medicamentos que regulan las defensas. También cuidado dental frecuente, porque la saliva protege los dientes.',
+  tu_parte=['Lágrimas artificiales sin conservadores, tantas veces como las necesites.','Agua a sorbos durante el día y chicle sin azúcar para estimular la saliva.','Visita al dentista cada seis meses: las caries avanzan rápido sin saliva.','Humidificador en la recámara y evitar el aire directo del ventilador o el clima.'],
+  faq=[
+   ('¿Es grave?','La mayoría de los casos se manejan bien con alivio de la sequedad y revisiones. Una minoría afecta otros órganos; por eso el seguimiento con reumatólogo importa.'),
+   ('¿Por qué me mandan con el reumatólogo si lo mío son los ojos?','Porque la sequedad es la punta del iceberg: la causa está en las defensas, y eso es terreno del reumatólogo.'),
+   ('¿Tiene que ver con la menopausia?','La menopausia también causa sequedad, pero el Sjögren es distinto y se confirma con estudios. Pueden coexistir.'),
+  ]),
+ dict(
+  slug='espondiloartritis', nombre='Espondiloartritis', icono='fa-solid fa-person-walking',
+  titulo='Espondiloartritis en León, Gto. | Dr. Daniel Mora, reumatólogo',
+  descripcion='Espondiloartritis y espondilitis anquilosante: dolor lumbar inflamatorio en jóvenes. Diagnóstico y tratamiento con el Dr. Daniel Mora, reumatólogo en León, Guanajuato.',
+  h1='Espondiloartritis', sub='El dolor de espalda que mejora cuando te mueves (sí, al revés de lo normal)',
+  lead='Es un grupo de enfermedades que inflaman la columna y las articulaciones de la pelvis, y a veces talones, rodillas u ojos. Suele empezar antes de los 45 años y se confunde con "dolor de espalda común" durante años. La pista: es peor en reposo y de madrugada, y mejora al moverse.',
+  en_corto=[
+   ('No es una hernia ni "mala postura"', 'Es inflamación. Por eso los relajantes musculares y el reposo no lo resuelven.'),
+   ('Viene en familia con otras cosas', 'Se asocia con psoriasis, enfermedad inflamatoria intestinal y uveítis (ojo rojo doloroso).'),
+   ('El movimiento es medicina', 'A diferencia de otros dolores de espalda, aquí el ejercicio es parte central del tratamiento.'),
+  ],
+  senales=['Dolor lumbar o en glúteos de más de tres meses, que empezó antes de los 45 años','Rigidez al despertar que mejora con el movimiento','Dolor que despierta en la madrugada','Dolor en talones o en la planta del pie','Dedos de manos o pies hinchados "como salchicha"','Ojo rojo y doloroso (uveítis) en episodios'],
+  diagnostico='Historia clínica detallada, exploración de la columna y las articulaciones, estudios de sangre (incluido el HLA-B27 cuando aplica) y estudios de imagen: radiografía y, sobre todo, resonancia de las articulaciones sacroilíacas, que detecta la inflamación antes de que se vea daño.',
+  tratamiento='Antiinflamatorios como primera línea, un programa de ejercicio y fisioterapia, y, cuando no basta, medicamentos biológicos que frenan la inflamación. Si hay psoriasis, intestino u ojos involucrados, el tratamiento se elige para cubrir todo.',
+  tu_parte=['Ejercicio diario de movilidad y estiramiento de la columna: es el pilar.','No fumar: el tabaco acelera el daño en la columna.','Si te da ojo rojo con dolor, acude el mismo día con oftalmólogo y avisa al reumatólogo.','Postura y colchón firme ayudan, pero no sustituyen el tratamiento.'],
+  faq=[
+   ('¿Es lo mismo que espondilitis anquilosante?','La espondilitis anquilosante es la forma más conocida dentro del grupo de las espondiloartritis. Hoy se diagnostica antes, cuando todavía no hay daño visible en radiografías.'),
+   ('¿Me voy a quedar "pegado"?','Con diagnóstico temprano, ejercicio y tratamiento, la mayoría conserva la movilidad. La rigidez permanente es cada vez menos frecuente.'),
+   ('¿Qué ejercicio me conviene?','Natación, estiramientos y movilidad de columna. El doctor y el fisioterapeuta arman una rutina según tu caso.'),
+  ]),
+ dict(
+  slug='vasculitis', nombre='Vasculitis', icono='fa-solid fa-heart-pulse',
+  titulo='Vasculitis en León, Gto. | Dr. Daniel Mora, reumatólogo',
+  descripcion='Vasculitis: inflamación de los vasos sanguíneos. Señales de alerta, diagnóstico y tratamiento con el Dr. Daniel Mora, reumatólogo en León, Guanajuato.',
+  h1='Vasculitis', sub='Cuando las tuberías del cuerpo se inflaman',
+  lead='Las vasculitis son un grupo de enfermedades en las que las defensas inflaman la pared de los vasos sanguíneos. Al estrecharse, llega menos sangre a los órganos. Hay muchas variantes, desde las que solo dan manchas en la piel hasta las que afectan riñón, pulmón o nervios. Por eso ante la sospecha se valora sin demora.',
+  en_corto=[
+   ('Hay muchas vasculitis', 'Se clasifican por el tamaño de los vasos que afectan. Cada una tiene su cara y su tratamiento.'),
+   ('El tiempo cuenta', 'Detectarla pronto protege riñón, pulmón y nervios. Si sospechas, no esperes "a ver si se quita".'),
+   ('Se controla', 'Con tratamiento, la mayoría de las vasculitis entran en remisión. El seguimiento evita recaídas.'),
+  ],
+  senales=['Fiebre, cansancio y pérdida de peso sin explicación','Manchas rojas o moradas en las piernas que no desaparecen al presionarlas','Hormigueo, adormecimiento o debilidad en manos o pies','Dolor de cabeza nuevo e intenso, sobre todo después de los 50 años','Sangrado nasal persistente o sinusitis que no mejora','Tos con sangre o falta de aire'],
+  diagnostico='Estudios de sangre (inflamación, función del riñón, anticuerpos como ANCA), análisis de orina, estudios de imagen y, con frecuencia, una biopsia del órgano afectado para confirmar. El reumatólogo coordina con otros especialistas según el órgano involucrado.',
+  tratamiento='Medicamentos que apagan la inflamación rápidamente (corticoides al inicio) y otros que mantienen la enfermedad controlada (inmunosupresores o biológicos). La dosis se baja conforme mejora. El tratamiento se diseña para el tipo de vasculitis y los órganos afectados.',
+  tu_parte=['Acude a las revisiones aunque te sientas bien: las recaídas se detectan en los estudios.','Reporta cualquier síntoma nuevo, por pequeño que parezca.','Vacúnate según te indique el doctor: algunos tratamientos bajan las defensas.','Guarda copia de tus biopsias y estudios: son la historia de tu enfermedad.'],
+  faq=[
+   ('¿Las manchas en las piernas son vasculitis?','A veces. Las manchas moradas que no se quitan al presionar (púrpura) son una señal que conviene revisar pronto, sobre todo si hay fiebre o malestar.'),
+   ('¿Es una urgencia?','Depende del tipo y del órgano. Algunas vasculitis sí requieren atención rápida. Por eso la regla es: ante la sospecha, valoración sin demora.'),
+   ('¿Voy a tomar cortisona toda la vida?','No necesariamente. Se usa al inicio para controlar la inflamación y se reduce conforme otros medicamentos toman el relevo.'),
+  ]),
+]

@@ -34,4 +34,4 @@ RewriteRule ^(.*)$ https://www.reumadanmora.com/$1 [L,R=301]
   Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
 </IfModule>
 
-ErrorDocument 404 /index.html
+ErrorDocument 404 /404.html

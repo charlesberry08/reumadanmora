@@ -224,8 +224,8 @@ body.menu-open-fixed{overflow:hidden}
 .retrato::after{
   content:"";position:absolute;left:50%;bottom:0;height:100%;aspect-ratio:1027/1269;transform:translateX(-50%);
   background:linear-gradient(180deg,rgba(10,14,30,0) 50%,rgba(10,14,30,.72) 100%);
-  -webkit-mask:url("../images/web/doctor-bn.png") center bottom/contain no-repeat;
-  mask:url("../images/web/doctor-bn.png") center bottom/contain no-repeat;
+  -webkit-mask:url("../images/web/doctor-bn-full.webp") center bottom/contain no-repeat;
+  mask:url("../images/web/doctor-bn-full.webp") center bottom/contain no-repeat;
   pointer-events:none;
 }
 .ficha{position:absolute;left:8%;right:8%;bottom:26px;z-index:1;color:#fff;display:flex;flex-direction:column;gap:8px}
@@ -742,3 +742,98 @@ footer{padding:36px 0 40px;border-top:1px solid var(--borde);margin-top:24px}
   .reuma-intro{padding:26px}
   .reuma-mitos li{grid-template-columns:1fr}
 }
+
+/* =========================================================
+   Iconos propios (sprite SVG) y accesibilidad
+   ========================================================= */
+.ico-svg{width:1em;height:1em;fill:currentColor;display:inline-block;vertical-align:-0.125em;flex:none}
+.btn .ico-svg{font-size:1.05em}
+.saltar{position:absolute;left:-999px;top:10px;z-index:100;background:var(--marino);color:#fff;padding:10px 16px;border-radius:999px;font-weight:700}
+.saltar:focus{left:16px;outline:3px solid var(--turquesa);outline-offset:2px}
+/* Contraste: números decorativos legibles */
+.guia-num{color:#6b7794}
+.pad-num{color:#8a95b3}
+.ed-cabecera-num{color:var(--tinta)}
+
+/* Liga "leer más" en fichas de padecimientos */
+.pad-mas{margin-top:auto;padding-top:12px;font-weight:700;font-size:.9rem;color:var(--azul-tinta);display:inline-flex;align-items:center;gap:8px}
+.pad-mas:hover{color:var(--marino);text-decoration:underline}
+.tile-marca .pad-mas{color:#fff}
+.tile-marca .pad-mas:hover{color:var(--cielo)}
+.pad-tile .pad-nota{margin-top:0}
+
+/* =========================================================
+   Preguntas frecuentes
+   ========================================================= */
+.faq-lateral{display:flex;flex-direction:column;gap:16px}
+.faq-lateral .tile-imagen{min-height:240px}
+.faq-lateral .tile-tinte{display:flex;flex-direction:column;gap:10px}
+.faq-lateral .tile-tinte h3{color:var(--marino-oscuro)}
+.faq-lateral .btn{align-self:flex-start;margin-top:4px}
+.faq-lista{padding:28px 36px 20px}
+.faq-titulo{
+  font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:clamp(1.6rem,2.4vw,2.1rem);line-height:1.1;letter-spacing:-0.015em;
+  color:var(--tinta);margin-bottom:12px;padding-bottom:16px;border-bottom:1px solid var(--tinta);
+}
+.faq-titulo em{font-style:italic;color:var(--azul-tinta)}
+.faq-item{border-bottom:1px solid var(--borde)}
+.faq-item summary{
+  list-style:none;cursor:pointer;display:grid;grid-template-columns:2.2rem 1fr auto;align-items:center;gap:12px;
+  padding:16px 4px;font-weight:700;color:var(--tinta);font-size:1.02rem;line-height:1.35;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:hover .faq-q{color:var(--azul-tinta)}
+.faq-item summary:focus-visible{outline:2px solid var(--azul-tinta);outline-offset:4px;border-radius:8px}
+.faq-num{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:500;color:#6b7794}
+.faq-item summary .ico-svg,.faq-item summary i{color:var(--celeste-borde);transition:transform .25s ease,color .25s ease}
+.faq-item[open] summary .ico-svg,.faq-item[open] summary i{color:var(--azul-tinta);transform:rotate(180deg)}
+.faq-a{padding:0 4px 18px 3.4rem}
+.faq-a p{max-width:62ch;line-height:1.65}
+@media (max-width:980px){ .faq-lateral{grid-column:span 6} .faq-lateral .tile-imagen{grid-column:span 6} }
+@media (max-width:640px){
+  .faq-lista{padding:20px 20px 12px}
+  .faq-item summary{grid-template-columns:1.8rem 1fr auto;font-size:.98rem}
+  .faq-a{padding-left:0}
+}
+
+/* =========================================================
+   Páginas de padecimientos
+   ========================================================= */
+.pag .hero{padding-top:28px}
+.pag-hero{display:flex;flex-direction:column;gap:14px;padding:40px;min-height:420px;justify-content:center}
+.pag-hero h1{font-size:clamp(2rem,3.6vw,3rem);color:#fff;letter-spacing:-0.02em}
+.pag-hero .pag-sub{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:400;font-size:1.25rem;color:var(--cielo)}
+.pag-hero .lead{font-size:1.05rem;color:rgba(255,255,255,.9);max-width:58ch;line-height:1.65}
+.pag-hero .acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.pag-hero .ico{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:rgba(255,255,255,.16);color:#fff;font-size:1.35rem;margin-bottom:6px}
+.migas{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.8rem;color:var(--tinta-suave);padding:18px 0 0}
+.migas a{color:var(--azul-tinta);font-weight:600}
+.migas .ico-svg,.migas i{font-size:.7em;color:var(--borde)}
+.pag-bloque{display:flex;flex-direction:column;gap:12px}
+.pag-bloque h2,.pag-bloque h3{font-size:1.3rem;color:var(--tinta);letter-spacing:-0.02em}
+.pag-bloque .etiqueta{margin-bottom:0}
+.pag-bloque p{line-height:1.65}
+.pag-senales{display:flex;flex-direction:column;margin-top:4px}
+.pag-senales li{display:grid;grid-template-columns:18px 1fr;gap:10px;padding:10px 0;border-top:1px dashed var(--borde);font-size:.97rem;color:var(--tinta);line-height:1.45}
+.pag-senales li:first-child{border-top:0}
+.pag-senales li::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--azul);box-shadow:0 0 0 4px var(--celeste);margin-top:7px}
+.pag-tuparte li{display:grid;grid-template-columns:22px 1fr;gap:10px;padding:9px 0;font-size:.95rem;color:var(--tinta);line-height:1.5}
+.pag-tuparte li .ico-svg,.pag-tuparte li i{color:var(--azul-tinta);margin-top:3px}
+.pag-otros{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.pag-otros a{display:inline-flex;align-items:center;gap:9px;padding:10px 14px;border-radius:var(--radio-sm);background:#fff;border:1px solid var(--borde);font-weight:700;font-size:.9rem;color:var(--tinta)}
+.pag-otros a:hover{border-color:var(--azul);color:var(--azul-tinta)}
+.pag-revision{font-size:.8rem;color:var(--tinta-suave);margin-top:14px}
+.pag-nota-medica{font-size:.84rem;color:var(--tinta-suave);line-height:1.5;border-top:1px dashed var(--borde);padding-top:12px;margin-top:4px}
+
+/* =========================================================
+   Página 404
+   ========================================================= */
+.pag-404{min-height:calc(100vh - 72px);display:grid;place-items:center;padding:40px 0}
+.pag-404 .tile{max-width:720px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;padding:48px 40px}
+.pag-404 .codigo{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(4rem,12vw,7rem);line-height:.9;color:var(--azul-tinta)}
+.pag-404 h1{font-size:clamp(1.5rem,3vw,2rem);color:var(--tinta)}
+.pag-404 p{max-width:48ch}
+.pag-404 .acciones{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:8px}
+.pag-404 svg.anticuerpo{width:110px;height:110px;animation:flotar404 4s ease-in-out infinite}
+@keyframes flotar404{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-10px) rotate(4deg)}}
+@media (prefers-reduced-motion:reduce){.pag-404 svg.anticuerpo{animation:none}}

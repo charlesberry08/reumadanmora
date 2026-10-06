@@ -4,6 +4,8 @@ Allow: /
 Disallow: /dev-server.py
 Disallow: /DISENO.md
 Disallow: /images/marca/muestra.html
+Disallow: /herramientas/
+Disallow: /404.html
 
 # Rastreadores de motores de IA (permitidos para que citen el sitio)
 User-agent: GPTBot

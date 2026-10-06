@@ -10,17 +10,14 @@
   <link rel="alternate" hreflang="es-MX" href="https://www.reumadanmora.com/aviso-de-privacidad.html">
 
   <!-- Fuentes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Estilos globales del sitio -->
-  <link rel="stylesheet" href="css/styles.css?v=20261006e"/>
+  <link rel="stylesheet" href="fonts/fuentes.css?v=1"/>
+  <link rel="stylesheet" href="css/styles.css?v=20261007a"/>
+  <script src="js/comun.js?v=2" defer></script>
   <link rel="icon" href="images/marca/icono.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
-  <!-- Font Awesome (iconos menú/CTA) -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" referrerpolicy="no-referrer" />
 
   <!-- Estilos mínimos propios de esta página (no pisan el topbar del sitio) -->
   <style>
@@ -87,7 +84,8 @@
   }
   </script>
 </head>
-<body>
+<body data-raiz="">
+<a class="saltar" href="#contenido">Ir al contenido</a>
 
 <!-- TOPBAR (sin íconos en enlaces de menú) -->
 <nav class="topbar" aria-label="Navegación principal">
@@ -156,7 +154,7 @@
 
   <!-- HEADER del Aviso -->
   <header class="pp-header">
-	<div class="wrap">
+	<div class="wrap" id="contenido">
 	  <h1>Aviso de Privacidad Integral</h1>
 	  <p>Con fundamento en la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP) y su Reglamento.</p>
 	</div>
@@ -289,80 +287,5 @@
   </main>
 
   <!-- Script ligero para el menú móvil (igual lógica que en index) -->
-  <script>
-	const $ = (s, c=document)=>c.querySelector(s);
-	const $$ = (s, c=document)=>Array.from(c.querySelectorAll(s));
-
-	const topbar = $('.topbar');
-	const toggle = $('.menu-toggle');
-	const drawer = $('#mobile-drawer');
-	const overlay = $('.drawer-overlay');
-	const closeBtn = $('.drawer-close');
-	const drawerLinks = $$('.drawer-link');
-
-	const onScroll = () => {
-	  if (window.scrollY > 6) topbar?.classList.add('is-scrolled');
-	  else topbar?.classList.remove('is-scrolled');
-	};
-	onScroll();
-	window.addEventListener('scroll', onScroll, { passive: true });
-
-	let __scrollY = 0;
-	function getScrollbarWidth(){ return window.innerWidth - document.documentElement.clientWidth; }
-	function lockScroll(){
-	  __scrollY = window.scrollY || 0;
-	  const sw = getScrollbarWidth();
-	  document.body.style.paddingRight = sw ? sw + 'px' : '';
-	  const tb = topbar;
-	  if (tb){
-		const pr = parseInt(getComputedStyle(tb).paddingRight || '0', 10);
-		tb.style.paddingRight = sw ? (pr + sw) + 'px' : '';
-	  }
-	  document.body.classList.add('menu-open-fixed');
-	  document.body.style.position = 'fixed';
-	  document.body.style.top = `-${__scrollY}px`;
-	  document.body.style.width = '100%';
-	}
-	function unlockScroll(){
-	  const tb = topbar;
-	  document.body.classList.remove('menu-open-fixed');
-	  document.body.style.position = '';
-	  document.body.style.top = '';
-	  document.body.style.width = '';
-	  document.body.style.paddingRight = '';
-	  if (tb){ tb.style.paddingRight = ''; }
-	  window.scrollTo(0, __scrollY);
-	}
-
-	function openDrawer(){
-	  drawer?.classList.add('open');
-	  if (overlay) overlay.hidden = false;
-	  toggle?.classList.add('active');
-	  drawer?.setAttribute('aria-hidden','false');
-	  toggle?.setAttribute('aria-expanded','true');
-	  document.body.classList.add('menu-open');
-	  lockScroll();
-	  drawer?.querySelector('.drawer-link')?.focus();
-	}
-	function closeDrawer(){
-	  drawer?.classList.remove('open');
-	  if (overlay) overlay.hidden = true;
-	  toggle?.classList.remove('active');
-	  drawer?.setAttribute('aria-hidden','true');
-	  toggle?.setAttribute('aria-expanded','false');
-	  document.body.classList.remove('menu-open');
-	  unlockScroll();
-	  toggle?.focus();
-	}
-
-	toggle?.addEventListener('click', ()=> drawer?.classList.contains('open') ? closeDrawer() : openDrawer());
-	overlay?.addEventListener('click', closeDrawer);
-	closeBtn?.addEventListener('click', closeDrawer);
-	drawerLinks.forEach(a => a.addEventListener('click', closeDrawer));
-	window.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && drawer?.classList.contains('open')) closeDrawer(); });
-
-	const mqDesktop = window.matchMedia('(min-width: 981px)');
-	mqDesktop.addEventListener?.('change', e => { if (e.matches && drawer?.classList.contains('open')) closeDrawer(); });
-  </script>
 </body>
 </html>

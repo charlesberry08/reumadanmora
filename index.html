@@ -22,13 +22,13 @@
   <meta name="geo.position" content="21.1504;-101.6878" />
   <meta name="ICBM" content="21.1504, -101.6878" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="dns-prefetch" href="https://i.ytimg.com" />
-  <link rel="preload" as="image" href="images/web/doctor-bn.png" fetchpriority="high" />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&display=swap" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles.css?v=20261006s" />
+  <link rel="preload" as="image" href="images/web/doctor-bn-full.webp" type="image/webp" fetchpriority="high" />
+  <link rel="preload" as="font" href="fonts/manrope-variable.woff2" type="font/woff2" crossorigin />
+  <link rel="preload" as="font" href="fonts/fraunces-variable.woff2" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="fonts/fuentes.css?v=1" />
+  <link rel="stylesheet" href="css/styles.css?v=20261007a" />
+  <script src="js/comun.js?v=2" defer></script>
 
   <link rel="icon" href="images/marca/icono.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="images/favicon.png" type="image/png" />
@@ -97,7 +97,24 @@
       },
       "mainEntity": {
         "@id": "https://www.reumadanmora.com/#physician"
-      }
+      },
+      "hasPart": [
+        {
+          "@id": "https://www.reumadanmora.com/artritis-reumatoide.html#webpage"
+        },
+        {
+          "@id": "https://www.reumadanmora.com/lupus.html#webpage"
+        },
+        {
+          "@id": "https://www.reumadanmora.com/sindrome-de-sjogren.html#webpage"
+        },
+        {
+          "@id": "https://www.reumadanmora.com/espondiloartritis.html#webpage"
+        },
+        {
+          "@id": "https://www.reumadanmora.com/vasculitis.html#webpage"
+        }
+      ]
     },
     {
       "@type": "ImageObject",
@@ -358,8 +375,10 @@
                 "name": "Nódulos bajo la piel"
               }
             ],
-            "relevantSpecialty": "Rheumatology"
-          }
+            "relevantSpecialty": "Rheumatology",
+            "url": "https://www.reumadanmora.com/artritis-reumatoide.html"
+          },
+          "url": "https://www.reumadanmora.com/artritis-reumatoide.html"
         },
         {
           "@type": "ListItem",
@@ -386,8 +405,10 @@
                 "name": "Úlceras en la boca y caída de cabello"
               }
             ],
-            "relevantSpecialty": "Rheumatology"
-          }
+            "relevantSpecialty": "Rheumatology",
+            "url": "https://www.reumadanmora.com/lupus.html"
+          },
+          "url": "https://www.reumadanmora.com/lupus.html"
         },
         {
           "@type": "ListItem",
@@ -410,8 +431,10 @@
                 "name": "Fatiga y dolor articular"
               }
             ],
-            "relevantSpecialty": "Rheumatology"
-          }
+            "relevantSpecialty": "Rheumatology",
+            "url": "https://www.reumadanmora.com/sindrome-de-sjogren.html"
+          },
+          "url": "https://www.reumadanmora.com/sindrome-de-sjogren.html"
         },
         {
           "@type": "ListItem",
@@ -434,8 +457,10 @@
                 "name": "Dolor en talones y uveítis"
               }
             ],
-            "relevantSpecialty": "Rheumatology"
-          }
+            "relevantSpecialty": "Rheumatology",
+            "url": "https://www.reumadanmora.com/espondiloartritis.html"
+          },
+          "url": "https://www.reumadanmora.com/espondiloartritis.html"
         },
         {
           "@type": "ListItem",
@@ -458,8 +483,10 @@
                 "name": "Hormigueo o debilidad en extremidades"
               }
             ],
-            "relevantSpecialty": "Rheumatology"
-          }
+            "relevantSpecialty": "Rheumatology",
+            "url": "https://www.reumadanmora.com/vasculitis.html"
+          },
+          "url": "https://www.reumadanmora.com/vasculitis.html"
         },
         {
           "@type": "ListItem",
@@ -549,10 +576,10 @@
         },
         {
           "@type": "Question",
-          "name": "¿Cuál es la diferencia entre reumatólogo y traumatólogo?",
+          "name": "¿Reumatólogo o traumatólogo? ¿A cuál voy?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "El traumatólogo u ortopedista atiende huesos rotos, golpes, lesiones deportivas y operaciones. El reumatólogo atiende el dolor y la inflamación que aparecen sin razón aparente y las enfermedades de las defensas; no opera: estudia y trata con medicamentos."
+            "text": "Si te caíste, te golpeaste o te rompiste algo, traumatólogo. Si te duele o se inflama \"sin razón\", amaneces tieso o traes cansancio que no se quita, reumatólogo. El reumatólogo no opera: estudia y trata con medicamentos."
           }
         },
         {
@@ -560,7 +587,7 @@
           "name": "¿Las enfermedades reumáticas son solo cosa de la edad?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Muchas de estas enfermedades empiezan entre los 20 y los 50 años, y algunas incluso en niños. El desgaste por la edad es solo una parte de lo que atiende un reumatólogo."
+            "text": "No. Muchas empiezan entre los 20 y los 50 años, y algunas incluso en niños. El desgaste por la edad es solo una parte de lo que atiende un reumatólogo."
           }
         },
         {
@@ -568,12 +595,28 @@
           "name": "\"Tengo reumas\", ¿eso qué es?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "\"Reuma\" no es una enfermedad, es una palabra que se usa para muchas cosas distintas. Hay más de cien padecimientos reumáticos y cada uno se trata diferente; por eso importa saber cuál es el tuyo."
+            "text": "\"Reuma\" no es una enfermedad, es una palabra que usamos para muchas cosas distintas. Hay más de cien padecimientos reumáticos y cada uno se trata diferente. Por eso importa saber cuál es el tuyo."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Qué pasa en la consulta con el reumatólogo?",
+          "name": "¿Necesito que otro médico me mande?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Puedes agendar directamente. Si otro médico te recomendó la valoración, trae su nota: ayuda a ir más rápido."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué llevo a la primera consulta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tus estudios previos (aunque creas que no sirven), la lista de los medicamentos que tomas y tus dudas apuntadas. Lo que no tengas, el doctor te indica cómo conseguirlo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa en la consulta?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "El doctor platica contigo, revisa tus articulaciones una por una y, si hace falta, pide estudios de sangre o de imagen. Con eso arma un plan y te explica qué tienes y qué sigue."
@@ -584,7 +627,7 @@
           "name": "¿Cuándo debo acudir con un reumatólogo?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Cuando hay dolor articular que empeora con el reposo y mejora con la actividad, rigidez matutina de más de 30 minutos, hinchazón articular sin golpe, fiebre o pérdida de peso sin causa, fatiga severa, fenómeno de Raynaud, erupciones, sequedad ocular o bucal, uveítis recurrente, abortos recurrentes o trombosis, anemia o plaquetas bajas, o cuando otro especialista recomienda valoración reumatológica."
+            "text": "Cuando hay dolor articular que empeora con el reposo y mejora al moverse, rigidez al despertar de más de 30 minutos, hinchazón sin golpe, fiebre o pérdida de peso sin causa, fatiga severa, dedos que se ponen blancos con el frío, erupciones, sequedad de ojos o boca, ojo rojo recurrente, abortos recurrentes o trombosis, anemia o plaquetas bajas, o cuando otro especialista recomienda valoración reumatológica."
           }
         },
         {
@@ -600,10 +643,19 @@
           "name": "¿Dónde consulta el Dr. Daniel Mora y en qué horario?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "En Médica Campestre, Calle Manantial 114, consultorio 107, León, Guanajuato. Lunes, miércoles y viernes de 10:00 a 13:00 y de 18:00 a 20:00 h, con cita previa por WhatsApp al 477 401 1085 o al teléfono 477 717 3939."
+            "text": "En Médica Campestre, Calle Manantial 114, consultorio 107, León, Guanajuato. Lunes, miércoles y viernes de 10:00 a 13:00 y de 18:00 a 20:00 h, con cita previa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo agendo una cita?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Por WhatsApp al 477 401 1085 o llamando al consultorio al 477 717 3939. Si escribes, dinos tu nombre y qué te está pasando en una línea; con eso te orientamos y agendamos."
           }
         }
-      ]
+      ],
+      "url": "https://www.reumadanmora.com/#preguntas"
     },
     {
       "@type": "VideoObject",
@@ -634,7 +686,7 @@
       "url": "https://www.youtube.com/@articulacionsonora1860",
       "description": "Podcast para la difusión de información sobre enfermedades reumáticas, dirigido al público en general. Contenidos y producción a cargo del Dr. Daniel Mora, reumatólogo.",
       "inLanguage": "es",
-      "image": "https://www.reumadanmora.com/images/web/podcast-articulacion-sonora.jpg",
+      "image": "https://www.reumadanmora.com/images/web/podcast-articulacion-sonora-600.webp",
       "author": {
         "@id": "https://www.reumadanmora.com/#physician"
       },
@@ -739,7 +791,8 @@
 }
   </script>
 </head>
-<body id="top">
+<body id="top" data-raiz="">
+<a class="saltar" href="#contenido">Ir al contenido</a>
 
 <!-- ============ TOPBAR ============ -->
 <nav class="topbar" aria-label="Navegación principal">
@@ -805,6 +858,7 @@
       <li><a href="#consultorio" class="drawer-link">Consultorio</a></li>
       <li><a href="#redes" class="drawer-link">Redes sociales</a></li>
       <li><a href="#contacto" class="drawer-link">Contacto</a></li>
+      <li><a href="#preguntas" class="drawer-link">Preguntas frecuentes</a></li>
       <li><a href="aviso-de-privacidad.html" class="drawer-link">Aviso de privacidad</a></li>
     </ul>
     <a href="https://wa.me/524774011085?text=Hola%20doctor,%20quisiera%20agendar%20una%20cita" class="btn btn-wa drawer-cta" target="_blank" rel="noopener noreferrer">
@@ -836,7 +890,7 @@
     </div>
 
     <figure class="retrato c-5 r-2 reveal">
-      <img src="images/web/doctor-bn.png" alt="Dr. Gildardo Daniel Mora Saucedo, médico reumatólogo en León, Guanajuato" width="1027" height="1269" fetchpriority="high" decoding="async" />
+      <img src="images/web/doctor-bn-full.webp" srcset="images/web/doctor-bn-600.webp 600w, images/web/doctor-bn-full.webp 1027w" sizes="(max-width:640px) 80vw, 460px" alt="Dr. Gildardo Daniel Mora Saucedo, médico reumatólogo en León, Guanajuato" width="1027" height="1269" fetchpriority="high" decoding="async" />
       <figcaption class="ficha">
         <span class="ficha-etiqueta">Reumatólogo certificado</span>
         <p class="ficha-nombre"><em>Dr.</em> Gildardo Daniel<br>Mora Saucedo</p>
@@ -880,7 +934,7 @@
   <div class="container">
     <div class="seccion-cabecera">
       <span class="etiqueta">Sobre el doctor</span>
-      <h2>Atención humana, empática y basada en evidencia</h2>
+      <h2>Reumatólogo en León: atención humana, empática y basada en evidencia</h2>
     </div>
 
     <div class="bento">
@@ -1008,6 +1062,7 @@
           <li>Nódulos bajo la piel</li>
         </ul>
         <p class="pad-nota"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Iniciar tratamiento en los primeros meses cambia el pronóstico: es la "ventana de oportunidad".</p>
+        <a class="pad-mas" href="artritis-reumatoide.html">Leer más sobre artritis reumatoide <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
       </article>
 
       <article class="tile pad-tile c-5 reveal">
@@ -1024,6 +1079,7 @@
           <li>Úlceras en la boca, caída de cabello</li>
         </ul>
         <p class="pad-nota"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Más frecuente en mujeres jóvenes.</p>
+        <a class="pad-mas" href="lupus.html">Leer más sobre lupus eritematoso sistémico <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
       </article>
 
       <article class="tile pad-tile c-4 reveal">
@@ -1038,6 +1094,7 @@
           <li>Boca seca, caries frecuentes</li>
           <li>Fatiga y dolor articular</li>
         </ul>
+        <a class="pad-mas" href="sindrome-de-sjogren.html">Leer más sobre el síndrome de Sjögren <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
       </article>
 
       <article class="tile pad-tile c-4 reveal">
@@ -1053,6 +1110,7 @@
           <li>Dolor en talones, ojo rojo (uveítis)</li>
         </ul>
         <p class="pad-nota"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Se asocia con psoriasis y enfermedad inflamatoria intestinal.</p>
+        <a class="pad-mas" href="espondiloartritis.html">Leer más sobre espondiloartritis <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
       </article>
 
       <article class="tile pad-tile c-4 reveal">
@@ -1068,6 +1126,7 @@
           <li>Hormigueo o debilidad en extremidades</li>
         </ul>
         <p class="pad-nota"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Requiere valoración sin demora.</p>
+        <a class="pad-mas" href="vasculitis.html">Leer más sobre vasculitis <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
       </article>
 
       <figure class="tile tile-foto tile-imagen c-6 reveal" data-imagen="" data-alt="" data-sugerencia="Manos con artritis o articulación inflamada, en acercamiento y con buena luz"></figure>
@@ -1263,16 +1322,16 @@
 
     <div class="bento">
       <figure class="tile tile-foto grande c-7 r-2 reveal">
-        <img src="images/web/consultorio1.jpg" alt="Consultorio de reumatología del Dr. Daniel Mora en Médica Campestre, León" loading="lazy" decoding="async" />
+        <img src="images/web/consultorio1-1200.webp" srcset="images/web/consultorio1-600.webp 600w, images/web/consultorio1-1200.webp 1200w, images/web/consultorio1-1800.webp 1800w" sizes="(max-width:640px) 92vw, (max-width:980px) 50vw, 680px" alt="Consultorio de reumatología del Dr. Daniel Mora en Médica Campestre, León" width="1800" height="1350" loading="lazy" decoding="async" />
       </figure>
       <figure class="tile tile-foto c-5 reveal">
-        <img src="images/web/consultorio2.jpg" alt="Área de consulta del consultorio del Dr. Daniel Mora, reumatólogo en León" loading="lazy" decoding="async" />
+        <img src="images/web/consultorio2-1200.webp" srcset="images/web/consultorio2-600.webp 600w, images/web/consultorio2-1200.webp 1200w, images/web/consultorio2-1800.webp 1800w" sizes="(max-width:640px) 92vw, (max-width:980px) 50vw, 680px" alt="Área de consulta del consultorio del Dr. Daniel Mora, reumatólogo en León" width="1800" height="1350" loading="lazy" decoding="async" />
       </figure>
       <figure class="tile tile-foto c-5 reveal">
-        <img src="images/web/consultorio4.jpg" alt="Mesa de exploración del consultorio de reumatología, Médica Campestre, León" loading="lazy" decoding="async" />
+        <img src="images/web/consultorio4-1200.webp" srcset="images/web/consultorio4-600.webp 600w, images/web/consultorio4-1200.webp 1200w, images/web/consultorio4-1800.webp 1800w" sizes="(max-width:640px) 92vw, (max-width:980px) 50vw, 680px" alt="Mesa de exploración del consultorio de reumatología, Médica Campestre, León" width="1800" height="1350" loading="lazy" decoding="async" />
       </figure>
       <figure class="tile tile-foto c-7 reveal">
-        <img src="images/web/consultorio3.jpg" alt="Fachada de Torre Médica Campestre I, donde consulta el Dr. Daniel Mora, León, Guanajuato" loading="lazy" decoding="async" />
+        <img src="images/web/consultorio3-1200.webp" srcset="images/web/consultorio3-600.webp 600w, images/web/consultorio3-1200.webp 1200w, images/web/consultorio3-1800.webp 1800w" sizes="(max-width:640px) 92vw, (max-width:980px) 50vw, 680px" alt="Fachada de Torre Médica Campestre I, donde consulta el Dr. Daniel Mora, León, Guanajuato" width="1800" height="1350" loading="lazy" decoding="async" />
         <figcaption class="pie"><strong>Torre Médica Campestre I</strong><span>Consultorio 107</span></figcaption>
       </figure>
       <div class="tile direccion c-5 reveal">
@@ -1358,6 +1417,74 @@
   </div>
 </section>
 
+<!-- ============ PREGUNTAS FRECUENTES ============ -->
+<section class="seccion faq" id="preguntas">
+  <div class="container">
+    <div class="ed-cabecera ed-cabecera-seccion reveal">
+      <span>Preguntas frecuentes</span>
+      <span class="ed-cabecera-num">N.º 04</span>
+      <span>Lo que todos preguntan</span>
+    </div>
+    <div class="bento">
+      <div class="tile faq-lista c-8 reveal">
+        <h2 class="faq-titulo">Las dudas de siempre, <em>sin vueltas</em></h2>
+        <details class="faq-item" open>
+          <summary><span class="faq-num">01</span><span class="faq-q">¿Qué es la reumatología?</span><i class="fa-solid fa-circle-info" aria-hidden="true"></i></summary>
+          <div class="faq-a"><p>Es la parte de la medicina que se encarga de los dolores, la inflamación y la rigidez de las articulaciones, los músculos y los huesos, y también de un grupo de enfermedades en las que las defensas del cuerpo se confunden y atacan al propio cuerpo.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-num">02</span><span class="faq-q">¿Reumatólogo o traumatólogo? ¿A cuál voy?</span><i class="fa-solid fa-circle-info" aria-hidden="true"></i></summary>
+          <div class="faq-a"><p>Si te caíste, te golpeaste o te rompiste algo, traumatólogo. Si te duele o se inflama "sin razón", amaneces tieso o traes cansancio que no se quita, reumatólogo. El reumatólogo no opera: estudia y trata con medicamentos.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-num">03</span><span class="faq-q">¿Las enfermedades reumáticas son solo cosa de la edad?</span><i class="fa-solid fa-circle-info" aria-hidden="true"></i></summary>
+          <div class="faq-a"><p>No. Muchas empiezan entre los 20 y los 50 años, y algunas incluso en niños. El desgaste por la edad es solo una parte de lo que atiende un reumatólogo.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-num">04</span><span class="faq-q">"Tengo reumas", ¿eso qué es?</span><i class="fa-solid fa-circle-info" aria-hidden="true"></i></summary>
+          <div class="faq-a"><p>"Reuma" no es una enfermedad, es una palabra que usamos para muchas cosas distintas. Hay más de cien padecimientos reumáticos y cada uno se trata diferente. Por eso importa saber cuál es el tuyo.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-num">05</span><span class="faq-q">¿Necesito que otro médico me mande?</span><i class="fa-solid fa-circle-info" aria-hidden="true"></i></summary>
+          <div class="faq-a"><p>No. Puedes agendar directamente. Si otro médico te recomendó la valoración, trae su nota: ayuda a ir más rápido.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-num">06</span><span class="faq-q">¿Qué llevo a la primera consulta?</span><i class="fa-solid fa-circle-info" aria-hidden="true"></i></summary>
+          <div class="faq-a"><p>Tus estudios previos (aunque creas que no sirven), la lista de los medicamentos que tomas y tus dudas apuntadas. Lo que no tengas, el doctor te indica cómo conseguirlo.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-num">07</span><span class="faq-q">¿Qué pasa en la consulta?</span><i class="fa-solid fa-circle-info" aria-hidden="true"></i></summary>
+          <div class="faq-a"><p>El doctor platica contigo, revisa tus articulaciones una por una y, si hace falta, pide estudios de sangre o de imagen. Con eso arma un plan y te explica qué tienes y qué sigue.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-num">08</span><span class="faq-q">¿Cuándo debo acudir con un reumatólogo?</span><i class="fa-solid fa-circle-info" aria-hidden="true"></i></summary>
+          <div class="faq-a"><p>Cuando hay dolor articular que empeora con el reposo y mejora al moverse, rigidez al despertar de más de 30 minutos, hinchazón sin golpe, fiebre o pérdida de peso sin causa, fatiga severa, dedos que se ponen blancos con el frío, erupciones, sequedad de ojos o boca, ojo rojo recurrente, abortos recurrentes o trombosis, anemia o plaquetas bajas, o cuando otro especialista recomienda valoración reumatológica.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-num">09</span><span class="faq-q">¿El dolor de las articulaciones es por el frío o la humedad?</span><i class="fa-solid fa-circle-info" aria-hidden="true"></i></summary>
+          <div class="faq-a"><p>El clima puede hacer que se sienta más, pero no es la causa. La causa está en la articulación o en las defensas.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-num">10</span><span class="faq-q">¿Dónde consulta el Dr. Daniel Mora y en qué horario?</span><i class="fa-solid fa-circle-info" aria-hidden="true"></i></summary>
+          <div class="faq-a"><p>En Médica Campestre, Calle Manantial 114, consultorio 107, León, Guanajuato. Lunes, miércoles y viernes de 10:00 a 13:00 y de 18:00 a 20:00 h, con cita previa.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-num">11</span><span class="faq-q">¿Cómo agendo una cita?</span><i class="fa-solid fa-circle-info" aria-hidden="true"></i></summary>
+          <div class="faq-a"><p>Por WhatsApp al 477 401 1085 o llamando al consultorio al 477 717 3939. Si escribes, dinos tu nombre y qué te está pasando en una línea; con eso te orientamos y agendamos.</p></div>
+        </details>
+      </div>
+      <aside class="faq-lateral c-4">
+        <div class="tile tile-tinte reveal">
+          <h3>¿Tu duda no está aquí?</h3>
+          <p>Escríbenos por WhatsApp. Las preguntas que más se repiten las vamos agregando a esta lista.</p>
+          <a href="https://wa.me/524774011085?text=Hola%20doctor,%20tengo%20una%20duda" class="btn btn-primario" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Preguntar por WhatsApp</a>
+        </div>
+        <figure class="tile tile-foto tile-imagen c-4 reveal" data-imagen="" data-alt="" data-sugerencia="El doctor en el escritorio, atendiendo o resolviendo dudas"></figure>
+      </aside>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <!-- ============ FOOTER ============ -->
@@ -1394,6 +1521,7 @@
       <li><a href="#sintomas">Síntomas</a></li>
       <li><a href="#consultorio">Consultorio</a></li>
       <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#preguntas">Preguntas frecuentes</a></li>
       <li><a href="aviso-de-privacidad.html">Aviso de privacidad</a></li>
     </ul>
     <p class="footer-copy">© 2025 Dr. Gildardo Daniel Mora Saucedo, reumatólogo en León, Guanajuato · Médica Campestre, Calle Manantial 114, consultorio 107 · Cédula profesional 7405984 · Cédula de especialidad 10508486. Todos los derechos reservados.</p>
@@ -1424,7 +1552,7 @@
   const PODCAST = {
     nombre: 'Articulación Sonora',
     url: 'https://www.youtube.com/@articulacionsonora1860',
-    portada: 'images/web/podcast-articulacion-sonora.jpg',
+    portada: 'images/web/podcast-articulacion-sonora-600.webp',
     descripcion: 'Podcast para la difusión de información sobre enfermedades reumáticas, dirigido al público en general. Contenidos y producción a cargo del Dr. Daniel Mora.',
     episodios: [
       { id: 'mNg73mhSi84', numero: 5, titulo: 'Tú puedes necesitar un reumatólogo: escucha y averígualo' },
@@ -1436,197 +1564,43 @@
   };
   // =====================================================================
 
-  const $ = (sel, ctx = document) => ctx.querySelector(sel);
-  const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // ---- Redes sociales ----
   const REDES_META = {
     instagram: { nombre: 'Instagram', icono: 'fa-brands fa-instagram', texto: 'Historias, consejos y avisos del consultorio.' },
     facebook:  { nombre: 'Facebook',  icono: 'fa-brands fa-facebook-f', texto: 'Publicaciones de divulgación y comunidad.' },
     tiktok:    { nombre: 'TikTok',    icono: 'fa-brands fa-tiktok', texto: 'Videos cortos con respuestas rápidas.' },
     youtube:   { nombre: 'YouTube',   icono: 'fa-brands fa-youtube', texto: 'Articulación Sonora, el podcast del doctor sobre enfermedades reumáticas.' }
   };
-  (function renderRedes() {
+
+  // Render propio de la portada; js/comun.js se encarga del resto (iconos, menú, imágenes, aparición).
+  window.renderPagina = function () {
+    const $ = (sel, ctx = document) => ctx.querySelector(sel);
+    // Redes
     const grid = $('#redes-grid'), foot = $('#footer-redes');
-    if (!grid) return;
-    Object.entries(REDES_META).forEach(([clave, meta]) => {
-      const cfg = REDES[clave] || {};
-      const tiene = !!cfg.url;
+    if (grid) Object.entries(REDES_META).forEach(([clave, meta]) => {
+      const cfg = REDES[clave] || {}, tiene = !!cfg.url;
       const a = document.createElement('a');
       a.className = `tile tile-red red-${clave} c-3 reveal` + (tiene ? '' : ' pendiente');
       a.href = tiene ? cfg.url : '#redes';
-      if (tiene) { a.target = '_blank'; a.rel = 'noopener'; }
+      if (tiene) { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
       a.setAttribute('aria-label', `${meta.nombre}${cfg.usuario ? ' ' + cfg.usuario : ''}`);
-      a.innerHTML = `
-        <span class="ico"><i class="${meta.icono}" aria-hidden="true"></i></span>
-        <span class="red-nombre">${meta.nombre}</span>
-        <span class="red-usuario">${cfg.usuario || 'Perfil del doctor'}</span>
-        <span class="red-texto">${meta.texto}</span>
-        <span class="red-flecha"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>`;
+      a.innerHTML = `<span class="ico"><i class="${meta.icono}" aria-hidden="true"></i></span><span class="red-nombre">${meta.nombre}</span><span class="red-usuario">${cfg.usuario || 'Perfil del doctor'}</span><span class="red-texto">${meta.texto}</span><span class="red-flecha"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>`;
       grid.appendChild(a);
-      if (tiene && foot) {
-        const li = document.createElement('li');
-        li.innerHTML = `<a href="${cfg.url}" target="_blank" rel="noopener noreferrer" aria-label="${meta.nombre}"><i class="${meta.icono}" aria-hidden="true"></i></a>`;
-        foot.appendChild(li);
-      }
+      if (tiene && foot) { const li = document.createElement('li'); li.innerHTML = `<a href="${cfg.url}" target="_blank" rel="noopener noreferrer" aria-label="${meta.nombre}"><i class="${meta.icono}" aria-hidden="true"></i></a>`; foot.appendChild(li); }
     });
-  })();
-
-  // ---- Fachada ligera de YouTube: portada + botón; el iframe se carga al dar clic ----
-  function crearVideo(v, span, etiqueta) {
-    const poster = v.id ? `https://i.ytimg.com/vi/${v.id}/maxresdefault.jpg` : 'images/web/consultorio2.jpg';
-    const fig = document.createElement('figure');
-    fig.className = `tile tile-video ${span} reveal` + (v.id ? '' : ' pendiente');
-    fig.innerHTML = `
-      <img src="${poster}" alt="" loading="lazy" decoding="async" ${v.id ? `onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${v.id}/hqdefault.jpg'"` : ''} />
-      <button class="video-play" type="button" aria-label="Reproducir: ${v.titulo}" ${v.id ? '' : 'disabled'}>
-        <i class="fa-solid fa-play" aria-hidden="true"></i>
-      </button>
-      <figcaption class="video-pie">
-        <span class="video-tema">${etiqueta}</span>
-        <strong>${v.titulo}</strong>
-        ${v.id ? '' : '<span class="video-nota">Próximamente</span>'}
-      </figcaption>`;
-    if (v.id) {
-      fig.querySelector('.video-play').addEventListener('click', () => {
-        const iframe = document.createElement('iframe');
-        iframe.src = `https://www.youtube-nocookie.com/embed/${v.id}?autoplay=1&rel=0`;
-        iframe.title = v.titulo;
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-        iframe.allowFullscreen = true;
-        fig.classList.add('reproduciendo');
-        fig.appendChild(iframe);
-      });
+    // Videos
+    const vg = $('#videos-grid');
+    if (vg) VIDEOS.forEach(v => vg.appendChild(crearVideo(v, v.grande ? 'c-7 r-2 grande' : 'c-5', v.tema)));
+    // Podcast
+    const pg = $('#podcast-grid');
+    if (pg) {
+      const canal = document.createElement('a');
+      canal.className = 'tile tile-marca podcast-canal c-5 r-2 reveal';
+      canal.href = PODCAST.url; canal.target = '_blank'; canal.rel = 'noopener noreferrer';
+      canal.innerHTML = `<img src="${PODCAST.portada}" alt="Portada de ${PODCAST.nombre}" width="400" height="400" loading="lazy" decoding="async" /><span class="etiqueta">Podcast del doctor</span><h3>${PODCAST.nombre}</h3><p>${PODCAST.descripcion}</p><span class="podcast-datos"><i class="fa-solid fa-headphones" aria-hidden="true"></i> ${PODCAST.episodios.length} episodios · YouTube</span><span class="btn btn-blanco"><i class="fa-brands fa-youtube" aria-hidden="true"></i> Ver el canal</span>`;
+      pg.appendChild(canal);
+      PODCAST.episodios.forEach((e, i) => pg.appendChild(crearVideo(e, i === 0 ? 'c-7 r-2 grande' : 'c-3', `Episodio ${String(e.numero).padStart(2, '0')}`)));
     }
-    return fig;
-  }
-  (function renderVideos() {
-    const grid = $('#videos-grid');
-    if (!grid) return;
-    VIDEOS.forEach(v => grid.appendChild(crearVideo(v, v.grande ? 'c-7 r-2 grande' : 'c-5', v.tema)));
-  })();
-  (function renderPodcast() {
-    const grid = $('#podcast-grid');
-    if (!grid) return;
-    const canal = document.createElement('a');
-    canal.className = 'tile tile-marca podcast-canal c-5 r-2 reveal';
-    canal.href = PODCAST.url; canal.target = '_blank'; canal.rel = 'noopener';
-    canal.innerHTML = `
-      <img src="${PODCAST.portada}" alt="Portada de ${PODCAST.nombre}" width="400" height="400" loading="lazy" decoding="async" />
-      <span class="etiqueta">Podcast del doctor</span>
-      <h3>${PODCAST.nombre}</h3>
-      <p>${PODCAST.descripcion}</p>
-      <span class="podcast-datos"><i class="fa-solid fa-headphones" aria-hidden="true"></i> ${PODCAST.episodios.length} episodios · YouTube</span>
-      <span class="btn btn-blanco"><i class="fa-brands fa-youtube" aria-hidden="true"></i> Ver el canal</span>`;
-    grid.appendChild(canal);
-    PODCAST.episodios.forEach((e, i) => {
-      const num = String(e.numero).padStart(2, '0');
-      grid.appendChild(crearVideo(e, i === 0 ? 'c-7 r-2 grande' : 'c-3', `Episodio ${num}`));
-    });
-  })();
-
-  // ---- Espacios para imágenes ----
-  // Cada <figure class="tile-imagen"> se llena con data-imagen (ruta del archivo),
-  // data-alt (texto alternativo) y, opcionalmente, data-pie / data-pie2 (pie de foto).
-  // Sin data-imagen se muestra el espacio con la sugerencia de qué fotografiar.
-  $$('.tile-imagen').forEach(fig => {
-    const src = fig.dataset.imagen;
-    if (src) {
-      const img = new Image();
-      img.src = src; img.alt = fig.dataset.alt || ''; img.loading = 'lazy'; img.decoding = 'async';
-      fig.prepend(img);
-      if (fig.dataset.pie) {
-        const cap = document.createElement('figcaption');
-        cap.className = 'pie';
-        cap.innerHTML = `<strong>${fig.dataset.pie}</strong>${fig.dataset.pie2 ? `<span>${fig.dataset.pie2}</span>` : ''}`;
-        fig.appendChild(cap);
-      }
-    } else {
-      fig.classList.add('pendiente');
-      fig.innerHTML = `<div class="imagen-pendiente">
-        <i class="fa-regular fa-image" aria-hidden="true"></i>
-        <strong>Espacio para imagen</strong>
-        <span>${fig.dataset.sugerencia || ''}</span>
-      </div>`;
-    }
-  });
-
-  // ---- Índice de la guía: resalta el capítulo visible ----
-  (function guiaIndice() {
-    const enlaces = $$('.guia-nav a'); if (!enlaces.length) return;
-    const porId = Object.fromEntries(enlaces.map(a => [a.getAttribute('href').slice(1), a]));
-    const ioGuia = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { enlaces.forEach(a => a.classList.remove('activo')); porId[e.target.id]?.classList.add('activo'); } });
-    }, { rootMargin: '-40% 0px -50% 0px' });
-    $$('.guia-cap').forEach(c => ioGuia.observe(c));
-  })();
-
-  // ---- Aparición escalonada de los bloques ----
-  $$('.bento').forEach(grid => {
-    $$('.reveal', grid).forEach((el, i) => el.style.setProperty('--retraso', `${Math.min(i, 8) * 70}ms`));
-  });
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); } });
-  }, { threshold: 0.12 });
-  $$('.reveal').forEach(el => io.observe(el));
-
-  // ---- Contador animado ----
-  const ioContador = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const el = entry.target, meta = +el.dataset.meta || 0;
-      ioContador.unobserve(el);
-      if (reduceMotion) { el.textContent = meta; return; }
-      const inicio = performance.now(), dur = 1100;
-      const paso = (t) => {
-        const p = Math.min(1, (t - inicio) / dur), e = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.round(meta * e);
-        if (p < 1) requestAnimationFrame(paso);
-      };
-      requestAnimationFrame(paso);
-    });
-  }, { threshold: 0.6 });
-  $$('.contador').forEach(el => ioContador.observe(el));
-
-  // Topbar con sombra al hacer scroll
-  const topbar = $('.topbar');
-  const onScroll = () => topbar?.classList.toggle('is-scrolled', window.scrollY > 6);
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
-
-  // Menú móvil
-  const toggle = $('.menu-toggle');
-  const drawer = $('#mobile-drawer');
-  const overlay = $('.drawer-overlay');
-  const closeBtn = $('.drawer-close');
-  let scrollY = 0;
-
-  function openDrawer() {
-    scrollY = window.scrollY || 0;
-    drawer.classList.add('open');
-    overlay.hidden = false;
-    toggle.classList.add('active');
-    drawer.setAttribute('aria-hidden', 'false');
-    toggle.setAttribute('aria-expanded', 'true');
-    document.body.classList.add('menu-open-fixed');
-    drawer.querySelector('.drawer-link')?.focus();
-  }
-  function closeDrawer() {
-    drawer.classList.remove('open');
-    overlay.hidden = true;
-    toggle.classList.remove('active');
-    drawer.setAttribute('aria-hidden', 'true');
-    toggle.setAttribute('aria-expanded', 'false');
-    document.body.classList.remove('menu-open-fixed');
-    window.scrollTo(0, scrollY);
-  }
-  toggle?.addEventListener('click', () => drawer.classList.contains('open') ? closeDrawer() : openDrawer());
-  overlay?.addEventListener('click', closeDrawer);
-  closeBtn?.addEventListener('click', closeDrawer);
-  $$('.drawer-link').forEach(a => a.addEventListener('click', closeDrawer));
-  window.addEventListener('keydown', (e) => { if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer(); });
-  window.matchMedia('(min-width: 981px)').addEventListener?.('change', e => { if (e.matches && drawer.classList.contains('open')) closeDrawer(); });
+  };
 </script>
 </body>
 </html>

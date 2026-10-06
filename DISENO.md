@@ -65,3 +65,14 @@ Once huecos repartidos en el sitio (3 en Sobre el doctor, 2 en ¿Qué es la reum
 - Semántica: un solo `h1`, `h2` por sección, `<main>`, alt de imágenes con entidad y lugar, `rel="noopener noreferrer"` en externos, dirección y cédulas en el pie.
 - Archivos: `robots.txt` (permite GPTBot, ClaudeBot, PerplexityBot, Google-Extended, etc. y bloquea archivos internos), `sitemap.xml` (con imágenes y video), `llms.txt` (ficha para motores de IA con datos verificables y cómo citar), `.htaccess` (301 a https+www, compresión, caché, cabeceras).
 - Al publicar: enviar el sitemap en Google Search Console y Bing Webmaster, crear/reclamar el Perfil de Negocio de Google con la misma dirección y horario, y verificar los datos con la prueba de resultados enriquecidos de Google.
+
+## Rendimiento y estructura (2026-10-06, segunda ronda SEO)
+
+- **Fuentes propias** en `fonts/` (Manrope y Fraunces variables, subconjunto latin, `font-display: swap`, precargadas). Ya no se carga Google Fonts.
+- **Iconos sin Font Awesome**: `images/marca/iconos.svg` es un sprite con los 33 iconos usados (Font Awesome Free, CC BY 4.0). El marcado sigue siendo `<i class="fa-solid fa-nombre">` y `js/comun.js` lo convierte en `<svg class="ico-svg"><use href="…#nombre">`. Para usar un icono nuevo: bajar su SVG de Font Awesome y agregar el `<symbol>` al sprite.
+- **Imágenes WebP responsivas** en `images/web/*-600/-1200/-1800.webp` y `*-full.webp` (retratos con transparencia). Los `<img>` llevan `srcset`/`sizes`; los espacios de imagen cargan `-full.webp` y caen al original si no existe. Para una foto nueva: dejar el JPG en `images/web/` y generar sus WebP (script en el historial o PIL).
+- **`js/comun.js`**: iconos, menú, aparición, contador, índice de la guía, espacios de imagen y fachada de YouTube, compartido por todas las páginas. `index.html` solo conserva la configuración (REDES, VIDEOS, PODCAST) y `window.renderPagina`.
+- **Páginas de padecimientos** (`artritis-reumatoide.html`, `lupus.html`, `sindrome-de-sjogren.html`, `espondiloartritis.html`, `vasculitis.html`): se generan con `python3 herramientas/generar-padecimientos.py` a partir de `herramientas/padecimientos.py` (texto en tono llano; el doctor debe revisarlo). Cada una lleva MedicalWebPage + MedicalCondition + FAQPage + migas, `lastReviewed` con la fecha de generación, y enlaza a las demás.
+- **Preguntas frecuentes visibles** (`#preguntas`, N.º 04) alineadas una a una con el FAQPage del JSON-LD de la portada.
+- **Accesibilidad**: enlace "Ir al contenido", `<main id="contenido">`, foco visible, números decorativos con contraste ≥ 4.5:1, `aria-current` en migas.
+- **404.html** propia (noindex) con enlaces útiles; `.htaccess` la sirve como ErrorDocument.
