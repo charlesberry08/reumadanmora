@@ -6,6 +6,15 @@ RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} !^www\. [NC]
 RewriteRule ^(.*)$ https://www.reumadanmora.com/$1 [L,R=301]
 
+# Páginas agrupadas (301 a su nuevo lugar)
+Redirect 301 /sobre-mi.html /index.html#sobre-mi
+Redirect 301 /reumatologia.html /padecimientos.html#reumatologia
+Redirect 301 /sintomas.html /cuando-acudir.html
+Redirect 301 /preguntas.html /cuando-acudir.html#preguntas
+Redirect 301 /videos.html /index.html#videos
+Redirect 301 /podcast.html /index.html#podcast
+Redirect 301 /consultorio.html /contacto.html#consultorio
+
 # Archivos internos fuera del público
 <FilesMatch "^(dev-server\.py|DISENO\.md|\.gitignore)$">
   Require all denied

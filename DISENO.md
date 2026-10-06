@@ -77,11 +77,19 @@ Once huecos repartidos en el sitio (3 en Sobre el doctor, 2 en ¿Qué es la reum
 - **Accesibilidad**: enlace "Ir al contenido", `<main id="contenido">`, foco visible, números decorativos con contraste ≥ 4.5:1, `aria-current` en migas.
 - **404.html** propia (noindex) con enlaces útiles; `.htaccess` la sirve como ErrorDocument.
 
-## Estructura multipágina (2026-10-06)
+## Estructura del sitio (2026-10-06, acordada con Carlos)
 
-El sitio dejó de ser una sola página. `herramientas/separar-paginas.py` hizo la separación una vez (no volver a correrlo: ahora cada página se edita directo). Páginas: `index.html` (héroe, cinta, tarjetas "Explora el sitio" y bloque de contacto), `sobre-mi.html`, `reumatologia.html`, `padecimientos.html` (+ las cinco páginas por padecimiento), `sintomas.html` (guía), `videos.html`, `podcast.html`, `consultorio.html`, `contacto.html` (incluye redes), `preguntas.html`, `aviso-de-privacidad.html`, `404.html`.
+Objetivo del doctor: "que la gente me encuentre en internet". Cuatro páginas, cada una para una intención de búsqueda, más cinco páginas por padecimiento:
 
-- La barra lleva 7 páginas; "¿Qué es la reumatología?" y "Preguntas frecuentes" van en el menú móvil, el pie y las tarjetas de la portada.
-- Cada página tiene su título, descripción, canónico, migas y los nodos JSON-LD que le corresponden (la portada conserva WebSite, Physician y MedicalClinic).
-- `js/contenido.js` guarda la configuración (REDES, VIDEOS, PODCAST) y los renders; `js/comun.js` el comportamiento común. Ambos se cargan en todas las páginas. Para cambiar redes, videos o episodios: editar `js/contenido.js`.
-- `herramientas/generar-padecimientos.py` toma la barra y el pie de `index.html`; si cambia el menú, volver a correrlo.
+| Página | Qué contiene | Búsqueda a la que responde |
+|---|---|---|
+| `index.html` | Héroe con retrato, datos rápidos, cinta, perfil editorial del doctor (#sobre-mi), tres accesos, videos (#videos), podcast (#podcast), contacto corto | "reumatólogo en León", "Dr. Daniel Mora" |
+| `padecimientos.html` | ¿Qué es la reumatología? (#reumatologia) + fichas de padecimientos; de aquí cuelgan `artritis-reumatoide`, `lupus`, `sindrome-de-sjogren`, `espondiloartritis`, `vasculitis` | "qué atiende un reumatólogo", cada enfermedad + León |
+| `cuando-acudir.html` | Guía de señales por tipo con índice fijo + preguntas frecuentes (#preguntas) | "cuándo ir al reumatólogo", "síntomas de…" |
+| `contacto.html` | Fotos del consultorio (#consultorio), cómo llegar, horarios, WhatsApp, mapa y redes (#redes) | "consultorio", "cita", "Médica Campestre" |
+
+Menú: El doctor · Padecimientos · ¿Cuándo acudir? · Consultorio y contacto + botón Agendar. El menú móvil y el pie añaden ¿Qué es la reumatología?, Preguntas frecuentes, Videos y podcast y Aviso de privacidad.
+
+- `herramientas/agrupar-paginas.py` hizo la agrupación una vez (no volver a correrlo). Las páginas se editan directo; las de padecimientos se regeneran con `generar-padecimientos.py`, que toma barra y pie de `index.html`.
+- `.htaccess` redirige con 301 las rutas que existieron brevemente (sobre-mi, reumatologia, sintomas, preguntas, videos, podcast, consultorio).
+- `js/contenido.js`: redes, videos y podcast. `js/comun.js`: comportamiento común.

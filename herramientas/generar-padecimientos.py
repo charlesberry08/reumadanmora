@@ -14,8 +14,8 @@ index = open('index.html', encoding='utf-8').read()
 nav = re.search(r'<nav class="topbar".*?</nav>', index, re.S).group(0)
 footer = re.search(r'<footer>.*?</footer>', index, re.S).group(0)
 # enlaces de la portada -> index.html#...
-nav = nav.replace('href="#top"', 'href="index.html"')
-footer = footer.replace('href="#top"', 'href="index.html"')
+nav = nav.replace('href="#top"', 'href="index.html"').replace('href="#', 'href="index.html#')
+footer = footer.replace('href="#top"', 'href="index.html"').replace('href="#', 'href="index.html#')
 # ids de gradiente únicos por página se mantienen (gm-nav/gm-foot); el pie no debe repetir el listado de redes dinámico
 footer = footer.replace('<ul class="footer-redes" id="footer-redes"></ul>', '')
 version = re.search(r'styles\.css\?v=([\w]+)', index).group(1)

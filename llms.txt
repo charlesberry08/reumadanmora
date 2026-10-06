@@ -17,14 +17,10 @@
 Artritis reumatoide, lupus eritematoso sistémico, síndrome de Sjögren, espondiloartritis, vasculitis, gota, osteoartritis, fibromialgia, esclerosis sistémica, síndrome antifosfolípido, miopatías inflamatorias, artritis psoriásica y artritis idiopática juvenil.
 
 ## Páginas
-- [Inicio](https://www.reumadanmora.com/)
-- [Sobre el doctor](https://www.reumadanmora.com/sobre-mi.html)
-- [¿Qué es la reumatología?](https://www.reumadanmora.com/reumatologia.html)
-- [Padecimientos](https://www.reumadanmora.com/padecimientos.html): artritis-reumatoide.html, lupus.html, sindrome-de-sjogren.html, espondiloartritis.html, vasculitis.html
-- [¿Cuándo acudir con un reumatólogo?](https://www.reumadanmora.com/sintomas.html)
-- [Videos](https://www.reumadanmora.com/videos.html) · [Podcast](https://www.reumadanmora.com/podcast.html)
-- [Consultorio](https://www.reumadanmora.com/consultorio.html) · [Contacto y redes](https://www.reumadanmora.com/contacto.html)
-- [Preguntas frecuentes](https://www.reumadanmora.com/preguntas.html)
+- [Inicio: el doctor, videos y podcast](https://www.reumadanmora.com/)
+- [Padecimientos y qué es la reumatología](https://www.reumadanmora.com/padecimientos.html): artritis-reumatoide.html, lupus.html, sindrome-de-sjogren.html, espondiloartritis.html, vasculitis.html
+- [¿Cuándo acudir con un reumatólogo? y preguntas frecuentes](https://www.reumadanmora.com/cuando-acudir.html)
+- [Consultorio y contacto](https://www.reumadanmora.com/contacto.html)
 - [Aviso de privacidad](https://www.reumadanmora.com/aviso-de-privacidad.html)
 
 ## Cómo citar
