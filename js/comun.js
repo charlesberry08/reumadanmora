@@ -87,9 +87,11 @@
     const onScroll = () => topbar?.classList.toggle('is-scrolled', window.scrollY > 6);
     onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
     if (!toggle || !drawer) return;
-    let scrollY = 0;
-    const abrir = () => { scrollY = window.scrollY || 0; drawer.classList.add('open'); overlay.hidden = false; toggle.classList.add('active'); drawer.setAttribute('aria-hidden', 'false'); toggle.setAttribute('aria-expanded', 'true'); document.body.classList.add('menu-open-fixed'); drawer.querySelector('.drawer-link')?.focus(); };
-    const cerrar = () => { drawer.classList.remove('open'); overlay.hidden = true; toggle.classList.remove('active'); drawer.setAttribute('aria-hidden', 'true'); toggle.setAttribute('aria-expanded', 'false'); document.body.classList.remove('menu-open-fixed'); window.scrollTo(0, scrollY); };
+    // El panel y el velo salen de la barra: la barra tiene backdrop-filter y, si quedan dentro,
+    // se posicionan respecto a ella (panel recortado y velo sin cubrir la página).
+    document.body.append(overlay, drawer);
+    const abrir = () => { drawer.classList.add('open'); overlay.hidden = false; toggle.classList.add('active'); drawer.setAttribute('aria-hidden', 'false'); toggle.setAttribute('aria-expanded', 'true'); document.documentElement.classList.add('menu-abierto'); setTimeout(() => drawer.querySelector('.drawer-link')?.focus({ preventScroll: true }), 320); };
+    const cerrar = () => { drawer.classList.remove('open'); overlay.hidden = true; toggle.classList.remove('active'); drawer.setAttribute('aria-hidden', 'true'); toggle.setAttribute('aria-expanded', 'false'); document.documentElement.classList.remove('menu-abierto'); };
     toggle.addEventListener('click', () => drawer.classList.contains('open') ? cerrar() : abrir());
     overlay?.addEventListener('click', cerrar); closeBtn?.addEventListener('click', cerrar);
     $$('.drawer-link').forEach(a => a.addEventListener('click', cerrar));
