@@ -50,6 +50,8 @@ El contenido se captura en el bloque `CONFIGURACIÓN DE CONTENIDO` al inicio del
 
 ## Retrato del doctor
 
+**Desde 2026-10-06 el héroe usa la foto a color que eligió el doctor** (`images/web/doctor-hero.jpg` y sus WebP 600/900/1170; original en `images/doctor-hero-original.jpg`): tile de foto con recorte `cover`, oscurecido inferior y la misma ficha editorial encima (`.retrato-foto`). Lo que sigue describe el recorte en blanco y negro anterior, que se conserva en `images/web/doctor-bn*.webp` por si se vuelve a usar.
+
 El héroe usa `images/web/doctor-bn.png`: el retrato **en blanco y negro** (Carlos descartó el duotono azul) recortado sin fondo. La máscara se obtiene con Vision de macOS (`VNGenerateForegroundInstanceMaskRequest`) y se refina en el borde del cabello con una banda de luminancia contra el fondo gris, para no perder mechones. La figura va **sin contenedor**, anclada abajo y contenida en la altura del héroe (altura 100 %; con más se metía bajo la barra de navegación y se cortaba el cabello), con sombra proyectada. Un oscurecido inferior neutro recortado a la silueta (`mask` con el mismo PNG) permite leer la ficha.
 
 **Ficha editorial** (`.ficha`): etiqueta en Manrope mayúsculas con tracking amplio en cielo, nombre en **Fraunces** 500 a dos líneas con el "Dr." en itálica cielo, regla fina de 44px y cédulas en Manrope pequeña con separador en cielo. Fraunces solo se usa para este nombre.
