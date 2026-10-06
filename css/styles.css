@@ -958,3 +958,48 @@ html.sin-precarga #precarga{display:none}
 @media (max-width:340px){
   .tile-dato,.tile-red,.podcast .tile-video.c-3{grid-column:span 6}
 }
+
+/* =========================================================
+   Menú móvil (rediseño acorde al sistema)
+   ========================================================= */
+.mobile-drawer{width:min(88vw,360px);padding:18px 18px 22px;gap:18px;background:var(--fondo)}
+.drawer-header{display:flex;align-items:center;justify-content:space-between;padding:4px 2px 14px;border-bottom:1px solid var(--tinta);position:relative}
+.drawer-header::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--borde)}
+.drawer-header .brand svg{width:38px;height:38px}
+.drawer-close{width:42px;height:42px;border-radius:12px;border:1px solid var(--borde);background:#fff;cursor:pointer;display:grid;place-items:center;color:var(--tinta);font-size:1rem;transition:background .2s ease,color .2s ease}
+.drawer-close:hover{background:var(--marino);color:#fff;border-color:var(--marino)}
+.drawer-nav{display:flex;flex-direction:column;gap:6px}
+.drawer-links{display:flex;flex-direction:column;gap:0;list-style:none}
+.drawer-principal li{border-bottom:1px solid var(--borde)}
+.drawer-principal .drawer-link{display:grid;grid-template-columns:2rem 1fr auto;align-items:center;gap:10px;padding:14px 6px;border-radius:0;font-size:1.12rem;font-weight:800;letter-spacing:-0.01em;color:var(--tinta)}
+.drawer-principal .drawer-link .ico-svg,.drawer-principal .drawer-link i{color:var(--borde);font-size:.8rem;transition:color .2s ease,transform .2s ease}
+.drawer-principal .drawer-link:hover{background:transparent;color:var(--marino)}
+.drawer-principal .drawer-link:hover .ico-svg{color:var(--azul-tinta);transform:translate(2px,-2px)}
+.drawer-principal .drawer-link.actual{color:var(--marino)}
+.drawer-principal .drawer-link.actual .drawer-num{color:var(--azul-tinta)}
+.drawer-principal .drawer-link.actual .ico-svg{color:var(--azul-tinta)}
+.drawer-num{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:500;font-size:1rem;color:#6b7794}
+.drawer-etiqueta{display:block;margin:14px 6px 4px;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--azul-tinta)}
+.drawer-secundario .drawer-link{display:flex;align-items:center;gap:12px;padding:10px 6px;font-size:.95rem;font-weight:600;color:var(--tinta-suave);border-radius:10px}
+.drawer-secundario .drawer-link .ico-svg,.drawer-secundario .drawer-link i{color:var(--azul-tinta);font-size:.9rem;width:1.1em}
+.drawer-secundario .drawer-link:hover{background:#fff;color:var(--tinta)}
+.drawer-cita{margin-top:auto;border-radius:var(--radio);padding:20px;display:flex;flex-direction:column;gap:6px;color:#fff;position:relative;overflow:hidden}
+.drawer-cita .etiqueta{margin-bottom:4px}
+.drawer-cita strong{font-size:1.05rem}
+.drawer-horario{font-size:.82rem;color:rgba(255,255,255,.85)}
+.drawer-cita .btn{margin-top:10px;justify-content:center;width:100%}
+.drawer-tel{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px;font-weight:700;font-size:.95rem;color:#fff}
+.drawer-tel .ico-svg{color:var(--turquesa)}
+.drawer-redes{display:flex;align-items:center;gap:8px;padding-top:4px}
+.drawer-redes a{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#fff;border:1px solid var(--borde);color:var(--tinta-suave)}
+.drawer-redes a:hover{background:var(--marino);color:#fff;border-color:var(--marino)}
+.drawer-pie{margin-left:auto;font-size:.74rem;font-weight:600;color:var(--tinta-suave)}
+/* Entrada escalonada de los elementos del panel */
+.mobile-drawer .drawer-link,.mobile-drawer .drawer-cita,.mobile-drawer .drawer-redes{opacity:0;transform:translateX(18px);transition:opacity .35s ease,transform .35s ease;transition-delay:calc(60ms + var(--i,0) * 35ms)}
+.mobile-drawer.open .drawer-link,.mobile-drawer.open .drawer-cita,.mobile-drawer.open .drawer-redes{opacity:1;transform:none}
+.drawer-cta{display:none}
+@media (prefers-reduced-motion:reduce){.mobile-drawer .drawer-link,.mobile-drawer .drawer-cita,.mobile-drawer .drawer-redes{transition:none}}
+/* El panel desplaza su contenido en pantallas bajas; nada se encoge ni se recorta */
+.mobile-drawer > *{flex-shrink:0}
+.drawer-cita{padding:18px}
+.drawer-cita .btn{margin-top:8px;padding:12px 18px}

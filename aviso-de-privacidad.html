@@ -14,9 +14,9 @@
   <!-- Estilos globales del sitio -->
     <script>try{if(sessionStorage.getItem('precarga'))document.documentElement.classList.add('sin-precarga')}catch(e){}</script>
   <link rel="stylesheet" href="fonts/fuentes.css?v=1"/>
-  <link rel="stylesheet" href="css/styles.css?v=20261007i"/>
+  <link rel="stylesheet" href="css/styles.css?v=20261007k"/>
   <script src="js/contenido.js?v=2" defer></script>
-  <script src="js/comun.js?v=8" defer></script>
+  <script src="js/comun.js?v=9" defer></script>
   <link rel="icon" href="images/marca/icono.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
@@ -155,24 +155,41 @@
   </div>
 
   <div class="drawer-overlay" hidden></div>
-  <aside id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+  <aside id="mobile-drawer" class="mobile-drawer" aria-hidden="true" aria-label="Menú">
     <div class="drawer-header">
-      <span class="brand-nombre">Dr. Daniel Mora</span>
-      <button class="drawer-close" aria-label="Cerrar menú">✕</button>
+      <span class="brand" aria-hidden="true">
+        <svg viewBox="0 0 100 100" focusable="false"><defs><linearGradient id="gp-drw" gradientUnits="userSpaceOnUse" x1="50" y1="92" x2="50" y2="22"><stop offset="0" stop-color="#1e2f97"/><stop offset=".55" stop-color="#1aa7ec"/><stop offset="1" stop-color="#4adfdd"/></linearGradient><linearGradient id="gl-drw" gradientUnits="userSpaceOnUse" x1="50" y1="62" x2="50" y2="26"><stop offset="0" stop-color="#797ef6"/><stop offset="1" stop-color="#7dd6f8"/></linearGradient></defs><g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="9"><path d="M43 92 V62 C43 54 40 49 35 42 L23 24" stroke="url(#gp-drw)"/><path d="M57 92 V62 C57 54 60 49 65 42 L77 24" stroke="url(#gp-drw)"/><path d="M30.5 59 L12.5 30" stroke="url(#gl-drw)"/><path d="M69.5 59 L87.5 30" stroke="url(#gl-drw)"/></g></svg>
+        <span class="brand-texto"><span class="brand-nombre">Dr. Daniel Mora</span><span class="brand-sub">Reumatología</span></span>
+      </span>
+      <button class="drawer-close" aria-label="Cerrar menú"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
     </div>
-    <ul class="drawer-links">
-      <li><a href="index.html" class="drawer-link">Inicio</a></li>
-      <li><a href="padecimientos.html" class="drawer-link">Padecimientos</a></li>
-      <li><a href="padecimientos.html#reumatologia" class="drawer-link">¿Qué es la reumatología?</a></li>
-      <li><a href="cuando-acudir.html" class="drawer-link">¿Cuándo acudir?</a></li>
-      <li><a href="cuando-acudir.html#preguntas" class="drawer-link">Preguntas frecuentes</a></li>
-      <li><a href="index.html#videos" class="drawer-link">Videos y podcast</a></li>
-      <li><a href="contacto.html" class="drawer-link">Consultorio y contacto</a></li>
-      <li><a href="aviso-de-privacidad.html" class="drawer-link">Aviso de privacidad</a></li>
-    </ul>
-    <a href="https://wa.me/524774011085?text=Hola%20doctor,%20quisiera%20agendar%20una%20cita" class="btn btn-wa drawer-cta" target="_blank" rel="noopener noreferrer">
-      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Agendar por WhatsApp
-    </a>
+    <nav class="drawer-nav" aria-label="Páginas">
+      <ol class="drawer-links drawer-principal">
+        <li><a href="index.html" class="drawer-link"><span class="drawer-num">01</span><span>Inicio</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+        <li><a href="padecimientos.html" class="drawer-link"><span class="drawer-num">02</span><span>Padecimientos</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+        <li><a href="cuando-acudir.html" class="drawer-link"><span class="drawer-num">03</span><span>¿Cuándo acudir?</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+        <li><a href="contacto.html" class="drawer-link"><span class="drawer-num">04</span><span>Consultorio y contacto</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+      </ol>
+      <span class="drawer-etiqueta">También</span>
+      <ul class="drawer-links drawer-secundario">
+        <li><a href="padecimientos.html#reumatologia" class="drawer-link"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>¿Qué es la reumatología?</span></a></li>
+        <li><a href="cuando-acudir.html#preguntas" class="drawer-link"><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i><span>Preguntas frecuentes</span></a></li>
+        <li><a href="index.html#videos" class="drawer-link"><i class="fa-solid fa-play" aria-hidden="true"></i><span>Videos y podcast</span></a></li>
+        <li><a href="aviso-de-privacidad.html" class="drawer-link"><i class="fa-solid fa-certificate" aria-hidden="true"></i><span>Aviso de privacidad</span></a></li>
+      </ul>
+    </nav>
+    <div class="drawer-cita tile-marca">
+      <span class="etiqueta">Agenda tu cita</span>
+      <strong>Lunes, miércoles y viernes</strong>
+      <span class="drawer-horario">10:00–13:00 · 18:00–20:00 h · Médica Campestre</span>
+      <a href="https://wa.me/524774011085?text=Hola%20doctor,%20quisiera%20agendar%20una%20cita" class="btn btn-blanco" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Agendar por WhatsApp</a>
+      <a href="tel:+524777173939" class="drawer-tel"><i class="fa-solid fa-phone" aria-hidden="true"></i> 477 717 3939</a>
+    </div>
+    <div class="drawer-redes">
+      <a href="https://www.instagram.com/reumatologodanielmora" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+      <a href="https://www.youtube.com/@articulacionsonora1860" target="_blank" rel="noopener noreferrer" aria-label="YouTube, podcast Articulación Sonora"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+      <span class="drawer-pie">Reumatólogo en León, Gto.</span>
+    </div>
   </aside>
 </nav>
 

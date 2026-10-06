@@ -3,7 +3,7 @@
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const SPRITE = (document.body.dataset.raiz || '') + 'images/marca/iconos.svg';
+  const SPRITE = (document.body.dataset.raiz || '') + 'images/marca/iconos.svg?v=2';
 
   // ---- Iconos: <i class="fa-solid fa-nombre"> -> SVG del sprite propio ----
   function iconos(ctx = document) {
@@ -90,6 +90,10 @@
     // El panel y el velo salen de la barra: la barra tiene backdrop-filter y, si quedan dentro,
     // se posicionan respecto a ella (panel recortado y velo sin cubrir la página).
     document.body.append(overlay, drawer);
+    // Página actual resaltada en el panel
+    const actual = (location.pathname.split('/').pop() || 'index.html');
+    $$('.drawer-link', drawer).forEach(a => { const destino = (a.getAttribute('href') || '').split('#')[0]; if (destino === actual && !a.getAttribute('href').includes('#')) a.classList.add('actual'); });
+    $$('.drawer-link, .drawer-cita, .drawer-redes', drawer).forEach((el, i) => el.style.setProperty('--i', i));
     const abrir = () => { drawer.classList.add('open'); overlay.hidden = false; toggle.classList.add('active'); drawer.setAttribute('aria-hidden', 'false'); toggle.setAttribute('aria-expanded', 'true'); document.documentElement.classList.add('menu-abierto'); setTimeout(() => drawer.querySelector('.drawer-link')?.focus({ preventScroll: true }), 320); };
     const cerrar = () => { drawer.classList.remove('open'); overlay.hidden = true; toggle.classList.remove('active'); drawer.setAttribute('aria-hidden', 'true'); toggle.setAttribute('aria-expanded', 'false'); document.documentElement.classList.remove('menu-abierto'); };
     toggle.addEventListener('click', () => drawer.classList.contains('open') ? cerrar() : abrir());

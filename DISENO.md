@@ -101,3 +101,7 @@ Cortina clara con el isotipo dibujándose trazo a trazo (cadenas pesadas y luego
 ## Móvil y tableta (auditoría 2026-10-06)
 
 Se auditaron las once páginas a 375, 768 y 1024 px con un script que busca desbordes horizontales, elementos fuera del viewport, zonas táctiles menores a 40 px y textos menores a 11.5 px. Ajustes: rótulos con tamaño mínimo legible, enlaces de texto con área táctil ≥ 40 px (pie, migas, teléfonos, "leer más", índice de la guía, acordeón), tiles de dato, redes y episodios del podcast a dos por fila en teléfonos (una por fila por debajo de 340 px), índice de la guía a dos columnas en tableta, fichas de padecimientos a dos por fila en tableta, títulos del héroe y de página reducidos en teléfonos. La cinta de padecimientos es el único elemento que sale del viewport, por diseño.
+
+## Menú móvil
+
+Panel lateral (`#mobile-drawer`) con el sistema del sitio: cabecera con isotipo y wordmark bajo doble filete, cuatro páginas principales numeradas en Fraunces itálica con filetes (la página actual en marino y azul), grupo "También" con iconos para las secciones secundarias, bloque saturado con horario, botón de WhatsApp y teléfono, y redes al pie. Los elementos entran escalonados. El panel y el velo se mueven al `body` al cargar (la barra tiene backdrop-filter) y el bloqueo de scroll se aplica en `html`. Si cambia el menú, editar el `<aside id="mobile-drawer">` en cada página (o en index.html y regenerar las de padecimientos).
