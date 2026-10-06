@@ -11,7 +11,7 @@ os.chdir(RAIZ)
 BASE = 'https://www.reumadanmora.com/'
 HOY = datetime.date.today().isoformat()
 index = open('index.html', encoding='utf-8').read()
-nav = re.search(r'<nav class="topbar".*?</nav>', index, re.S).group(0)
+nav = re.search(r'<nav class="topbar".*?</aside>\s*</nav>', index, re.S).group(0)
 footer = re.search(r'<footer>.*?</footer>', index, re.S).group(0)
 # enlaces de la portada -> index.html#...
 nav = nav.replace('href="#top"', 'href="index.html"').replace('href="#', 'href="index.html#')
