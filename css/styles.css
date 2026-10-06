@@ -850,3 +850,8 @@ footer{padding:36px 0 40px;border-top:1px solid var(--borde);margin-top:24px}
 .explora:hover .explora-ir{text-decoration:underline}
 .pag .migas{padding-top:18px}
 .pag .seccion:first-of-type{padding-top:28px}
+
+/* Índice de la guía: estado activo más visible */
+.guia-nav a{position:relative}
+.guia-nav a.activo{color:var(--marino);font-weight:800;background:var(--celeste);border-radius:10px;padding-left:12px}
+.guia-nav a.activo::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:3px;border-radius:3px;background:var(--azul)}

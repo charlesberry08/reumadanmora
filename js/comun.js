@@ -89,14 +89,35 @@
     window.matchMedia('(min-width: 981px)').addEventListener?.('change', e => { if (e.matches && drawer.classList.contains('open')) cerrar(); });
   }
 
-  // ---- Índice de la guía ----
+  // ---- Índice de la guía: resalta el capítulo que está bajo la barra y responde al clic ----
   function guiaIndice() {
     const enlaces = $$('.guia-nav a'); if (!enlaces.length) return;
-    const porId = Object.fromEntries(enlaces.map(a => [a.getAttribute('href').slice(1), a]));
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { enlaces.forEach(a => a.classList.remove('activo')); porId[e.target.id]?.classList.add('activo'); } });
-    }, { rootMargin: '-40% 0px -50% 0px' });
-    $$('.guia-cap').forEach(c => io.observe(c));
+    const caps = enlaces.map(a => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
+    const LIMITE = 140; // px bajo el borde superior (barra fija + margen)
+    let fijado = null, fijadoHasta = 0;
+    const marcar = (id) => enlaces.forEach(a => a.classList.toggle('activo', a.getAttribute('href') === '#' + id));
+    const calcular = () => {
+      if (fijado && performance.now() < fijadoHasta) { marcar(fijado); return; }
+      let actual = caps[0];
+      for (const c of caps) { if (c.getBoundingClientRect().top <= LIMITE) actual = c; }
+      // al llegar al final de la página, el último capítulo
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) actual = caps[caps.length - 1];
+      if (actual) marcar(actual.id);
+    };
+    let pendiente = false;
+    const onScroll = () => { if (!pendiente) { pendiente = true; requestAnimationFrame(() => { pendiente = false; calcular(); }); } };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    enlaces.forEach(a => a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href').slice(1), destino = document.getElementById(id);
+      if (!destino) return;
+      e.preventDefault();
+      fijado = id; fijadoHasta = performance.now() + 900; marcar(id);
+      destino.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+      history.replaceState(null, '', '#' + id);
+      setTimeout(calcular, 950);
+    }));
+    calcular();
   }
 
   // ---- Fachada ligera de YouTube ----
