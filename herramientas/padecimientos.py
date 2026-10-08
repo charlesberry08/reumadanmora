@@ -43,10 +43,10 @@ PADECIMIENTOS = [
    ('¿Por qué me piden tantos estudios?','Porque el lupus puede afectar órganos sin dar síntomas al principio, sobre todo el riñón. Revisarlos a tiempo evita daños.'),
   ]),
  dict(
-  slug='sindrome-de-sjogren', nombre='Síndrome de Sjögren', icono='fa-solid fa-droplet',
-  titulo='Síndrome de Sjögren en León, Gto. | Dr. Daniel Mora, reumatólogo',
-  descripcion='Síndrome de Sjögren: ojos y boca secos, fatiga y dolor articular. Diagnóstico y tratamiento con el Dr. Daniel Mora, reumatólogo en León, Guanajuato.',
-  h1='Síndrome de Sjögren', sub='Cuando ni las lágrimas ni la saliva alcanzan',
+  slug='enfermedad-de-sjogren', nombre='Enfermedad de Sjögren', icono='fa-solid fa-droplet',
+  titulo='Enfermedad de Sjögren en León, Gto. | Dr. Daniel Mora, reumatólogo',
+  descripcion='Enfermedad de Sjögren: ojos y boca secos, fatiga y dolor articular. Diagnóstico y tratamiento con el Dr. Daniel Mora, reumatólogo en León, Guanajuato.',
+  h1='Enfermedad de Sjögren', sub='Cuando ni las lágrimas ni la saliva alcanzan',
   lead='Es una enfermedad autoinmune que ataca las glándulas que producen lágrimas y saliva. El resultado: ojos secos como si tuvieran arena y boca seca que hace difícil tragar o hablar. Puede presentarse solo o acompañar a la artritis reumatoide o al lupus.',
   en_corto=[
    ('No es "falta de agua"', 'Tomar más líquidos no lo resuelve; el problema está en las glándulas, no en la sed.'),

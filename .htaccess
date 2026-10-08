@@ -12,7 +12,8 @@ Redirect 301 /reumatologia.html /padecimientos.html#reumatologia
 Redirect 301 /sintomas.html /cuando-acudir.html
 Redirect 301 /preguntas.html /cuando-acudir.html#preguntas
 Redirect 301 /videos.html /index.html#videos
-Redirect 301 /podcast.html /index.html#podcast
+Redirect 301 /podcast.html /index.html#videos
+Redirect 301 /sindrome-de-sjogren.html /enfermedad-de-sjogren.html
 Redirect 301 /consultorio.html /contacto.html#consultorio
 
 # Archivos internos fuera del público

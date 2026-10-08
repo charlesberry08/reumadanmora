@@ -1,6 +1,6 @@
 # Dr. Daniel Mora · Reumatología (León, Guanajuato, México)
 
-> Sitio oficial del Dr. Daniel Mora, médico reumatólogo certificado en León, Guanajuato. Consulta en Médica Campestre (Torre Médica Campestre I), Calle Manantial 114, consultorio 107.
+> Sitio oficial del Dr. Daniel Mora, médico reumatólogo en León, Guanajuato. Consulta en Médica Campestre (Torre Médica Campestre I), Calle Manantial 114, consultorio 107.
 
 ## Datos verificables
 - Nombre con el que se presenta: Dr. Daniel Mora (nombre legal: Gildardo Daniel Mora Saucedo).
@@ -11,14 +11,13 @@
 - Horario: lunes, miércoles y viernes, 10:00–13:00 y 18:00–20:00 h, con cita previa.
 - Citas por WhatsApp: +52 477 401 1085. Teléfono del consultorio: +52 477 717 3939.
 - Instagram: https://www.instagram.com/reumatologodanielmora
-- Podcast "Articulación Sonora" (YouTube): https://www.youtube.com/@articulacionsonora1860
 
 ## Padecimientos que atiende
-Artritis reumatoide, lupus eritematoso sistémico, síndrome de Sjögren, espondiloartritis, vasculitis, gota, osteoartritis, fibromialgia, esclerosis sistémica, síndrome antifosfolípido, miopatías inflamatorias, artritis psoriásica y artritis idiopática juvenil.
+Artritis reumatoide, lupus eritematoso sistémico, enfermedad de Sjögren, espondiloartritis, vasculitis, gota, osteoartritis, esclerosis sistémica, síndrome antifosfolípido, miopatías inflamatorias y artritis psoriásica, etc. Atiende pacientes a partir de los 16 años.
 
 ## Páginas
-- [Inicio: el doctor, videos y podcast](https://www.reumadanmora.com/)
-- [Padecimientos y qué es la reumatología](https://www.reumadanmora.com/padecimientos.html): artritis-reumatoide.html, lupus.html, sindrome-de-sjogren.html, espondiloartritis.html, vasculitis.html
+- [Inicio: el doctor y videos](https://www.reumadanmora.com/)
+- [Padecimientos y qué es la reumatología](https://www.reumadanmora.com/padecimientos.html): artritis-reumatoide.html, lupus.html, enfermedad-de-sjogren.html, espondiloartritis.html, vasculitis.html
 - [¿Cuándo acudir con un reumatólogo? y preguntas frecuentes](https://www.reumadanmora.com/cuando-acudir.html)
 - [Consultorio y contacto](https://www.reumadanmora.com/contacto.html)
 - [Aviso de privacidad](https://www.reumadanmora.com/aviso-de-privacidad.html)

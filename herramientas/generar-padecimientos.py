@@ -75,7 +75,7 @@ def pagina(p):
   <script>try{{if(sessionStorage.getItem('precarga'))document.documentElement.classList.add('sin-precarga')}}catch(e){{}}</script>
   <link rel="stylesheet" href="fonts/fuentes.css?v=1" />
   <link rel="stylesheet" href="css/styles.css?v={version}" />
-  <script src="js/contenido.js?v=2" defer></script>
+  <script src="js/contenido.js?v=3" defer></script>
   <script src="js/comun.js?v=9" defer></script>
   <link rel="icon" href="images/marca/icono.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="images/favicon.png" type="image/png" />
@@ -200,7 +200,7 @@ def pagina(p):
     <div class="ed-cabecera ed-cabecera-seccion reveal">
       <span>Preguntas frecuentes</span>
       <span class="ed-cabecera-num">N.º 03</span>
-      <span>Sobre {p['nombre'].lower() if p['slug'] != 'sindrome-de-sjogren' else 'el síndrome de Sjögren'}</span>
+      <span>Sobre {p['nombre'].lower() if p['slug'] != 'enfermedad-de-sjogren' else 'la enfermedad de Sjögren'}</span>
     </div>
     <div class="bento">
       <div class="tile faq-lista c-8 reveal">

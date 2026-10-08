@@ -74,7 +74,7 @@ Once huecos repartidos en el sitio (3 en Sobre el doctor, 2 en ¿Qué es la reum
 - **Iconos sin Font Awesome**: `images/marca/iconos.svg` es un sprite con los 33 iconos usados (Font Awesome Free, CC BY 4.0). El marcado sigue siendo `<i class="fa-solid fa-nombre">` y `js/comun.js` lo convierte en `<svg class="ico-svg"><use href="…#nombre">`. Para usar un icono nuevo: bajar su SVG de Font Awesome y agregar el `<symbol>` al sprite.
 - **Imágenes WebP responsivas** en `images/web/*-600/-1200/-1800.webp` y `*-full.webp` (retratos con transparencia). Los `<img>` llevan `srcset`/`sizes`; los espacios de imagen cargan `-full.webp` y caen al original si no existe. Para una foto nueva: dejar el JPG en `images/web/` y generar sus WebP (script en el historial o PIL).
 - **`js/comun.js`**: iconos, menú, aparición, contador, índice de la guía, espacios de imagen y fachada de YouTube, compartido por todas las páginas. `index.html` solo conserva la configuración (REDES, VIDEOS, PODCAST) y `window.renderPagina`.
-- **Páginas de padecimientos** (`artritis-reumatoide.html`, `lupus.html`, `sindrome-de-sjogren.html`, `espondiloartritis.html`, `vasculitis.html`): se generan con `python3 herramientas/generar-padecimientos.py` a partir de `herramientas/padecimientos.py` (texto en tono llano; el doctor debe revisarlo). Cada una lleva MedicalWebPage + MedicalCondition + FAQPage + migas, `lastReviewed` con la fecha de generación, y enlaza a las demás.
+- **Páginas de padecimientos** (`artritis-reumatoide.html`, `lupus.html`, `enfermedad-de-sjogren.html`, `espondiloartritis.html`, `vasculitis.html`): se generan con `python3 herramientas/generar-padecimientos.py` a partir de `herramientas/padecimientos.py` (texto en tono llano; el doctor debe revisarlo). Cada una lleva MedicalWebPage + MedicalCondition + FAQPage + migas, `lastReviewed` con la fecha de generación, y enlaza a las demás.
 - **Preguntas frecuentes visibles** (`#preguntas`, N.º 04) alineadas una a una con el FAQPage del JSON-LD de la portada.
 - **Accesibilidad**: enlace "Ir al contenido", `<main id="contenido">`, foco visible, números decorativos con contraste ≥ 4.5:1, `aria-current` en migas.
 - **404.html** propia (noindex) con enlaces útiles; `.htaccess` la sirve como ErrorDocument.
@@ -111,3 +111,10 @@ Panel lateral (`#mobile-drawer`) con el sistema del sitio: cabecera con isotipo 
 ## Aviso de privacidad (rediseño 2026-10-06)
 
 Misma estructura que el resto: migas, cabecera corrida, bloque saturado con el h1, el fundamento y el párrafo del responsable (nombre legal completo, a propósito), tile celeste con los datos de contacto y botón "Solicitar derechos ARCO", y diez secciones con cabecera editorial numerada (N.º 01–10) y tiles `.aviso-tile` con listas de filete. El texto legal no cambió; fecha de última actualización 25 de agosto de 2025. Al final, bloque de contacto y el pie del sitio. Las listas (`.aviso-lista`, `.pag-senales`) usan viñeta absoluta en vez de retícula, para que el texto con negritas no se parta.
+
+## Cambios pedidos por el doctor (2026-10-08)
+
+- "Reumatólogo" sin "certificado" en todo el sitio (héroe, ficha, metadatos, schema).
+- "Enfermedad de Sjögren" (antes "síndrome"); la página pasó a `enfermedad-de-sjogren.html` con 301 desde la ruta anterior (.htaccess y Caddy). En las listas de padecimientos: "…vasculitis, enfermedad de Sjögren, etc." (sin "y").
+- Podcast eliminado por completo: sección, configuración `PODCAST` en `js/contenido.js`, YouTube en redes y pie, nodos PodcastSeries/Episode del schema, llms.txt. La sección de videos se queda con la presentación.
+- No atiende fibromialgia ni menores de 16 años: fuera "Fibromialgia" y "Artritis idiopática juvenil" de chips, cinta, schema y llms; nota de edad mínima en "¿Es solo cosa de la edad?" y nueva pregunta frecuente "¿Atiende niños o adolescentes?".

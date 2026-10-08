@@ -27,8 +27,8 @@
   <link rel="preload" as="font" href="fonts/fraunces-variable.woff2" type="font/woff2" crossorigin />
     <script>try{if(sessionStorage.getItem('precarga'))document.documentElement.classList.add('sin-precarga')}catch(e){}</script>
   <link rel="stylesheet" href="fonts/fuentes.css?v=1" />
-  <link rel="stylesheet" href="css/styles.css?v=20261007t" />
-  <script src="js/contenido.js?v=2" defer></script>
+  <link rel="stylesheet" href="css/styles.css?v=20261008a" />
+  <script src="js/contenido.js?v=3" defer></script>
   <script src="js/comun.js?v=9" defer></script>
 
   <link rel="icon" href="images/marca/icono.svg" type="image/svg+xml" />
@@ -169,6 +169,14 @@
         },
         {
           "@type": "Question",
+          "name": "¿Atiende niños o adolescentes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El doctor atiende pacientes a partir de los 16 años. Para menores de esa edad, lo indicado es acudir con un reumatólogo pediatra."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "¿Qué pasa en la consulta?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -226,8 +234,7 @@
         "addressCountry": "MX"
       },
       "sameAs": [
-        "https://www.instagram.com/reumatologodanielmora",
-        "https://www.youtube.com/@articulacionsonora1860"
+        "https://www.instagram.com/reumatologodanielmora"
       ]
     }
   ]
@@ -320,7 +327,7 @@
       <ul class="drawer-links drawer-secundario">
         <li><a href="padecimientos.html#reumatologia" class="drawer-link"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>¿Qué es la reumatología?</span></a></li>
         <li><a href="cuando-acudir.html#preguntas" class="drawer-link"><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i><span>Preguntas frecuentes</span></a></li>
-        <li><a href="index.html#videos" class="drawer-link"><i class="fa-solid fa-play" aria-hidden="true"></i><span>Videos y podcast</span></a></li>
+        <li><a href="index.html#videos" class="drawer-link"><i class="fa-solid fa-play" aria-hidden="true"></i><span>Videos</span></a></li>
         <li><a href="aviso-de-privacidad.html" class="drawer-link"><i class="fa-solid fa-certificate" aria-hidden="true"></i><span>Aviso de privacidad</span></a></li>
       </ul>
     </nav>
@@ -333,7 +340,6 @@
     </div>
     <div class="drawer-redes">
       <a href="https://www.instagram.com/reumatologodanielmora" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-      <a href="https://www.youtube.com/@articulacionsonora1860" target="_blank" rel="noopener noreferrer" aria-label="YouTube, podcast Articulación Sonora"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
       <span class="drawer-pie">Reumatólogo en León, Gto.</span>
     </div>
   </aside>
@@ -394,7 +400,7 @@
           <dl class="guia-lista">
             <div class="guia-item"><dt>Fiebre sin causa aparente</dt><dd>Puede indicar lupus, vasculitis u otra enfermedad autoinmune sistémica.</dd></div>
             <div class="guia-item"><dt>Pérdida de peso involuntaria</dt><dd>Común en procesos inflamatorios crónicos o activos.</dd></div>
-            <div class="guia-item"><dt>Fatiga severa</dt><dd>Síntoma frecuente en lupus, artritis reumatoide y síndrome de Sjögren.</dd></div>
+            <div class="guia-item"><dt>Fatiga severa</dt><dd>Síntoma frecuente en lupus, artritis reumatoide y enfermedad de Sjögren.</dd></div>
           </dl>
         </article>
         <article class="guia-cap" id="guia-musculares">
@@ -426,7 +432,7 @@
           </header>
           <dl class="guia-lista">
             <div class="guia-item"><dt>Uveítis o escleritis</dt><dd>Inflamación ocular recurrente relacionada con espondiloartritis o lupus.</dd></div>
-            <div class="guia-item"><dt>Sequedad ocular o bucal</dt><dd>Característica principal del síndrome de Sjögren.</dd></div>
+            <div class="guia-item"><dt>Sequedad ocular o bucal</dt><dd>Característica principal del enfermedad de Sjögren.</dd></div>
           </dl>
         </article>
         <article class="guia-cap" id="guia-hemato-inmunologicos">
@@ -507,23 +513,27 @@
           <div class="faq-a"><p>Tus estudios previos (aunque creas que no sirven), la lista de los medicamentos que tomas y tus dudas apuntadas. Lo que no tengas, el doctor te indica cómo conseguirlo.</p></div>
         </details>
         <details class="faq-item">
-          <summary><span class="faq-num">07</span><span class="faq-q">¿Qué pasa en la consulta?</span><i class="fa-solid fa-circle-info" aria-hidden="true"></i></summary>
+          <summary><span class="faq-num">07</span><span class="faq-q">¿Atiende niños o adolescentes?</span><i class="fa-solid fa-circle-info" aria-hidden="true"></i></summary>
+          <div class="faq-a"><p>El doctor atiende pacientes a partir de los 16 años. Para menores de esa edad, lo indicado es acudir con un reumatólogo pediatra.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-num">08</span><span class="faq-q">¿Qué pasa en la consulta?</span><i class="fa-solid fa-circle-info" aria-hidden="true"></i></summary>
           <div class="faq-a"><p>El doctor platica contigo, revisa tus articulaciones una por una y, si hace falta, pide estudios de sangre o de imagen. Con eso arma un plan y te explica qué tienes y qué sigue.</p></div>
         </details>
         <details class="faq-item">
-          <summary><span class="faq-num">08</span><span class="faq-q">¿Cuándo debo acudir con un reumatólogo?</span><i class="fa-solid fa-circle-info" aria-hidden="true"></i></summary>
+          <summary><span class="faq-num">09</span><span class="faq-q">¿Cuándo debo acudir con un reumatólogo?</span><i class="fa-solid fa-circle-info" aria-hidden="true"></i></summary>
           <div class="faq-a"><p>Cuando hay dolor articular que empeora con el reposo y mejora al moverse, rigidez al despertar de más de 30 minutos, hinchazón sin golpe, fiebre o pérdida de peso sin causa, fatiga severa, dedos que se ponen blancos con el frío, erupciones, sequedad de ojos o boca, ojo rojo recurrente, abortos recurrentes o trombosis, anemia o plaquetas bajas, o cuando otro especialista recomienda valoración reumatológica.</p></div>
         </details>
         <details class="faq-item">
-          <summary><span class="faq-num">09</span><span class="faq-q">¿El dolor de las articulaciones es por el frío o la humedad?</span><i class="fa-solid fa-circle-info" aria-hidden="true"></i></summary>
+          <summary><span class="faq-num">10</span><span class="faq-q">¿El dolor de las articulaciones es por el frío o la humedad?</span><i class="fa-solid fa-circle-info" aria-hidden="true"></i></summary>
           <div class="faq-a"><p>El clima puede hacer que se sienta más, pero no es la causa. La causa está en la articulación o en las defensas.</p></div>
         </details>
         <details class="faq-item">
-          <summary><span class="faq-num">10</span><span class="faq-q">¿Dónde consulta el Dr. Daniel Mora y en qué horario?</span><i class="fa-solid fa-circle-info" aria-hidden="true"></i></summary>
+          <summary><span class="faq-num">11</span><span class="faq-q">¿Dónde consulta el Dr. Daniel Mora y en qué horario?</span><i class="fa-solid fa-circle-info" aria-hidden="true"></i></summary>
           <div class="faq-a"><p>En Médica Campestre, Calle Manantial 114, consultorio 107, León, Guanajuato. Lunes, miércoles y viernes de 10:00 a 13:00 y de 18:00 a 20:00 h, con cita previa.</p></div>
         </details>
         <details class="faq-item">
-          <summary><span class="faq-num">11</span><span class="faq-q">¿Cómo agendo una cita?</span><i class="fa-solid fa-circle-info" aria-hidden="true"></i></summary>
+          <summary><span class="faq-num">12</span><span class="faq-q">¿Cómo agendo una cita?</span><i class="fa-solid fa-circle-info" aria-hidden="true"></i></summary>
           <div class="faq-a"><p>Por WhatsApp al 477 401 1085 o llamando al consultorio al 477 717 3939. Si escribes, dinos tu nombre y qué te está pasando en una línea; con eso te orientamos y agendamos.</p></div>
         </details>
       </div>
