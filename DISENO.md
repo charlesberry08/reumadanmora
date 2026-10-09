@@ -118,3 +118,7 @@ Misma estructura que el resto: migas, cabecera corrida, bloque saturado con el h
 - "Enfermedad de Sjögren" (antes "síndrome"); la página pasó a `enfermedad-de-sjogren.html` con 301 desde la ruta anterior (.htaccess y Caddy). En las listas de padecimientos: "…vasculitis, enfermedad de Sjögren, etc." (sin "y").
 - Podcast eliminado por completo: sección, configuración `PODCAST` en `js/contenido.js`, YouTube en redes y pie, nodos PodcastSeries/Episode del schema, llms.txt. La sección de videos se queda con la presentación.
 - No atiende fibromialgia ni menores de 16 años: fuera "Fibromialgia" y "Artritis idiopática juvenil" de chips, cinta, schema y llms; nota de edad mínima en "¿Es solo cosa de la edad?" y nueva pregunta frecuente "¿Atiende niños o adolescentes?".
+
+## Revisión SEO (2026-10-09)
+
+Auditoría automática de las 11 páginas: títulos de 43 a 60 caracteres y únicos, descripciones de 110 a 158 caracteres y únicas, canónico y og:url correctos, Open Graph y Twitter completos (se repusieron en el aviso), un solo h1 por página (se añadió en padecimientos, cuando-acudir y contacto), sin saltos de nivel de encabezado (títulos de sección promovidos a h2 con los mismos estilos; h2 ocultos `.sr-only` en las páginas de padecimientos; los datos rápidos del héroe dejaron de ser h4), JSON-LD válido sin restos de podcast, "certificado", fibromialgia ni la URL vieja de Sjögren, `speakable` apuntando a selectores reales, pie con enlaces a los cinco padecimientos en todas las páginas (enlazado interno) y sitemap con fecha del día. Cero enlaces rotos.

@@ -151,6 +151,7 @@ def pagina(p):
       <span class="ed-cabecera-num">N.º 01</span>
       <span>Tres cosas que conviene saber</span>
     </div>
+    <h2 class="sr-only">{p['nombre']} en corto: tres cosas que conviene saber</h2>
     <div class="bento">
 {en_corto}    </div>
   </div>
@@ -201,6 +202,7 @@ def pagina(p):
       <span class="ed-cabecera-num">N.º 03</span>
       <span>Sobre {p['nombre'].lower() if p['slug'] != 'enfermedad-de-sjogren' else 'la enfermedad de Sjögren'}</span>
     </div>
+    <h2 class="sr-only">Preguntas frecuentes sobre {p['nombre'].lower()}</h2>
     <div class="bento">
       <div class="tile faq-lista c-8 reveal">
 {faq}      </div>

@@ -292,7 +292,7 @@ html.menu-abierto{overflow:hidden}
 .consultorio .tile-foto{min-height:240px}
 .consultorio .tile-foto.grande{min-height:420px}
 .direccion{display:flex;flex-direction:column;gap:14px;justify-content:center}
-.direccion h3{color:var(--marino-oscuro)}
+.direccion h3,.direccion h2{color:var(--marino-oscuro)}
 .direccion .linea{display:flex;gap:12px;align-items:flex-start;color:var(--tinta)}
 .direccion .linea i{color:var(--azul-tinta);margin-top:4px}
 .direccion .linea small{display:block;color:var(--tinta-suave);font-size:.86rem}
@@ -688,7 +688,7 @@ footer{padding:36px 0 40px;border-top:1px solid var(--borde);margin-top:24px}
 .guia-cap:last-child{border-bottom:0}
 .guia-cap-cabeza{display:flex;align-items:baseline;gap:14px;margin-bottom:14px}
 .guia-cap-cabeza .guia-num{font-size:1.6rem;color:var(--azul-tinta)}
-.guia-cap-cabeza h3{font-size:1.3rem;letter-spacing:-0.02em;color:var(--tinta)}
+.guia-cap-cabeza h3,.guia-cap-cabeza h2{font-size:1.3rem;letter-spacing:-0.02em;color:var(--tinta)}
 .guia-cap-cabeza i{margin-left:auto;color:var(--celeste-borde);font-size:1.1rem;align-self:center}
 .guia-lista{display:flex;flex-direction:column}
 .guia-item{
@@ -723,7 +723,7 @@ footer{padding:36px 0 40px;border-top:1px solid var(--borde);margin-top:24px}
 .reuma-lead{font-size:1.1rem;line-height:1.6;color:#fff !important;max-width:52ch}
 .reuma-intro p{color:rgba(255,255,255,.88);max-width:56ch}
 .reuma-no{display:flex;flex-direction:column;gap:10px}
-.reuma-no h3{font-size:1.25rem;color:var(--tinta)}
+.reuma-no h3,.reuma-no h2{font-size:1.25rem;color:var(--tinta)}
 .reuma-vs{display:flex;flex-direction:column;gap:10px;margin-top:6px}
 .reuma-vs div{padding:12px 14px;border-radius:var(--radio-sm);background:var(--fondo);border:1px solid var(--borde)}
 .reuma-vs dt{display:flex;align-items:center;gap:9px;font-weight:700;color:var(--tinta);font-size:.95rem}
@@ -732,16 +732,16 @@ footer{padding:36px 0 40px;border-top:1px solid var(--borde);margin-top:24px}
 .reuma-vs div:last-child{background:var(--celeste);border-color:var(--celeste-borde)}
 .reuma-dato{display:flex;flex-direction:column;gap:8px}
 .reuma-num{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:500;font-size:1.6rem;color:var(--azul-tinta);line-height:1}
-.reuma-dato h3{font-size:1.15rem;color:var(--tinta);letter-spacing:-0.01em}
+.reuma-dato h3,.reuma-dato h2{font-size:1.15rem;color:var(--tinta);letter-spacing:-0.01em}
 .reuma-dato p{font-size:.95rem;line-height:1.6}
-.reuma-mitos h3{font-size:1.3rem;color:var(--marino-oscuro);margin:4px 0 12px}
+.reuma-mitos h3,.reuma-mitos h2{font-size:1.3rem;color:var(--marino-oscuro);margin:4px 0 12px}
 .reuma-mitos ul{display:flex;flex-direction:column}
 .reuma-mitos li{display:grid;grid-template-columns:minmax(0,15rem) 1fr;gap:4px 24px;padding:12px 0;border-top:1px dashed var(--celeste-borde)}
 .reuma-mitos li:first-child{border-top:0;padding-top:0}
 .reuma-mitos li strong{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:500;font-size:1.05rem;color:var(--marino)}
 .reuma-mitos li span{font-size:.92rem;color:var(--tinta-suave);line-height:1.5}
 .reuma-cta{display:flex;flex-direction:column;gap:10px;justify-content:center}
-.reuma-cta h3{font-size:1.25rem;color:var(--marino-oscuro)}
+.reuma-cta h3,.reuma-cta h2{font-size:1.25rem;color:var(--marino-oscuro)}
 .reuma-cta .btn{align-self:flex-start}
 .reuma-cta .btn + .btn{margin-top:2px}
 @media (max-width:640px){
@@ -1076,3 +1076,13 @@ html.sin-precarga #precarga{display:none}
 .aviso-tile .chip{display:inline-block;padding:3px 10px;border-radius:999px;background:var(--celeste);border:1px solid var(--celeste-borde);color:var(--marino);font-weight:700;font-size:.82rem}
 .aviso-tile .kicker{font-weight:700;color:var(--tinta)}
 @media (max-width:640px){ .aviso-intro{padding:26px} }
+
+/* Accesibilidad / SEO: encabezados solo para lectores de pantalla y buscadores */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.tile-dato .dato-titulo{font-size:.98rem;font-weight:700;color:var(--tinta);margin:0}
+@media (max-width:640px){ .tile-dato .dato-titulo{font-size:.92rem} }
+/* Pie: segunda línea de enlaces a padecimientos */
+.footer-pad{width:100%;font-size:.84rem}
+
+.direccion h2{font-size:1.15rem}
+.seccion-cabecera h1{font-size:clamp(1.7rem,3vw,2.3rem)}

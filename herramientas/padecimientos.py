@@ -4,8 +4,8 @@
 PADECIMIENTOS = [
  dict(
   slug='artritis-reumatoide', nombre='Artritis reumatoide', icono='fa-solid fa-hand-dots',
-  titulo='Artritis reumatoide en León, Gto. | Dr. Daniel Mora, reumatólogo',
-  descripcion='Artritis reumatoide: señales, diagnóstico y tratamiento con el Dr. Daniel Mora, reumatólogo en León, Guanajuato. Tratarla a tiempo evita daño en las articulaciones.',
+  titulo='Artritis reumatoide en León, Gto. | Dr. Daniel Mora',
+  descripcion='Artritis reumatoide: señales, diagnóstico y tratamiento con el Dr. Daniel Mora, reumatólogo en León. Tratarla a tiempo evita daño en las articulaciones.',
   h1='Artritis reumatoide', sub='Cuando tus manos amanecen tiesas y no es "por la edad"',
   lead='Es una enfermedad autoinmune: las defensas, que deberían cuidarte, se confunden y atacan el revestimiento de tus articulaciones. Suele empezar en manos, muñecas y pies, y casi siempre de los dos lados a la vez. La buena noticia: hoy se controla muy bien si se atiende a tiempo.',
   en_corto=[
@@ -25,7 +25,7 @@ PADECIMIENTOS = [
  dict(
   slug='lupus', nombre='Lupus eritematoso sistémico', icono='fa-solid fa-sun',
   titulo='Lupus en León, Gto. | Dr. Daniel Mora, reumatólogo',
-  descripcion='Lupus eritematoso sistémico: señales, diagnóstico y tratamiento con el Dr. Daniel Mora, reumatólogo en León, Guanajuato. Seguimiento cercano para controlar los brotes.',
+  descripcion='Lupus eritematoso sistémico: señales, diagnóstico y tratamiento con el Dr. Daniel Mora, reumatólogo en León, Gto. Seguimiento cercano para controlar brotes.',
   h1='Lupus eritematoso sistémico', sub='La enfermedad de las mil caras (y por eso se tarda en reconocer)',
   lead='El lupus es una enfermedad autoinmune que puede afectar la piel, las articulaciones, el riñón, la sangre y otros órganos. Va y viene por brotes. No hay dos casos iguales, y por eso el seguimiento cercano con un reumatólogo es parte del tratamiento, no un extra.',
   en_corto=[
@@ -44,7 +44,7 @@ PADECIMIENTOS = [
   ]),
  dict(
   slug='enfermedad-de-sjogren', nombre='Enfermedad de Sjögren', icono='fa-solid fa-droplet',
-  titulo='Enfermedad de Sjögren en León, Gto. | Dr. Daniel Mora, reumatólogo',
+  titulo='Enfermedad de Sjögren en León, Gto. | Dr. Daniel Mora',
   descripcion='Enfermedad de Sjögren: ojos y boca secos, fatiga y dolor articular. Diagnóstico y tratamiento con el Dr. Daniel Mora, reumatólogo en León, Guanajuato.',
   h1='Enfermedad de Sjögren', sub='Cuando ni las lágrimas ni la saliva alcanzan',
   lead='Es una enfermedad autoinmune que ataca las glándulas que producen lágrimas y saliva. El resultado: ojos secos como si tuvieran arena y boca seca que hace difícil tragar o hablar. Puede presentarse solo o acompañar a la artritis reumatoide o al lupus.',
@@ -64,8 +64,8 @@ PADECIMIENTOS = [
   ]),
  dict(
   slug='espondiloartritis', nombre='Espondiloartritis', icono='fa-solid fa-person-walking',
-  titulo='Espondiloartritis en León, Gto. | Dr. Daniel Mora, reumatólogo',
-  descripcion='Espondiloartritis y espondilitis anquilosante: dolor lumbar inflamatorio en jóvenes. Diagnóstico y tratamiento con el Dr. Daniel Mora, reumatólogo en León, Guanajuato.',
+  titulo='Espondiloartritis en León, Gto. | Dr. Daniel Mora',
+  descripcion='Espondiloartritis: dolor lumbar inflamatorio que mejora al moverse. Diagnóstico y tratamiento con el Dr. Daniel Mora, reumatólogo en León, Guanajuato.',
   h1='Espondiloartritis', sub='El dolor de espalda que mejora cuando te mueves (sí, al revés de lo normal)',
   lead='Es un grupo de enfermedades que inflaman la columna y las articulaciones de la pelvis, y a veces talones, rodillas u ojos. Suele empezar antes de los 45 años y se confunde con "dolor de espalda común" durante años. La pista: es peor en reposo y de madrugada, y mejora al moverse.',
   en_corto=[
