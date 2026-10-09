@@ -130,7 +130,7 @@ def pagina(p):
     </nav>
   </div>
   <div class="container bento" style="margin-top:16px">
-    <div class="tile tile-marca pag-hero c-7 r-2 reveal">
+    <div class="tile tile-marca pag-hero c-12 reveal">
       <span class="ico"><i class="{p['icono']}" aria-hidden="true"></i></span>
       <span class="etiqueta">Padecimiento · Reumatología en León, Gto.</span>
       <h1>{p['h1']}</h1>
@@ -141,7 +141,6 @@ def pagina(p):
         <a href="#senales" class="btn btn-fantasma"><i class="fa-solid fa-list-check" aria-hidden="true"></i> Ver las señales</a>
       </div>
     </div>
-    <figure class="tile tile-foto tile-imagen c-5 r-2 reveal" data-imagen="" data-alt="" data-sugerencia="Imagen relacionada con {p['nombre'].lower()}: articulación afectada, exploración o paciente en consulta"></figure>
   </div>
 </header>
 

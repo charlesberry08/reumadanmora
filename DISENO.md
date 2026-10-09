@@ -58,7 +58,7 @@ El héroe usa `images/web/doctor-bn.png`: el retrato **en blanco y negro** (Carl
 
 ## Espacios para imágenes
 
-Once huecos repartidos en el sitio (3 en Sobre el doctor, 2 en ¿Qué es la reumatología?, 2 en Padecimientos, 1 en Síntomas, 2 en Consultorio, 1 en Contacto), como `<figure class="tile tile-foto tile-imagen …">`. Se llenan con atributos: `data-imagen` (ruta, ideal en `images/web/`, máx. 1800px), `data-alt` (texto alternativo) y opcionalmente `data-pie` / `data-pie2` (pie de foto). Sin `data-imagen` el tile muestra "Espacio para imagen" con la sugerencia de qué fotografiar (`data-sugerencia`). El primero ya tiene la foto a color del doctor (`doctor-color.jpg`).
+Los espacios vacíos se retiraron el 2026-10-09 a pedido de Carlos. El mecanismo sigue en `js/comun.js`: para poner una foto se agrega `<figure class="tile tile-foto tile-imagen c-N reveal" data-imagen="images/web/archivo.jpg" data-alt="…">` donde se quiera.
 
 ## SEO y motores de IA (2026-10-06)
 
