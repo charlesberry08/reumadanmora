@@ -73,10 +73,11 @@ def pagina(p):
   <link rel="preload" as="font" href="fonts/manrope-variable.woff2" type="font/woff2" crossorigin />
   <link rel="preload" as="font" href="fonts/fraunces-variable.woff2" type="font/woff2" crossorigin />
   <script>try{{if(sessionStorage.getItem('precarga'))document.documentElement.classList.add('sin-precarga')}}catch(e){{}}</script>
+  <script>(function(){{try{{var t=localStorage.getItem('tema');if(t!=='oscuro'&&t!=='claro'){{t=window.matchMedia('(prefers-color-scheme: dark)').matches?'oscuro':'claro'}}document.documentElement.setAttribute('data-tema',t)}}catch(e){{document.documentElement.setAttribute('data-tema','claro')}}}})();</script>
   <link rel="stylesheet" href="fonts/fuentes.css?v=1" />
   <link rel="stylesheet" href="css/styles.css?v={version}" />
   <script src="js/contenido.js?v=3" defer></script>
-  <script src="js/comun.js?v=9" defer></script>
+  <script src="js/comun.js?v=10" defer></script>
   <link rel="icon" href="images/marca/icono.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="images/favicon.png" type="image/png" />
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />

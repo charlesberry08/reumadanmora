@@ -3,7 +3,7 @@
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const SPRITE = (document.body.dataset.raiz || '') + 'images/marca/iconos.svg?v=2';
+  const SPRITE = (document.body.dataset.raiz || '') + 'images/marca/iconos.svg?v=3';
 
   // ---- Iconos: <i class="fa-solid fa-nombre"> -> SVG del sprite propio ----
   function iconos(ctx = document) {
@@ -79,6 +79,24 @@
     const medir = () => { const w = img.getBoundingClientRect().width; if (w) fig.style.setProperty('--foto-w', w + 'px'); };
     medir(); img.addEventListener('load', medir); window.addEventListener('resize', medir);
     if (document.fonts) document.fonts.ready.then(medir);
+  }
+
+  // ---- Modo claro / oscuro ----
+  function tema() {
+    const raiz = document.documentElement, medio = window.matchMedia('(prefers-color-scheme: dark)');
+    let guardado = null; try { guardado = localStorage.getItem('tema'); } catch (e) {}
+    const pintar = (t) => {
+      raiz.setAttribute('data-tema', t);
+      $$('.tema-toggle').forEach(b => { const osc = t === 'oscuro'; b.setAttribute('aria-pressed', String(osc)); b.setAttribute('aria-label', osc ? 'Activar modo claro' : 'Activar modo oscuro'); });
+      const meta = document.querySelector('meta[name="theme-color"]'); if (meta) meta.setAttribute('content', t === 'oscuro' ? '#0a1124' : '#1e2f97');
+    };
+    pintar(raiz.getAttribute('data-tema') || (medio.matches ? 'oscuro' : 'claro'));
+    $$('.tema-toggle').forEach(b => b.addEventListener('click', () => {
+      const nuevo = raiz.getAttribute('data-tema') === 'oscuro' ? 'claro' : 'oscuro';
+      raiz.classList.add('tema-transicion'); setTimeout(() => raiz.classList.remove('tema-transicion'), 450);
+      pintar(nuevo); guardado = nuevo; try { localStorage.setItem('tema', nuevo); } catch (e) {}
+    }));
+    medio.addEventListener?.('change', e => { if (!guardado) pintar(e.matches ? 'oscuro' : 'claro'); });
   }
 
   // ---- Topbar y menú móvil ----
@@ -173,6 +191,7 @@
     espaciosImagen();
     iconos();
     retrato();
+    tema();
     menu();
     contadores();
     guiaIndice();

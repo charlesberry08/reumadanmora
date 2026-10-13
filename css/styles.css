@@ -1086,3 +1086,92 @@ html.sin-precarga #precarga{display:none}
 
 .direccion h2{font-size:1.15rem}
 .seccion-cabecera h1{font-size:clamp(1.7rem,3vw,2.3rem)}
+
+/* =========================================================
+   Auditoría móvil (2026-10-13)
+   ========================================================= */
+@media (max-width:640px){
+  /* Rótulos en mayúsculas: mínimo legible de 12 px */
+  .etiqueta,.ed-cabecera,.ficha-etiqueta,.ficha-datos,.ed-firma-rol,.formacion dt,.drawer-etiqueta,.video-tema{font-size:.76rem}
+  .ed-cabecera{letter-spacing:.1em;justify-content:flex-start}
+  /* Cabecera editorial en una línea: rótulo + número; el tercer rótulo es decorativo */
+  .ed-cabecera > span:not(.ed-cabecera-num):last-child{display:none}
+  .ed-cabecera > span:first-child{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  /* Barra más baja para ganar pantalla */
+  .topbar-inner{height:64px}
+  .brand svg{width:40px;height:40px}
+}
+/* Zonas táctiles de al menos 44 px */
+.migas a{display:inline-block;padding:12px 6px;min-width:44px;text-align:center}
+.footer-links a{display:inline-block;padding:12px 4px;min-width:44px}
+.aviso-datos a{display:inline-block;padding:9px 0}
+
+/* =========================================================
+   Interruptor de tema
+   ========================================================= */
+.tema-toggle{
+  width:42px;height:42px;border-radius:12px;border:1px solid var(--borde);background:var(--tarjeta);
+  color:var(--tinta);display:grid;place-items:center;cursor:pointer;flex:none;position:relative;
+  transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease;
+}
+.tema-toggle:hover{border-color:var(--azul);color:var(--azul-tinta)}
+.tema-toggle:active{transform:scale(.94)}
+.tema-toggle .ico-svg{position:absolute;font-size:1.05rem;transition:opacity .25s ease,transform .35s cubic-bezier(.2,.7,.2,1)}
+.tema-toggle .t-sol{opacity:0;transform:rotate(-60deg) scale(.6)}
+[data-tema="oscuro"] .tema-toggle .t-luna{opacity:0;transform:rotate(60deg) scale(.6)}
+[data-tema="oscuro"] .tema-toggle .t-sol{opacity:1;transform:none}
+@media (max-width:980px){
+  .tema-toggle{margin-left:auto}
+  .menu-toggle{margin-left:8px}
+}
+html.tema-transicion,html.tema-transicion *{transition:background-color .35s ease,color .35s ease,border-color .35s ease,fill .35s ease !important}
+
+/* =========================================================
+   Modo oscuro
+   Base marino profundo; la paleta de marca se conserva en bloques y acentos.
+   ========================================================= */
+[data-tema="oscuro"]{
+  color-scheme:dark;
+  --fondo:#0a1124;
+  --tarjeta:#111a33;
+  --tinta:#e7ecf8;
+  --tinta-suave:#a7b2ce;
+  --borde:#24304f;
+  --azul-tinta:#7dd6f8;
+  --lavanda-tinta:#a9adff;
+  --marino:#c9d6ff;
+  --marino-oscuro:#e2eaff;
+  --celeste:#122644;
+  --celeste-borde:#21406b;
+  --sombra:0 1px 2px rgba(0,0,0,.35),0 16px 36px -18px rgba(0,0,0,.7);
+  --sombra-hover:0 2px 4px rgba(0,0,0,.4),0 24px 46px -18px rgba(0,0,0,.75);
+}
+[data-tema="oscuro"] body{background:var(--fondo)}
+[data-tema="oscuro"] ::selection{background:#2a5bd7;color:#fff}
+[data-tema="oscuro"] .topbar{background:rgba(10,17,36,.82)}
+[data-tema="oscuro"] .topbar.is-scrolled{box-shadow:0 8px 24px -16px rgba(0,0,0,.8)}
+/* Botones y controles */
+[data-tema="oscuro"] .btn-primario,[data-tema="oscuro"] .saltar{background:#2a5bd7;color:#fff}
+[data-tema="oscuro"] .btn-primario:hover{background:#1aa7ec;color:#fff}
+[data-tema="oscuro"] .btn-blanco{color:#1e2f97}
+[data-tema="oscuro"] .btn-contorno{background:transparent;color:var(--tinta);border-color:var(--borde)}
+[data-tema="oscuro"] .btn-contorno:hover{border-color:var(--azul);color:var(--azul-tinta)}
+[data-tema="oscuro"] .nav-link:hover,[data-tema="oscuro"] .drawer-secundario .drawer-link:hover{background:var(--tarjeta)}
+[data-tema="oscuro"] .menu-toggle,[data-tema="oscuro"] .drawer-close{background:var(--tarjeta);border-color:var(--borde)}
+[data-tema="oscuro"] .drawer-close:hover,[data-tema="oscuro"] .footer-redes a:hover,[data-tema="oscuro"] .drawer-redes a:hover{background:#2a5bd7;border-color:#2a5bd7;color:#fff}
+[data-tema="oscuro"] .footer-redes a,[data-tema="oscuro"] .drawer-redes a{background:var(--tarjeta)}
+/* Superficies que eran blancas */
+[data-tema="oscuro"] .pag-otros a,[data-tema="oscuro"] .pad-chips li,[data-tema="oscuro"] .cinta{background:var(--tarjeta)}
+[data-tema="oscuro"] .cinta-pista span{background:var(--fondo)}
+[data-tema="oscuro"] .formacion .fila,[data-tema="oscuro"] .horarios li{background:rgba(255,255,255,.04)}
+[data-tema="oscuro"] .tile-foto .pie{background:rgba(10,17,36,.86)}
+[data-tema="oscuro"] .tile-video{background:#070c1a}
+[data-tema="oscuro"] .ed-cabecera{border-bottom-color:var(--tinta-suave)}
+[data-tema="oscuro"] .guia-num,[data-tema="oscuro"] .faq-num,[data-tema="oscuro"] .drawer-num{color:#8592b3}
+[data-tema="oscuro"] .pad-num{color:#5d6a8c}
+/* Mapa: tonos invertidos para no deslumbrar */
+[data-tema="oscuro"] .tile-mapa iframe{filter:invert(.92) hue-rotate(180deg) saturate(.75) brightness(.95)}
+/* Precarga */
+[data-tema="oscuro"] #precarga{background:radial-gradient(80% 60% at 50% 40%,#111a33 0%,#0a1124 70%,#070c1a 100%)}
+/* Bloques saturados: un poco más profundos para no brillar sobre fondo oscuro */
+[data-tema="oscuro"] .tile-marca{background:linear-gradient(135deg,#1688c7 0%,#1f4bb0 55%,#1a2880 100%)}

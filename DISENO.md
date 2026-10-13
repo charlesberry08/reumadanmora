@@ -122,3 +122,19 @@ Misma estructura que el resto: migas, cabecera corrida, bloque saturado con el h
 ## Revisión SEO (2026-10-09)
 
 Auditoría automática de las 11 páginas: títulos de 43 a 60 caracteres y únicos, descripciones de 110 a 158 caracteres y únicas, canónico y og:url correctos, Open Graph y Twitter completos (se repusieron en el aviso), un solo h1 por página (se añadió en padecimientos, cuando-acudir y contacto), sin saltos de nivel de encabezado (títulos de sección promovidos a h2 con los mismos estilos; h2 ocultos `.sr-only` en las páginas de padecimientos; los datos rápidos del héroe dejaron de ser h4), JSON-LD válido sin restos de podcast, "certificado", fibromialgia ni la URL vieja de Sjögren, `speakable` apuntando a selectores reales, pie con enlaces a los cinco padecimientos en todas las páginas (enlazado interno) y sitemap con fecha del día. Cero enlaces rotos.
+
+## Auditoría móvil y modo oscuro (2026-10-13)
+
+**Auditoría móvil (375 / 320 px):** sin desbordes horizontales ni elementos fuera de su tarjeta. Ajustes:
+- Rótulos en mayúsculas (`.etiqueta`, `.ed-cabecera`, etc.) suben a .76rem (≈12 px) en ≤640 px.
+- Cabecera editorial en una línea en ≤640 px: rótulo + número; el tercer rótulo (decorativo) se oculta.
+- Barra superior de 64 px en teléfono (logo 40 px) para ganar pantalla.
+- Áreas táctiles ≥44 px en migas, enlaces del pie y contactos del aviso.
+- Preload del retrato con `imagesrcset`/`imagesizes` (ya no baja la versión equivocada).
+
+**Modo oscuro:**
+- Atributo `data-tema="claro|oscuro"` en `<html>`, fijado por un script en línea en el `<head>` antes del CSS (evita el destello): usa `localStorage.tema` o, si no hay elección, `prefers-color-scheme`.
+- Botón `.tema-toggle` (luna/sol) junto al menú en todas las páginas; `tema()` en `js/comun.js` guarda la elección, actualiza `aria-pressed`/`aria-label` y `meta[name=theme-color]`, y sigue al sistema mientras el usuario no elija.
+- Los colores se resuelven con tokens: `[data-tema="oscuro"]` redefine `--fondo #0a1124`, `--tarjeta #111a33`, `--tinta #e7ecf8`, `--tinta-suave #a7b2ce`, `--borde #24304f`, `--azul-tinta #7dd6f8`, etc. Componentes nuevos deben usar tokens, no colores fijos.
+- Excepciones: tarjeta de marca con degradado más profundo; mapa de Google con `filter: invert(.92) hue-rotate(180deg)`; botones primarios #2a5bd7.
+- La base del sitio sigue siendo clara (producto de salud); el oscuro es opción del visitante.

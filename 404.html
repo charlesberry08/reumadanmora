@@ -6,10 +6,11 @@
   <title>Página no encontrada | Dr. Daniel Mora, reumatólogo en León</title>
   <meta name="robots" content="noindex, follow" />
   <meta name="theme-color" content="#1e2f97" />
+  <script>(function(){try{var t=localStorage.getItem('tema');if(t!=='oscuro'&&t!=='claro'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'oscuro':'claro'}document.documentElement.setAttribute('data-tema',t)}catch(e){document.documentElement.setAttribute('data-tema','claro')}})();</script>
   <link rel="stylesheet" href="/fonts/fuentes.css?v=1" />
-  <link rel="stylesheet" href="/css/styles.css?v=20261007b" />
+  <link rel="stylesheet" href="/css/styles.css?v=20261013b" />
   <link rel="icon" href="/images/marca/icono.svg" type="image/svg+xml" />
-  <script src="/js/comun.js?v=4" defer></script>
+  <script src="/js/comun.js?v=10" defer></script>
 </head>
 <body data-raiz="/">
 <nav class="topbar" aria-label="Navegación principal">
@@ -18,7 +19,9 @@
       <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="gp-404" gradientUnits="userSpaceOnUse" x1="50" y1="92" x2="50" y2="22"><stop offset="0" stop-color="#1e2f97"/><stop offset=".55" stop-color="#1aa7ec"/><stop offset="1" stop-color="#4adfdd"/></linearGradient><linearGradient id="gl-404" gradientUnits="userSpaceOnUse" x1="50" y1="62" x2="50" y2="26"><stop offset="0" stop-color="#797ef6"/><stop offset="1" stop-color="#7dd6f8"/></linearGradient></defs><g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="9"><path d="M43 92 V62 C43 54 40 49 35 42 L23 24" stroke="url(#gp-404)"/><path d="M57 92 V62 C57 54 60 49 65 42 L77 24" stroke="url(#gp-404)"/><path d="M30.5 59 L12.5 30" stroke="url(#gl-404)"/><path d="M69.5 59 L87.5 30" stroke="url(#gl-404)"/></g></svg>
       <span class="brand-texto"><span class="brand-nombre">Dr. Daniel Mora</span><span class="brand-sub">Reumatología</span></span>
     </a>
-    <div class="nav-cta" style="display:flex;margin-left:auto"><a href="/" class="btn btn-primario"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ir al inicio</a></div>
+    <div class="nav-cta" style="display:flex;margin-left:auto;gap:8px"><button class="tema-toggle" type="button" aria-label="Activar modo oscuro" aria-pressed="false" title="Modo claro u oscuro">
+      <i class="fa-solid fa-moon t-luna" aria-hidden="true"></i><i class="fa-solid fa-sun t-sol" aria-hidden="true"></i>
+    </button><a href="/" class="btn btn-primario"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ir al inicio</a></div>
   </div>
 </nav>
 <main class="container pag-404" id="contenido">
