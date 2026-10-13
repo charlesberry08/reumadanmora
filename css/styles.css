@@ -207,6 +207,7 @@ html.menu-abierto{overflow:hidden}
 .hero{padding:28px 0 56px}
 .hero .tile-marca{display:flex;flex-direction:column;justify-content:center;gap:18px;padding:40px;min-height:440px}
 .hero h1{font-size:clamp(1.9rem,3.3vw,2.75rem);color:#fff;max-width:20ch}
+.hero h1 .etiqueta{display:flex;font-size:.74rem;line-height:1.2;margin-bottom:12px}
 .hero .lead{font-size:1.08rem;max-width:46ch;line-height:1.6}
 .hero .acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
 .hero .sello{

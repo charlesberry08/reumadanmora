@@ -138,3 +138,8 @@ Auditoría automática de las 11 páginas: títulos de 43 a 60 caracteres y úni
 - Los colores se resuelven con tokens: `[data-tema="oscuro"]` redefine `--fondo #0a1124`, `--tarjeta #111a33`, `--tinta #e7ecf8`, `--tinta-suave #a7b2ce`, `--borde #24304f`, `--azul-tinta #7dd6f8`, etc. Componentes nuevos deben usar tokens, no colores fijos.
 - Excepciones: tarjeta de marca con degradado más profundo; mapa de Google con `filter: invert(.92) hue-rotate(180deg)`; botones primarios #2a5bd7.
 - La base del sitio sigue siendo clara (producto de salud); el oscuro es opción del visitante.
+
+## Auditoría SEO (2026-10-13)
+- Perfiles externos del doctor enlazados como `sameAs` (Instagram, Doctoralia `perfil/daniel-mora`, TocDoc `node/31901`) en todas las páginas y en `llms.txt`; Doctoralia confirma las mismas cédulas.
+- El h1 del inicio incluye el rótulo "Reumatólogo en León, Gto." (visualmente igual, `.hero h1 .etiqueta`). Título del inicio con "Guanajuato" completo.
+- Pendientes fuera del sitio (los que más pesan): publicar en Jetthost (el dominio sirve la versión vieja sin robots/sitemap), Perfil de Negocio de Google, reclamar Doctoralia (sin teléfono, "pendiente de validación", 2 opiniones) y actualizar TocDoc (lista Hospital HR Raúl Hernández), Search Console.

@@ -53,7 +53,7 @@ def pagina(p):
             {"@type": "ListItem", "position": 2, "name": "Padecimientos", "item": BASE + "padecimientos.html"},
             {"@type": "ListItem", "position": 3, "name": p['nombre'], "item": url}]},
         {"@type": "FAQPage", "@id": url + "#faq", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in p['faq']]},
-        {"@type": "Physician", "@id": BASE + "#physician", "name": "Dr. Daniel Mora", "alternateName": "Gildardo Daniel Mora Saucedo", "url": BASE, "medicalSpecialty": "Rheumatology",
+        {"@type": "Physician", "@id": BASE + "#physician", "name": "Dr. Daniel Mora", "alternateName": "Gildardo Daniel Mora Saucedo", "url": BASE, "medicalSpecialty": "Rheumatology", "sameAs": ["https://www.instagram.com/reumatologodanielmora", "https://www.doctoralia.com.mx/perfil/daniel-mora", "https://www.tocdoc.com/node/31901"],
          "telephone": "+52-477-717-3939", "address": {"@type": "PostalAddress", "streetAddress": "Calle Manantial 114, Consultorio 107, Médica Campestre", "addressLocality": "León", "addressRegion": "Guanajuato", "postalCode": "37180", "addressCountry": "MX"}}
     ]}
     return f'''<!DOCTYPE html>
