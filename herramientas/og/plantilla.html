@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8" />
+<title>Plantilla Open Graph</title>
+<link rel="stylesheet" href="../../fonts/fuentes.css" />
+<style>
+  :root{
+    --cielo:#7dd6f8; --lavanda:#797ef6; --turquesa:#4adfdd; --azul:#1aa7ec; --marino:#1e2f97;
+    --grad-marca:linear-gradient(135deg,#1aa7ec 0%,#2457c4 55%,#1e2f97 100%);
+  }
+  *{box-sizing:border-box;margin:0}
+  html,body{width:1200px;height:630px;overflow:hidden}
+  body{font-family:'Manrope',system-ui,sans-serif;color:#fff;background:var(--grad-marca);position:relative;-webkit-font-smoothing:antialiased}
+
+  /* Anticuerpo de fondo, como marca de agua */
+  .agua{position:absolute;right:-60px;top:-120px;width:620px;height:620px;opacity:.10}
+  .agua svg{width:100%;height:100%}
+
+  /* Retrato a la derecha, fundido con el degradado */
+  .foto{position:absolute;right:0;top:0;height:630px;width:560px;
+    -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 38%),linear-gradient(to top,transparent 0%,#000 26%);
+    -webkit-mask-composite:source-in;mask-composite:intersect;
+    mask-image:linear-gradient(to right,transparent 0%,#000 38%),linear-gradient(to top,transparent 0%,#000 26%);}
+  .foto img{position:absolute;right:-20px;top:0;height:690px;width:auto}
+  body.sin-foto .foto{display:none}
+
+  .contenido{position:absolute;left:64px;top:64px;bottom:64px;width:700px;display:flex;flex-direction:column;justify-content:space-between}
+  .marca{display:flex;align-items:center;gap:18px}
+  .marca svg{width:68px;height:68px;overflow:visible;filter:drop-shadow(0 6px 14px rgba(0,0,0,.25))}
+  .marca-texto{line-height:1.05}
+  .marca-texto b{display:block;font-size:26px;font-weight:800;letter-spacing:-.4px}
+  .marca-texto span{display:block;font-size:13px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--cielo);margin-top:4px}
+
+  .bloque{max-width:640px}
+  .eyebrow{display:flex;align-items:center;gap:12px;font-size:17px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.86);margin-bottom:18px}
+  .eyebrow::before{content:"";width:34px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--turquesa),var(--cielo))}
+  h1{font-weight:800;font-size:64px;line-height:1.02;letter-spacing:-1.6px;text-shadow:0 4px 18px rgba(0,0,0,.18);text-wrap:balance}
+  h1 em{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:400;letter-spacing:0}
+  body.inicio h1{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:84px;letter-spacing:-1px}
+  body.inicio h1 em{font-style:italic;font-weight:400}
+  .sub{margin-top:18px;font-size:24px;line-height:1.35;color:rgba(255,255,255,.88);max-width:600px;text-wrap:pretty}
+
+  .pie{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .chip{display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border-radius:999px;font-size:17px;font-weight:700;
+    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.26);backdrop-filter:blur(6px)}
+  .chip svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .chip.url{background:#fff;color:var(--marino)}
+</style>
+</head>
+<body>
+  <div class="agua">
+    <svg viewBox="0 0 100 100" aria-hidden="true">
+      <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="9">
+        <path d="M43 92 V62 C43 54 40 49 35 42 L23 24"/><path d="M57 92 V62 C57 54 60 49 65 42 L77 24"/>
+        <path d="M30.5 59 L12.5 30"/><path d="M69.5 59 L87.5 30"/>
+      </g>
+    </svg>
+  </div>
+  <div class="foto"><img src="../../images/web/doctor-hero.jpg" alt="" /></div>
+
+  <div class="contenido">
+    <div class="marca">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="9">
+          <path d="M43 92 V62 C43 54 40 49 35 42 L23 24" stroke="#fff"/>
+          <path d="M57 92 V62 C57 54 60 49 65 42 L77 24" stroke="#fff"/>
+          <path d="M30.5 59 L12.5 30" stroke="#7dd6f8"/>
+          <path d="M69.5 59 L87.5 30" stroke="#7dd6f8"/>
+        </g>
+        <g fill="none" stroke="#1e2f97" stroke-linecap="round" stroke-opacity=".35" stroke-width="2.2">
+          <path d="M40.6 86 V64 C40.6 56 38 51 33 44"/><path d="M54.6 86 V64"/>
+          <path d="M27.6 55 L13 31.5"/><path d="M66.6 55 L81 31.5"/>
+        </g>
+      </svg>
+      <div class="marca-texto"><b>Dr. Daniel Mora</b><span>Reumatología</span></div>
+    </div>
+
+    <div class="bloque">
+      <div class="eyebrow" id="eyebrow"></div>
+      <h1 id="titulo"></h1>
+      <p class="sub" id="sub"></p>
+    </div>
+
+    <div class="pie">
+      <span class="chip"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>Médica Campestre · León, Gto.</span>
+      <span class="chip"><svg viewBox="0 0 24 24"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2z"/></svg>477 401 1085</span>
+      <span class="chip url">reumadanmora.com</span>
+    </div>
+  </div>
+
+<script>
+  const q = new URLSearchParams(location.search);
+  const pon = (id, v) => { document.getElementById(id).innerHTML = v || ''; };
+  pon('eyebrow', q.get('eyebrow')); pon('titulo', q.get('titulo')); pon('sub', q.get('sub'));
+  if (q.get('tipo')) document.body.classList.add(q.get('tipo'));
+  if (!q.get('sub')) document.getElementById('sub').remove();
+</script>
+</body>
+</html>

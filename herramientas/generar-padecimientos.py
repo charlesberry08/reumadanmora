@@ -87,13 +87,17 @@ def pagina(p):
   <meta property="og:url" content="{url}" />
   <meta property="og:title" content="{p['titulo']}" />
   <meta property="og:description" content="{p['descripcion']}" />
-  <meta property="og:image" content="{BASE}images/og-consultorio.jpg" />
+  <meta property="og:image" content="{BASE}images/og/{p['slug']}.jpg" />
+  <meta property="og:image:secure_url" content="{BASE}images/og/{p['slug']}.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="{p['nombre']}: atención con el Dr. Daniel Mora, reumatólogo en León" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{p['titulo']}" />
   <meta name="twitter:description" content="{p['descripcion']}" />
-  <meta name="twitter:image" content="{BASE}images/og-consultorio.jpg" />
+  <meta name="twitter:image" content="{BASE}images/og/{p['slug']}.jpg" />
+  <meta name="twitter:image:alt" content="{p['nombre']}: atención con el Dr. Daniel Mora, reumatólogo en León" />
   <script type="application/ld+json">
 {json.dumps(ld, ensure_ascii=False, indent=2)}
   </script>

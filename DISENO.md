@@ -143,3 +143,8 @@ Auditoría automática de las 11 páginas: títulos de 43 a 60 caracteres y úni
 - Perfiles externos del doctor enlazados como `sameAs` (Instagram, Doctoralia `perfil/daniel-mora`, TocDoc `node/31901`) en todas las páginas y en `llms.txt`; Doctoralia confirma las mismas cédulas.
 - El h1 del inicio incluye el rótulo "Reumatólogo en León, Gto." (visualmente igual, `.hero h1 .etiqueta`). Título del inicio con "Guanajuato" completo.
 - Pendientes fuera del sitio (los que más pesan): publicar en Jetthost (el dominio sirve la versión vieja sin robots/sitemap), Perfil de Negocio de Google, reclamar Doctoralia (sin teléfono, "pendiente de validación", 2 opiniones) y actualizar TocDoc (lista Hospital HR Raúl Hernández), Search Console.
+
+## Imágenes Open Graph (2026-10-13)
+- Una imagen por página en `images/og/<slug>.jpg` (1200×630, ~70–90 KB): degradado de marca, isotipo, retrato del doctor fundido a la derecha, rótulo + título editorial (última palabra en Fraunces cursiva), chips de consultorio/WhatsApp/dominio.
+- Se generan con `python3 herramientas/generar-og.py [slug…]` (con el dev-server en :4328): renderiza `herramientas/og/plantilla.html?eyebrow=&titulo=&sub=&tipo=` con Chrome sin ventana a 2× y actualiza `og:image`, `twitter:image` y sus `alt` en cada página. `generar-padecimientos.py` ya escribe la imagen de cada padecimiento.
+- Al cambiar el hero o el nombre de una página, regenerar su imagen. Tras publicar, refrescar la caché de WhatsApp/Facebook con el Sharing Debugger de Meta.
