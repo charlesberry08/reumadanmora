@@ -48,9 +48,10 @@
 </div>
 <script>
   // ?t=segundos congela todas las animaciones en ese instante (para capturar cuadro por cuadro)
-  const t = parseFloat(new URLSearchParams(location.search).get('t') || '0');
+  const q = new URLSearchParams(location.search);
+  const t = parseFloat(q.get('t') || '0'), vel = parseFloat(q.get('vel') || '1');   // ?vel= acelera
   document.fonts.ready.then(() => {
-    document.getAnimations().forEach(a => { a.pause(); a.currentTime = t * 1000; });
+    document.getAnimations().forEach(a => { a.pause(); a.currentTime = t * vel * 1000; });
     document.documentElement.dataset.listo = '1';
   });
 </script>

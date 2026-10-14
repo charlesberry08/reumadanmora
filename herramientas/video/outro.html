@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../fonts/fuentes.css" />
+<style>
+  /* Cierre: mismo lenguaje del preloader, con los datos del doctor */
+  :root{--tinta:#121a45;--tinta-suave:#5b6480;--azul-tinta:#0b6fb0;--celeste-borde:#cfe6f7;--grad-marca:linear-gradient(135deg,#1aa7ec 0%,#2457c4 55%,#1e2f97 100%)}
+  *{box-sizing:border-box;margin:0}
+  html,body{width:1080px;height:1920px;overflow:hidden;font-family:'Manrope',sans-serif;-webkit-font-smoothing:antialiased}
+  #cierre{position:fixed;inset:0;display:grid;place-items:center;background:radial-gradient(80% 60% at 50% 40%,#ffffff 0%,#f3f7fc 70%,#e9f1fb 100%)}
+  .logo{display:flex;flex-direction:column;align-items:center;gap:30px;text-align:center}
+  .logo svg{width:220px;height:220px;overflow:visible}
+  .logo path{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:9;stroke-dasharray:140;stroke-dashoffset:140;animation:trazo .9s cubic-bezier(.4,0,.2,1) forwards}
+  .logo .p1{animation-delay:.1s}.logo .p2{animation-delay:.25s}
+  .logo .l1{stroke-dasharray:60;stroke-dashoffset:60;animation-delay:.6s}
+  .logo .l2{stroke-dasharray:60;stroke-dashoffset:60;animation-delay:.72s}
+  @keyframes trazo{to{stroke-dashoffset:0}}
+  .nombre{font-weight:800;font-size:66px;letter-spacing:-0.02em;color:var(--tinta);opacity:0;transform:translateY(36px);animation:subir .6s ease forwards 1.0s}
+  .sub{font-size:26px;font-weight:700;letter-spacing:.42em;text-transform:uppercase;color:var(--azul-tinta);margin-top:14px;opacity:0;animation:abrir .7s ease forwards 1.25s}
+  @keyframes subir{to{opacity:1;transform:none}}
+  @keyframes abrir{from{opacity:0;letter-spacing:.42em}to{opacity:1;letter-spacing:.22em}}
+  .datos{margin-top:54px;display:flex;flex-direction:column;gap:18px;align-items:center}
+  .dato{display:flex;align-items:center;gap:16px;font-size:31px;font-weight:600;color:var(--tinta-suave);opacity:0;transform:translateY(22px);animation:subir .55s ease forwards}
+  .dato:nth-child(1){animation-delay:1.7s}.dato:nth-child(2){animation-delay:1.9s}.dato:nth-child(3){animation-delay:2.1s}
+  .dato strong{color:var(--tinta);font-weight:800}
+  .dato svg{width:34px;height:34px;fill:none;stroke:#1aa7ec;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .web{margin-top:40px;display:inline-block;padding:18px 38px;border-radius:999px;background:var(--grad-marca);color:#fff;font-size:30px;font-weight:800;letter-spacing:-.3px;opacity:0;transform:scale(.92);animation:aparecer .5s cubic-bezier(.2,.8,.2,1) forwards 2.45s}
+  @keyframes aparecer{to{opacity:1;transform:none}}
+  .barra{position:absolute;left:50%;bottom:14vh;width:300px;height:5px;border-radius:5px;background:var(--celeste-borde);transform:translateX(-50%);overflow:hidden}
+  .barra::after{content:"";position:absolute;inset:0;background:var(--grad-marca);transform:translateX(-100%);animation:barra 3s ease forwards .1s}
+  @keyframes barra{to{transform:translateX(0)}}
+</style>
+</head>
+<body>
+<div id="cierre" aria-hidden="true">
+  <div class="logo">
+    <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="gp" gradientUnits="userSpaceOnUse" x1="50" y1="92" x2="50" y2="22"><stop offset="0" stop-color="#1e2f97"/><stop offset=".55" stop-color="#1aa7ec"/><stop offset="1" stop-color="#4adfdd"/></linearGradient>
+        <linearGradient id="gl" gradientUnits="userSpaceOnUse" x1="50" y1="62" x2="50" y2="26"><stop offset="0" stop-color="#797ef6"/><stop offset="1" stop-color="#7dd6f8"/></linearGradient>
+      </defs>
+      <path class="p1" d="M43 92 V62 C43 54 40 49 35 42 L23 24" stroke="url(#gp)"/>
+      <path class="p2" d="M57 92 V62 C57 54 60 49 65 42 L77 24" stroke="url(#gp)"/>
+      <path class="l1" d="M30.5 59 L12.5 30" stroke="url(#gl)"/>
+      <path class="l2" d="M69.5 59 L87.5 30" stroke="url(#gl)"/>
+    </svg>
+    <div>
+      <div class="nombre">Dr. Daniel Mora</div>
+      <div class="sub">Reumatólogo · León, Gto.</div>
+    </div>
+    <div class="datos">
+      <div class="dato"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg><span>Médica Campestre · <strong>Consultorio 107</strong></span></div>
+      <div class="dato"><svg viewBox="0 0 24 24"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2z"/></svg><span>WhatsApp <strong>477 401 1085</strong></span></div>
+      <div class="dato"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Lunes, miércoles y viernes</span></div>
+    </div>
+    <div class="web">reumadanmora.com</div>
+  </div>
+  <div class="barra"></div>
+</div>
+<script>
+  // ?t=segundos congela las animaciones en ese instante; ?vel= acelera (1.5 = 50 % más rápido)
+  const q = new URLSearchParams(location.search);
+  const t = parseFloat(q.get('t') || '0'), vel = parseFloat(q.get('vel') || '1');
+  document.fonts.ready.then(() => {
+    document.getAnimations().forEach(a => { a.pause(); a.currentTime = t * vel * 1000; });
+  });
+</script>
+</body>
+</html>
