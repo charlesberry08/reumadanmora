@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://www.reumadanmora.com/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://www.reumadanmora.com/videos/reel-presentacion.jpg</video:thumbnail_loc>
+      <video:title>Conoce al Dr. Daniel Mora, reumatólogo en León</video:title>
+      <video:description>El Dr. Daniel Mora se presenta y explica qué atiende un reumatólogo y cuándo conviene acudir.</video:description>
+      <video:content_loc>https://www.reumadanmora.com/videos/reel-presentacion.mp4</video:content_loc>
+      <video:duration>77</video:duration>
+      <video:publication_date>2026-10-14</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>

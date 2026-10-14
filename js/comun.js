@@ -154,14 +154,21 @@
 
   // ---- Fachada ligera de YouTube ----
   window.crearVideo = function (v, span, etiqueta) {
-    const poster = v.id ? `https://i.ytimg.com/vi/${v.id}/maxresdefault.jpg` : (document.body.dataset.raiz || '') + 'images/web/consultorio2-1200.webp';
+    const raiz = document.body.dataset.raiz || '', hay = !!(v.id || v.archivo);
+    const poster = v.archivo ? raiz + v.poster : v.id ? `https://i.ytimg.com/vi/${v.id}/maxresdefault.jpg` : raiz + 'images/web/consultorio2-1200.webp';
     const fig = document.createElement('figure');
-    fig.className = `tile tile-video ${span} reveal` + (v.id ? '' : ' pendiente');
+    fig.className = `tile tile-video ${span} reveal` + (hay ? '' : ' pendiente') + (v.archivo ? ' propio' : '');
     fig.innerHTML = `
       <img src="${poster}" alt="" loading="lazy" decoding="async" ${v.id ? `onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${v.id}/hqdefault.jpg'"` : ''} />
-      <button class="video-play" type="button" aria-label="Reproducir: ${v.titulo}" ${v.id ? '' : 'disabled'}><i class="fa-solid fa-play" aria-hidden="true"></i></button>
-      <figcaption class="video-pie"><span class="video-tema">${etiqueta}</span><strong>${v.titulo}</strong>${v.id ? '' : '<span class="video-nota">Próximamente</span>'}</figcaption>`;
-    if (v.id) fig.querySelector('.video-play').addEventListener('click', () => {
+      <button class="video-play" type="button" aria-label="Reproducir: ${v.titulo}" ${hay ? '' : 'disabled'}><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+      <figcaption class="video-pie"><span class="video-tema">${etiqueta}</span><strong>${v.titulo}</strong>${hay ? '' : '<span class="video-nota">Próximamente</span>'}</figcaption>`;
+    if (v.archivo) fig.querySelector('.video-play').addEventListener('click', () => {
+      const vid = document.createElement('video');
+      vid.src = raiz + v.archivo; vid.poster = poster; vid.controls = true; vid.playsInline = true; vid.preload = 'metadata';
+      vid.setAttribute('aria-label', v.titulo);
+      fig.classList.add('reproduciendo'); fig.appendChild(vid); vid.play().catch(() => {});
+    });
+    else if (v.id) fig.querySelector('.video-play').addEventListener('click', () => {
       const iframe = document.createElement('iframe');
       iframe.src = `https://www.youtube-nocookie.com/embed/${v.id}?autoplay=1&rel=0`; iframe.title = v.titulo;
       iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'; iframe.allowFullscreen = true;

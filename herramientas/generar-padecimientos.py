@@ -76,8 +76,8 @@ def pagina(p):
   <script>(function(){{try{{var t=localStorage.getItem('tema');if(t!=='oscuro'&&t!=='claro'){{t=window.matchMedia('(prefers-color-scheme: dark)').matches?'oscuro':'claro'}}document.documentElement.setAttribute('data-tema',t)}}catch(e){{document.documentElement.setAttribute('data-tema','claro')}}}})();</script>
   <link rel="stylesheet" href="fonts/fuentes.css?v=1" />
   <link rel="stylesheet" href="css/styles.css?v={version}" />
-  <script src="js/contenido.js?v=5" defer></script>
-  <script src="js/comun.js?v=11" defer></script>
+  <script src="js/contenido.js?v=6" defer></script>
+  <script src="js/comun.js?v=12" defer></script>
   <link rel="icon" href="favicon.ico" sizes="48x48" />
   <link rel="icon" href="images/favicon-96.png" type="image/png" sizes="96x96" />
   <link rel="icon" href="images/favicon-192.png" type="image/png" sizes="192x192" />
