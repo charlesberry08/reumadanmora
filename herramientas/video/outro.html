@@ -24,7 +24,7 @@
   .dato{display:flex;align-items:center;gap:16px;font-size:31px;font-weight:600;color:var(--tinta-suave);opacity:0;transform:translateY(22px);animation:subir .55s ease forwards}
   .dato:nth-child(1){animation-delay:1.7s}.dato:nth-child(2){animation-delay:1.9s}.dato:nth-child(3){animation-delay:2.1s}
   .dato strong{color:var(--tinta);font-weight:800}
-  .dato svg{width:34px;height:34px;fill:none;stroke:#1aa7ec;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .dato svg{width:30px;height:30px;fill:#1aa7ec}
   .web{margin-top:40px;display:inline-block;padding:18px 38px;border-radius:999px;background:var(--grad-marca);color:#fff;font-size:30px;font-weight:800;letter-spacing:-.3px;opacity:0;transform:scale(.92);animation:aparecer .5s cubic-bezier(.2,.8,.2,1) forwards 2.45s}
   @keyframes aparecer{to{opacity:1;transform:none}}
   .barra{position:absolute;left:50%;bottom:14vh;width:300px;height:5px;border-radius:5px;background:var(--celeste-borde);transform:translateX(-50%);overflow:hidden}
@@ -50,9 +50,9 @@
       <div class="sub">Reumatólogo · León, Gto.</div>
     </div>
     <div class="datos">
-      <div class="dato"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg><span>Médica Campestre · <strong>Consultorio 107</strong></span></div>
-      <div class="dato"><svg viewBox="0 0 24 24"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2z"/></svg><span>WhatsApp <strong>477 401 1085</strong></span></div>
-      <div class="dato"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Lunes, miércoles y viernes</span></div>
+      <div class="dato"><svg aria-hidden="true"><use href="../../images/marca/iconos.svg#location-dot"/></svg><span>Médica Campestre · <strong>Consultorio 107</strong></span></div>
+      <div class="dato"><svg aria-hidden="true"><use href="../../images/marca/iconos.svg#whatsapp"/></svg><span>WhatsApp <strong>477 401 1085</strong></span></div>
+      <div class="dato"><svg aria-hidden="true"><use href="../../images/marca/iconos.svg#clock"/></svg><span>Lunes, miércoles y viernes</span></div>
     </div>
     <div class="web">reumadanmora.com</div>
   </div>
