@@ -81,3 +81,83 @@ Formato vertical, pleca y cierre con el molde que ya tenemos. Entregar los clips
 - Responder comentarios el mismo día; preguntas clínicas → "te leo por WhatsApp".
 - Cada post con la liga de citas; el 19 y el 29, además, la liga para dejar opinión en Doctoralia.
 - A fin de mes revisar en Instagram: alcance de reels vs carruseles para decidir la mezcla de noviembre.
+
+---
+
+# Copys listos para pegar
+
+## 1 · Jue 15 oct · Reel de presentación
+```
+Soy el Dr. Daniel Mora, reumatólogo en León.
+
+Atiendo artritis reumatoide, lupus, enfermedad de Sjögren, espondiloartritis, vasculitis y otras enfermedades en las que las defensas atacan al propio cuerpo.
+
+Si llevas meses con dolor o rigidez en las articulaciones y nadie te dice qué es, por aquí empezamos. Consulto en Médica Campestre, lunes, miércoles y viernes.
+
+Citas por WhatsApp: 477 401 1085 (liga en el perfil).
+
+#ReumatólogoLeón #Reumatología #León #Guanajuato #ArtritisReumatoide #Lupus
+```
+
+## 2 · Sáb 17 oct · Carrusel "¿Qué hace un reumatólogo?"
+```
+¿Qué hace un reumatólogo? No, no solo "reumas".
+
+Si alguna vez pensaste "a mí me duele todo y nadie encuentra nada", desliza. En 6 láminas te explico qué atiendo, cuándo conviene venir y en qué me diferencio de un traumatólogo.
+
+Guárdalo para cuando lo necesites o mándaselo a quien lleva meses sin respuesta.
+
+Atiendo a partir de los 16 años. Citas por WhatsApp: 477 401 1085.
+
+#ReumatólogoLeón #Reumatología #DolorArticular #León #Guanajuato
+```
+
+## 3 · Lun 19 oct · Día Mundial del Cáncer de Mama
+```
+Hoy no hablo de articulaciones. Hablo de la cita que llevas meses posponiendo.
+
+19 de octubre, Día Mundial del Cáncer de Mama. Lo único que te pido: agenda tu revisión. Autoexploración cada mes y mastografía a partir de los 40, o antes si tu médico lo indica.
+
+Y si vives con lupus, artritis reumatoide u otra enfermedad autoinmune, esto va doble: algunos tratamientos piden tener los chequeos al día, y en consulta te lo voy a preguntar. Trae tu última mastografía a tu siguiente control; es parte del seguimiento, no un extra.
+
+Agéndala hoy. Etiqueta a quien también la está posponiendo.
+
+#MesRosa #CáncerDeMama #19DeOctubre #ReumatólogoLeón #Lupus #ArtritisReumatoide
+```
+
+## 4 · Jue 22 oct · Reel "Dolor articular durante el tratamiento del cáncer de mama"
+```
+¿Te duelen las manos o las rodillas desde que empezaste el tratamiento del cáncer de mama? No es "que ya te hiciste vieja".
+
+Algunos medicamentos que se toman por años después del cáncer, como los inhibidores de aromatasa, pueden causar dolor y rigidez en las articulaciones. Es frecuente, tiene nombre y se puede tratar. Y no, no significa que debas dejar tu tratamiento.
+
+Coméntalo con tu oncólogo y, si hace falta, lo vemos juntos en consulta.
+
+Comparte este video con alguien que esté pasando por esto. Citas por WhatsApp: 477 401 1085.
+
+#MesRosa #CáncerDeMama #DolorArticular #ReumatólogoLeón #Reumatología #León
+```
+
+## 5 · Mar 27 oct · Reel "Por qué elegí la reumatología"
+```
+Me preguntan mucho por qué reumatología.
+
+La respuesta corta: porque son enfermedades que cambian vidas y que, bien atendidas, se controlan. La larga, en el video: dónde me formé, el momento en que lo decidí y qué pasa en la primera consulta.
+
+Si tienes dudas sobre si lo tuyo es para reumatólogo, pregúntame en los comentarios o por WhatsApp: 477 401 1085.
+
+#ReumatólogoLeón #Reumatología #León #Guanajuato #MédicaCampestre
+```
+
+## 6 · Jue 29 oct · Carrusel "Mito: los medicamentos para la artritis dan cáncer"
+```
+"Doctor, ¿los medicamentos para la artritis dan cáncer?" Es la duda que más escucho en consulta. Cerramos el mes rosa con ella.
+
+La respuesta corta: los tratamientos actuales se vigilan, antes de empezar y durante, con revisiones y estudios periódicos. Y dejar la inflamación sin control también tiene riesgos; por eso se trata.
+
+Por eso te pregunto por tu mastografía, tu Papanicolaou y tus lunares. No es curiosidad: es parte del tratamiento.
+
+Si tienes dudas sobre tu medicamento, pregúntalas en consulta. Nunca lo suspendas por tu cuenta.
+
+#MesRosa #ArtritisReumatoide #Lupus #ReumatólogoLeón #Reumatología #León
+```
