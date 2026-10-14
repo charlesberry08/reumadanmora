@@ -158,3 +158,6 @@ Auditoría automática de las 11 páginas: títulos de 43 a 60 caracteres y úni
 
 ## Videos (2026-10-14)
 - El video de presentación de Médica Campestre se retiró a petición del doctor (grabará videos nuevos). Quedan tres espacios "Próximamente" del mismo tamaño (`c-4`); cuando haya al menos un `id` en `VIDEOS` (js/contenido.js) vuelve el acomodo grande + dos. Se quitó el `VideoObject` del JSON-LD y la extensión de video del sitemap; al cargar videos reales hay que volver a agregarlos.
+
+## Favicon para Google (2026-10-14)
+- Google exige icono cuadrado múltiplo de 48 px y lo toma al rastrear la portada. Se generan desde `images/marca/icono-512.png`: `favicon.ico` en la raíz (16/32/48) y `images/favicon-{48,96,144,192}.png` con esquinas transparentes; el SVG se mantiene para navegadores modernos. Orden de `<link rel="icon">`: ico, png 96, png 192, svg. `.cpanel.yml` copia `favicon.ico` e `images/favicon-*.png`.
