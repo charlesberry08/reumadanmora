@@ -121,7 +121,7 @@
       "@id": "https://www.reumadanmora.com/#padecimientos",
       "name": "Padecimientos que atiende el Dr. Daniel Mora",
       "itemListOrder": "ItemListOrderAscending",
-      "numberOfItems": 11,
+      "numberOfItems": 12,
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -266,13 +266,113 @@
           "position": 6,
           "item": {
             "@type": "MedicalCondition",
-            "name": "Gota",
-            "relevantSpecialty": "Rheumatology"
-          }
+            "name": "Miopatías inflamatorias idiopáticas",
+            "description": "Enfermedades autoinmunes que inflaman los músculos. La señal es debilidad para subir escaleras o levantar los brazos, no dolor.",
+            "signOrSymptom": [
+              {
+                "@type": "MedicalSignOrSymptom",
+                "name": "Debilidad en hombros y caderas"
+              },
+              {
+                "@type": "MedicalSignOrSymptom",
+                "name": "Manchas rojizas en párpados o nudillos"
+              },
+              {
+                "@type": "MedicalSignOrSymptom",
+                "name": "Dificultad para tragar o falta de aire"
+              }
+            ],
+            "relevantSpecialty": "Rheumatology",
+            "url": "https://www.reumadanmora.com/miopatias-inflamatorias.html"
+          },
+          "url": "https://www.reumadanmora.com/miopatias-inflamatorias.html"
         },
         {
           "@type": "ListItem",
           "position": 7,
+          "item": {
+            "@type": "MedicalCondition",
+            "name": "Artropatías por cristales",
+            "alternateName": [
+              "Gota",
+              "Pseudogota"
+            ],
+            "description": "Gota y pseudogota: cristales dentro de la articulación que provocan ataques de dolor intenso, hinchazón y enrojecimiento.",
+            "signOrSymptom": [
+              {
+                "@type": "MedicalSignOrSymptom",
+                "name": "Dolor repentino en el dedo gordo, de noche"
+              },
+              {
+                "@type": "MedicalSignOrSymptom",
+                "name": "Articulación roja, caliente, que no tolera el roce"
+              },
+              {
+                "@type": "MedicalSignOrSymptom",
+                "name": "Ácido úrico alto en análisis"
+              }
+            ],
+            "relevantSpecialty": "Rheumatology",
+            "url": "https://www.reumadanmora.com/artropatias-por-cristales.html"
+          },
+          "url": "https://www.reumadanmora.com/artropatias-por-cristales.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "MedicalCondition",
+            "name": "Esclerosis sistémica progresiva",
+            "alternateName": "Esclerodermia",
+            "description": "También llamada esclerodermia: la piel se endurece, sobre todo en manos y cara, y puede afectar pulmón, esófago y riñón.",
+            "signOrSymptom": [
+              {
+                "@type": "MedicalSignOrSymptom",
+                "name": "Dedos que cambian de color con el frío"
+              },
+              {
+                "@type": "MedicalSignOrSymptom",
+                "name": "Piel tirante que no deja cerrar la mano"
+              },
+              {
+                "@type": "MedicalSignOrSymptom",
+                "name": "Agruras intensas, falta de aire"
+              }
+            ],
+            "relevantSpecialty": "Rheumatology",
+            "url": "https://www.reumadanmora.com/esclerosis-sistemica.html"
+          },
+          "url": "https://www.reumadanmora.com/esclerosis-sistemica.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "item": {
+            "@type": "MedicalCondition",
+            "name": "Enfermedad mixta del tejido conectivo",
+            "description": "Combina rasgos de lupus, esclerodermia y miositis, y se identifica por un anticuerpo específico (anti-U1-RNP).",
+            "signOrSymptom": [
+              {
+                "@type": "MedicalSignOrSymptom",
+                "name": "Dedos hinchados \"como salchichas\""
+              },
+              {
+                "@type": "MedicalSignOrSymptom",
+                "name": "Raynaud y dolor en articulaciones"
+              },
+              {
+                "@type": "MedicalSignOrSymptom",
+                "name": "Debilidad muscular, falta de aire"
+              }
+            ],
+            "relevantSpecialty": "Rheumatology",
+            "url": "https://www.reumadanmora.com/enfermedad-mixta-del-tejido-conectivo.html"
+          },
+          "url": "https://www.reumadanmora.com/enfermedad-mixta-del-tejido-conectivo.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
           "item": {
             "@type": "MedicalCondition",
             "name": "Osteoartritis",
@@ -281,16 +381,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 8,
-          "item": {
-            "@type": "MedicalCondition",
-            "name": "Esclerosis sistémica",
-            "relevantSpecialty": "Rheumatology"
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 9,
+          "position": 11,
           "item": {
             "@type": "MedicalCondition",
             "name": "Síndrome antifosfolípido",
@@ -299,16 +390,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 10,
-          "item": {
-            "@type": "MedicalCondition",
-            "name": "Miopatías inflamatorias",
-            "relevantSpecialty": "Rheumatology"
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 11,
+          "position": 12,
           "item": {
             "@type": "MedicalCondition",
             "name": "Artritis psoriásica",
@@ -604,15 +686,76 @@
         <a class="pad-mas" href="vasculitis.html">Leer más sobre vasculitis <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
       </article>
 
+      <article class="tile pad-tile c-3 reveal">
+        <div class="pad-cabeza">
+          <span class="ico"><i class="fa-solid fa-dumbbell" aria-hidden="true"></i></span>
+          <span class="pad-num">06</span>
+        </div>
+        <h3>Miopatías inflamatorias idiopáticas</h3>
+        <p class="pad-desc">Enfermedades autoinmunes que inflaman los músculos. La señal es debilidad para subir escaleras o levantar los brazos, no dolor.</p>
+        <ul class="pad-senales" aria-label="Señales frecuentes">
+          <li>Debilidad en hombros y caderas</li>
+          <li>Manchas rojizas en párpados o nudillos</li>
+          <li>Dificultad para tragar o falta de aire</li>
+        </ul>
+        <p class="pad-nota"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Incluye dermatomiositis y polimiositis.</p>
+        <a class="pad-mas" href="miopatias-inflamatorias.html">Leer más sobre miopatías inflamatorias <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+      </article>
+
+      <article class="tile pad-tile c-3 reveal">
+        <div class="pad-cabeza">
+          <span class="ico"><i class="fa-solid fa-fire" aria-hidden="true"></i></span>
+          <span class="pad-num">07</span>
+        </div>
+        <h3>Artropatías por cristales</h3>
+        <p class="pad-desc">Gota y pseudogota: cristales dentro de la articulación que provocan ataques de dolor intenso, hinchazón y enrojecimiento.</p>
+        <ul class="pad-senales" aria-label="Señales frecuentes">
+          <li>Dolor repentino en el dedo gordo, de noche</li>
+          <li>Articulación roja, caliente, que no tolera el roce</li>
+          <li>Ácido úrico alto en análisis</li>
+        </ul>
+        <p class="pad-nota"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> La dieta ayuda, pero casi siempre hace falta medicamento.</p>
+        <a class="pad-mas" href="artropatias-por-cristales.html">Leer más sobre gota y artropatías por cristales <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+      </article>
+
+      <article class="tile pad-tile c-3 reveal">
+        <div class="pad-cabeza">
+          <span class="ico"><i class="fa-solid fa-hand" aria-hidden="true"></i></span>
+          <span class="pad-num">08</span>
+        </div>
+        <h3>Esclerosis sistémica progresiva</h3>
+        <p class="pad-desc">También llamada esclerodermia: la piel se endurece, sobre todo en manos y cara, y puede afectar pulmón, esófago y riñón.</p>
+        <ul class="pad-senales" aria-label="Señales frecuentes">
+          <li>Dedos que cambian de color con el frío</li>
+          <li>Piel tirante que no deja cerrar la mano</li>
+          <li>Agruras intensas, falta de aire</li>
+        </ul>
+        <p class="pad-nota"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Pulmón, corazón y riñón se revisan desde el inicio.</p>
+        <a class="pad-mas" href="esclerosis-sistemica.html">Leer más sobre esclerosis sistémica <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+      </article>
+
+      <article class="tile pad-tile c-3 reveal">
+        <div class="pad-cabeza">
+          <span class="ico"><i class="fa-solid fa-hand-dots" aria-hidden="true"></i></span>
+          <span class="pad-num">09</span>
+        </div>
+        <h3>Enfermedad mixta del tejido conectivo</h3>
+        <p class="pad-desc">Combina rasgos de lupus, esclerodermia y miositis, y se identifica por un anticuerpo específico (anti-U1-RNP).</p>
+        <ul class="pad-senales" aria-label="Señales frecuentes">
+          <li>Dedos hinchados "como salchichas"</li>
+          <li>Raynaud y dolor en articulaciones</li>
+          <li>Debilidad muscular, falta de aire</li>
+        </ul>
+        <p class="pad-nota"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Con el tiempo puede inclinarse hacia una de las enfermedades que la componen.</p>
+        <a class="pad-mas" href="enfermedad-mixta-del-tejido-conectivo.html">Leer más sobre enfermedad mixta del tejido conectivo <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+      </article>
+
       <div class="tile tile-tinte pad-otros c-8 reveal">
         <h3>También atiende</h3>
         <p>Otras enfermedades reumáticas frecuentes en consulta.</p>
         <ul class="pad-chips">
-          <li><i class="fa-solid fa-fire" aria-hidden="true"></i> Gota</li>
           <li><i class="fa-solid fa-bone" aria-hidden="true"></i> Osteoartritis</li>
-          <li><i class="fa-solid fa-hand" aria-hidden="true"></i> Esclerosis sistémica</li>
           <li><i class="fa-solid fa-vial" aria-hidden="true"></i> Síndrome antifosfolípido</li>
-          <li><i class="fa-solid fa-dumbbell" aria-hidden="true"></i> Miopatías inflamatorias</li>
           <li><i class="fa-solid fa-hand-dots" aria-hidden="true"></i> Artritis psoriásica</li>
         </ul>
       </div>
@@ -687,6 +830,10 @@
       <li><a href="espondiloartritis.html">Espondiloartritis</a></li>
       <li><a href="vasculitis.html">Vasculitis</a></li>
       <li><a href="enfermedad-de-sjogren.html">Enfermedad de Sjögren</a></li>
+      <li><a href="miopatias-inflamatorias.html">Miopatías inflamatorias idiopáticas</a></li>
+      <li><a href="artropatias-por-cristales.html">Artropatías por cristales</a></li>
+      <li><a href="esclerosis-sistemica.html">Esclerosis sistémica progresiva</a></li>
+      <li><a href="enfermedad-mixta-del-tejido-conectivo.html">Enfermedad mixta del tejido conectivo</a></li>
     </ul>
     <p class="footer-copy">© 2025 Dr. Daniel Mora, reumatólogo en León, Guanajuato · Médica Campestre, Calle Manantial 114, consultorio 107 · Cédula profesional 7405984 · Cédula de especialidad 10508486. Todos los derechos reservados.</p>
   </div>

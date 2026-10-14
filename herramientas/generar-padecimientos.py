@@ -205,9 +205,9 @@ def pagina(p):
     <div class="ed-cabecera ed-cabecera-seccion reveal">
       <span>Preguntas frecuentes</span>
       <span class="ed-cabecera-num">N.º 03</span>
-      <span>Sobre {p['nombre'].lower() if p['slug'] != 'enfermedad-de-sjogren' else 'la enfermedad de Sjögren'}</span>
+      <span>Sobre {p.get('sobre') or p['nombre'].lower()}</span>
     </div>
-    <h2 class="sr-only">Preguntas frecuentes sobre {p['nombre'].lower()}</h2>
+    <h2 class="sr-only">Preguntas frecuentes sobre {p.get('sobre') or p['nombre'].lower()}</h2>
     <div class="bento">
       <div class="tile faq-lista c-8 reveal">
 {faq}      </div>

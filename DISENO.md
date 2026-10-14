@@ -148,3 +148,7 @@ Auditoría automática de las 11 páginas: títulos de 43 a 60 caracteres y úni
 - Una imagen por página en `images/og/<slug>.jpg` (1200×630, ~70–90 KB): degradado de marca, isotipo, retrato del doctor fundido a la derecha, rótulo + título editorial (última palabra en Fraunces cursiva), chips de consultorio/WhatsApp/dominio.
 - Se generan con `python3 herramientas/generar-og.py [slug…]` (con el dev-server en :4328): renderiza `herramientas/og/plantilla.html?eyebrow=&titulo=&sub=&tipo=` con Chrome sin ventana a 2× y actualiza `og:image`, `twitter:image` y sus `alt` en cada página. `generar-padecimientos.py` ya escribe la imagen de cada padecimiento.
 - Al cambiar el hero o el nombre de una página, regenerar su imagen. Tras publicar, refrescar la caché de WhatsApp/Facebook con el Sharing Debugger de Meta.
+
+## Padecimientos nuevos (2026-10-14)
+- A petición del doctor: miopatías inflamatorias idiopáticas, artropatías por cristales (gota y pseudogota), esclerosis sistémica progresiva y enfermedad mixta del tejido conectivo. Contenido en `herramientas/padecimientos.py` (campo opcional `sobre` = nombre con artículo para la cabecera del FAQ), fichas 06–09 en `padecimientos.html` (`.pad-tile.c-3`, cuatro por fila), ItemList de 12, pie de página, sitemap, llms.txt y knowsAbout. Los chips "También atiende" quedan en osteoartritis, antifosfolípido y artritis psoriásica.
+- Texto clínico redactado en lenguaje llano; pendiente de revisión por el doctor.

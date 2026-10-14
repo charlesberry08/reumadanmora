@@ -15,11 +15,11 @@
 - Perfil en TocDoc: https://www.tocdoc.com/node/31901
 
 ## Padecimientos que atiende
-Artritis reumatoide, lupus eritematoso sistémico, enfermedad de Sjögren, espondiloartritis, vasculitis, gota, osteoartritis, esclerosis sistémica, síndrome antifosfolípido, miopatías inflamatorias y artritis psoriásica, etc. Atiende pacientes a partir de los 16 años.
+Artritis reumatoide, lupus eritematoso sistémico, enfermedad de Sjögren, espondiloartritis, vasculitis, miopatías inflamatorias idiopáticas, artropatías por cristales (gota y pseudogota), esclerosis sistémica progresiva, enfermedad mixta del tejido conectivo, osteoartritis, síndrome antifosfolípido y artritis psoriásica, etc. Atiende pacientes a partir de los 16 años.
 
 ## Páginas
 - [Inicio: el doctor y videos](https://www.reumadanmora.com/)
-- [Padecimientos y qué es la reumatología](https://www.reumadanmora.com/padecimientos.html): artritis-reumatoide.html, lupus.html, enfermedad-de-sjogren.html, espondiloartritis.html, vasculitis.html
+- [Padecimientos y qué es la reumatología](https://www.reumadanmora.com/padecimientos.html): artritis-reumatoide.html, lupus.html, enfermedad-de-sjogren.html, espondiloartritis.html, vasculitis.html, miopatias-inflamatorias.html, artropatias-por-cristales.html, esclerosis-sistemica.html, enfermedad-mixta-del-tejido-conectivo.html
 - [¿Cuándo acudir con un reumatólogo? y preguntas frecuentes](https://www.reumadanmora.com/cuando-acudir.html)
 - [Consultorio y contacto](https://www.reumadanmora.com/contacto.html)
 - [Aviso de privacidad](https://www.reumadanmora.com/aviso-de-privacidad.html)
