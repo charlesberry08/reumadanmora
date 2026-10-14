@@ -152,3 +152,6 @@ Auditoría automática de las 11 páginas: títulos de 43 a 60 caracteres y úni
 ## Padecimientos nuevos (2026-10-14)
 - A petición del doctor: miopatías inflamatorias idiopáticas, artropatías por cristales (gota y pseudogota), esclerosis sistémica progresiva y enfermedad mixta del tejido conectivo. Contenido en `herramientas/padecimientos.py` (campo opcional `sobre` = nombre con artículo para la cabecera del FAQ), fichas 06–09 en `padecimientos.html` (`.pad-tile.c-3`, cuatro por fila), ItemList de 12, pie de página, sitemap, llms.txt y knowsAbout. Los chips "También atiende" quedan en osteoartritis, antifosfolípido y artritis psoriásica.
 - Texto clínico redactado en lenguaje llano; pendiente de revisión por el doctor.
+
+## Opiniones (Doctoralia, 2026-10-14)
+- Bloque "Opiniones de pacientes" (`.tile-aviso`) en Contacto (bajo el mapa) e Inicio (sección Agenda tu cita): botón primario "Dejar una opinión" → `doctoralia.com.mx/anade-opinion/daniel-mora`, secundario "Ver opiniones". Ligas en `OPINIONES` de `js/contenido.js`; el pie agrega un icono de estrella junto a las redes. No se copian opiniones al sitio (son de pacientes con nombre).

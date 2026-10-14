@@ -3,7 +3,7 @@
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const SPRITE = (document.body.dataset.raiz || '') + 'images/marca/iconos.svg?v=3';
+  const SPRITE = (document.body.dataset.raiz || '') + 'images/marca/iconos.svg?v=4';
 
   // ---- Iconos: <i class="fa-solid fa-nombre"> -> SVG del sprite propio ----
   function iconos(ctx = document) {

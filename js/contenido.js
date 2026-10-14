@@ -10,6 +10,11 @@
     tiktok:    { url: '', usuario: '' },
     youtube:   { url: '', usuario: '' }
   };
+  // Opiniones de pacientes (Doctoralia): perfil con opiniones y liga para dejar una nueva.
+  const OPINIONES = {
+    ver: 'https://www.doctoralia.com.mx/perfil/daniel-mora#profile-reviews',
+    dejar: 'https://www.doctoralia.com.mx/anade-opinion/daniel-mora'
+  };
   // Videos: "id" es el identificador del video en YouTube (lo que va después
   // de v= en la liga). Con id vacío se muestra la portada sin reproducir.
   // Los títulos son temas sugeridos; cambiarlos por los de los videos reales.
@@ -42,6 +47,7 @@
       grid.appendChild(a); }
       if (tiene && foot) { const li = document.createElement('li'); li.innerHTML = `<a href="${cfg.url}" target="_blank" rel="noopener noreferrer" aria-label="${meta.nombre}"><i class="${meta.icono}" aria-hidden="true"></i></a>`; foot.appendChild(li); }
     });
+    if (foot && OPINIONES.ver) { const li = document.createElement('li'); li.innerHTML = `<a href="${OPINIONES.ver}" target="_blank" rel="noopener noreferrer" aria-label="Opiniones en Doctoralia" title="Opiniones en Doctoralia"><i class="fa-solid fa-star" aria-hidden="true"></i></a>`; foot.appendChild(li); }
     // Videos
     const vg = $('#videos-grid');
     if (vg) VIDEOS.forEach(v => vg.appendChild(crearVideo(v, v.grande ? 'c-7 r-2 grande' : 'c-5', v.tema)));
