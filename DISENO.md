@@ -155,3 +155,6 @@ Auditoría automática de las 11 páginas: títulos de 43 a 60 caracteres y úni
 
 ## Opiniones (Doctoralia, 2026-10-14)
 - Bloque "Opiniones de pacientes" (`.tile-aviso`) en Contacto (bajo el mapa) e Inicio (sección Agenda tu cita): botón primario "Dejar una opinión" → `doctoralia.com.mx/anade-opinion/daniel-mora`, secundario "Ver opiniones". Ligas en `OPINIONES` de `js/contenido.js`; el pie agrega un icono de estrella junto a las redes. No se copian opiniones al sitio (son de pacientes con nombre).
+
+## Videos (2026-10-14)
+- El video de presentación de Médica Campestre se retiró a petición del doctor (grabará videos nuevos). Quedan tres espacios "Próximamente" del mismo tamaño (`c-4`); cuando haya al menos un `id` en `VIDEOS` (js/contenido.js) vuelve el acomodo grande + dos. Se quitó el `VideoObject` del JSON-LD y la extensión de video del sitemap; al cargar videos reales hay que volver a agregarlos.
