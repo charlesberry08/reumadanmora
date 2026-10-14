@@ -51,5 +51,5 @@
     if (foot && OPINIONES.ver) { const li = document.createElement('li'); li.innerHTML = `<a href="${OPINIONES.ver}" target="_blank" rel="noopener noreferrer" aria-label="Opiniones en Doctoralia" title="Opiniones en Doctoralia"><i class="fa-solid fa-star" aria-hidden="true"></i></a>`; foot.appendChild(li); }
     // Videos
     const vg = $('#videos-grid');
-    if (vg) { const hayVideo = VIDEOS.some(v => v.id || v.archivo); VIDEOS.forEach(v => vg.appendChild(crearVideo(v, hayVideo ? (v.grande ? 'c-7 r-2 grande' : 'c-5') : 'c-4', v.tema))); }
+    if (vg) VIDEOS.forEach(v => vg.appendChild(crearVideo(v, 'c-4 vertical', v.tema)));   // tarjetas 9:16, como los reels
   };
