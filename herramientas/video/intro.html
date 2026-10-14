@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../fonts/fuentes.css" />
+<style>
+  /* Réplica del preloader del sitio (css/styles.css, bloque #precarga) a 1080×1920 y escala ×2.6 */
+  :root{--tinta:#121a45;--azul-tinta:#0b6fb0;--celeste-borde:#cfe6f7;--grad-marca:linear-gradient(135deg,#1aa7ec 0%,#2457c4 55%,#1e2f97 100%)}
+  *{box-sizing:border-box;margin:0}
+  html,body{width:1080px;height:1920px;overflow:hidden;font-family:'Manrope',sans-serif;-webkit-font-smoothing:antialiased}
+  #precarga{position:fixed;inset:0;display:grid;place-items:center;background:radial-gradient(80% 60% at 50% 40%,#ffffff 0%,#f3f7fc 70%,#e9f1fb 100%)}
+  .precarga-logo{display:flex;flex-direction:column;align-items:center;gap:36px;text-align:center}
+  .precarga-logo svg{width:250px;height:250px;overflow:visible}
+  .precarga-logo path{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:9;stroke-dasharray:140;stroke-dashoffset:140;animation:trazo 1.25s cubic-bezier(.4,0,.2,1) forwards}
+  .precarga-logo .p1{animation-delay:.15s}.precarga-logo .p2{animation-delay:.4s}
+  .precarga-logo .l1{stroke-dasharray:60;stroke-dashoffset:60;animation-delay:1s}
+  .precarga-logo .l2{stroke-dasharray:60;stroke-dashoffset:60;animation-delay:1.2s}
+  @keyframes trazo{to{stroke-dashoffset:0}}
+  .precarga-texto{display:flex;flex-direction:column;line-height:1.05;overflow:hidden}
+  .precarga-nombre{font-weight:800;font-size:66px;letter-spacing:-0.02em;color:var(--tinta);opacity:0;transform:translateY(36px);animation:subir .7s ease forwards 1.6s}
+  .precarga-sub{font-size:26px;font-weight:700;letter-spacing:.42em;text-transform:uppercase;color:var(--azul-tinta);margin-top:16px;opacity:0;animation:abrir .8s ease forwards 1.95s}
+  @keyframes subir{to{opacity:1;transform:none}}
+  @keyframes abrir{from{opacity:0;letter-spacing:.42em}to{opacity:1;letter-spacing:.22em}}
+  .precarga-barra{position:absolute;left:50%;bottom:14vh;width:300px;height:5px;border-radius:5px;background:var(--celeste-borde);transform:translateX(-50%);overflow:hidden}
+  .precarga-barra::after{content:"";position:absolute;inset:0;background:var(--grad-marca);transform:translateX(-100%);animation:barra 2.9s ease forwards .2s}
+  @keyframes barra{to{transform:translateX(0)}}
+</style>
+</head>
+<body>
+<div id="precarga" aria-hidden="true">
+  <div class="precarga-logo">
+    <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="gp-pre" gradientUnits="userSpaceOnUse" x1="50" y1="92" x2="50" y2="22"><stop offset="0" stop-color="#1e2f97"/><stop offset=".55" stop-color="#1aa7ec"/><stop offset="1" stop-color="#4adfdd"/></linearGradient>
+        <linearGradient id="gl-pre" gradientUnits="userSpaceOnUse" x1="50" y1="62" x2="50" y2="26"><stop offset="0" stop-color="#797ef6"/><stop offset="1" stop-color="#7dd6f8"/></linearGradient>
+      </defs>
+      <path class="p1" d="M43 92 V62 C43 54 40 49 35 42 L23 24" stroke="url(#gp-pre)"/>
+      <path class="p2" d="M57 92 V62 C57 54 60 49 65 42 L77 24" stroke="url(#gp-pre)"/>
+      <path class="l1" d="M30.5 59 L12.5 30" stroke="url(#gl-pre)"/>
+      <path class="l2" d="M69.5 59 L87.5 30" stroke="url(#gl-pre)"/>
+    </svg>
+    <div class="precarga-texto">
+      <span class="precarga-nombre">Dr. Daniel Mora</span>
+      <span class="precarga-sub">Reumatología</span>
+    </div>
+  </div>
+  <div class="precarga-barra"></div>
+</div>
+<script>
+  // ?t=segundos congela todas las animaciones en ese instante (para capturar cuadro por cuadro)
+  const t = parseFloat(new URLSearchParams(location.search).get('t') || '0');
+  document.fonts.ready.then(() => {
+    document.getAnimations().forEach(a => { a.pause(); a.currentTime = t * 1000; });
+    document.documentElement.dataset.listo = '1';
+  });
+</script>
+</body>
+</html>

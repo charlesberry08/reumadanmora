@@ -161,3 +161,8 @@ Auditoría automática de las 11 páginas: títulos de 43 a 60 caracteres y úni
 
 ## Favicon para Google (2026-10-14)
 - Google exige icono cuadrado múltiplo de 48 px y lo toma al rastrear la portada. Se generan desde `images/marca/icono-512.png`: `favicon.ico` en la raíz (16/32/48) y `images/favicon-{48,96,144,192}.png` con esquinas transparentes; el SVG se mantiene para navegadores modernos. Orden de `<link rel="icon">`: ico, png 96, png 192, svg. `.cpanel.yml` copia `favicon.ico` e `images/favicon-*.png`.
+
+## Videos verticales (2026-10-14)
+- Pleca elegida: variante B (`herramientas/video/pleca-muestra.html?v=B&solo=1`, barra oscura con el degradado). Vive al 72 % de la altura, fuera de lo que tapan TikTok/Reels/Shorts; `?guias=1` dibuja esas zonas.
+- Intro = preloader del sitio replicado en `herramientas/video/intro.html`; `?t=` congela las animaciones en ese instante y se captura cuadro por cuadro con Chrome.
+- `herramientas/video/armar-reel.sh <carpeta_trabajo> <salida> clips…` normaliza, arma intro + fundidos de 0.6 s + pleca de nombre en el primer clip + loudnorm. Los clips primero se normalizan a 1080×1920/30 fps/AAC estéreo (ver comando en el historial del 2026-10-14).
