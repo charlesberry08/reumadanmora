@@ -11,6 +11,7 @@ FPS=30; XF=0.6
 INTRO_VEL=1.6; INTRO_DUR=2.1; INTRO_HOLD=0.4      # el preloader del sitio dura 3.3 s; aquí va 1.6× más rápido
 OUTRO_DUR=3.3;  OUTRO_HOLD=1.6                     # cierre: animación + pausa para leer los datos
 PLECA_IN=0.8; PLECA_DUR=5                          # pleca de nombre: entra 0.8 s después del corte, 5 s
+: ${PLECA2:=}; : ${PLECA2_CLIP:=2}; : ${PLECA2_IN:=0.8}; : ${PLECA2_DUR:=5}   # pleca de tema opcional (PNG de cuadro completo)
 mkdir -p "$W" && cd "$W"
 
 cuadros() {  # cuadros <html> <carpeta> <dur> <hold> <vel>
@@ -39,9 +40,9 @@ fi
 # Cadena: intro + clips + outro, con fundidos; la pleca va en el primer clip y en el último
 FILES=(intro.mp4 "${CLIPS[@]}" outro.mp4)
 INPUTS=(); for f in "${FILES[@]}"; do INPUTS+=(-i "$f"); done
-python3 - "$XF" "$PLECA_IN" "$PLECA_DUR" "${FILES[@]}" <<'PY'
+python3 - "$XF" "$PLECA_IN" "$PLECA_DUR" "$PLECA2" "$PLECA2_CLIP" "$PLECA2_IN" "$PLECA2_DUR" "${FILES[@]}" <<'PY'
 import sys, subprocess, json
-xf=float(sys.argv[1]); pin=float(sys.argv[2]); pdur=float(sys.argv[3]); files=sys.argv[4:]
+xf=float(sys.argv[1]); pin=float(sys.argv[2]); pdur=float(sys.argv[3]); p2=sys.argv[4]; p2clip=int(sys.argv[5]); p2in=float(sys.argv[6]); p2dur=float(sys.argv[7]); files=sys.argv[8:]
 dur=[float(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','csv=p=0',f]).decode().strip()) for f in files]
 v='[0:v]'; a='[0:a]'; t=0; partes=[]; inicio=[0.0]
 for i in range(1,len(files)):
@@ -56,10 +57,17 @@ def pleca(p0):
     return f"if(lt(t,{p0:.3f}),-1100,if(lt(t,{p1:.3f}),-1100*pow(1-(t-{p0:.3f})/0.6,3),if(lt(t,{p2:.3f}),0,if(lt(t,{p3:.3f}),-1100*pow((t-{p2:.3f})/0.4,3),-1100))))"
 x=f"if(lt(t,{inicio[-2]:.3f}),{pleca(primero)},{pleca(ultimo)})"
 n=len(files)
-filtro=';'.join(partes)+f";{v}[{n}:v]overlay=eval=frame:x='{x}':y=0:format=auto,format=yuv420p[vout];{a}loudnorm=I=-16:TP=-1.5:LRA=11[aout]"
+capa=f"{v}[{n}:v]overlay=eval=frame:x='{x}':y=0:format=auto[vp]"; final='[vp]'
+if p2:
+    def pleca2(p0):
+        p1,p2_,p3=p0+0.6,p0+p2dur,p0+p2dur+0.4
+        return f"if(lt(t,{p0:.3f}),-1100,if(lt(t,{p1:.3f}),-1100*pow(1-(t-{p0:.3f})/0.6,3),if(lt(t,{p2_:.3f}),0,if(lt(t,{p3:.3f}),-1100*pow((t-{p2_:.3f})/0.4,3),-1100))))"
+    capa+=f";[vp][{n+1}:v]overlay=eval=frame:x='{pleca2(inicio[p2clip]+p2in)}':y=0:format=auto[vq]"; final='[vq]'
+filtro=';'.join(partes)+f";{capa};{final}format=yuv420p[vout];{a}loudnorm=I=-16:TP=-1.5:LRA=11[aout]"
 open('filtro.txt','w').write(filtro)
 print('inicios:', [round(s,2) for s in inicio], '| total ≈', round(sum(dur)-xf*(n-1),1), 's')
 PY
-ffmpeg -y -loglevel error "${INPUTS[@]}" -i pleca-B.png -filter_complex_script filtro.txt \
+EXTRA=(); [ -n "$PLECA2" ] && EXTRA=(-i "$PLECA2")
+ffmpeg -y -loglevel error "${INPUTS[@]}" -i pleca-B.png "${EXTRA[@]}" -filter_complex_script filtro.txt \
   -map "[vout]" -map "[aout]" -c:v libx264 -preset medium -crf 19 -r $FPS -c:a aac -b:a 192k -movflags +faststart "$OUT"
 echo "listo: $OUT"
