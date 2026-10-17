@@ -172,3 +172,6 @@ Auditoría automática de las 11 páginas: títulos de 43 a 60 caracteres y úni
 - Transcripción local con `mlx-whisper` (modelo `mlx-community/whisper-large-v3-turbo`, Apple Silicon) desde el venv `herramientas/video/.venv` (no se sube al repo): `word_timestamps=True`, `language='es'`, `initial_prompt` con los términos del doctor para que escriba bien "paraneoplásico", "dermatomiositis", etc. Revisar términos médicos en el JSON antes de quemar.
 - `herramientas/video/subtitulos.py salida.ass clip.json:INICIO …` arma el .ass (frases de ≤6 palabras / 2 líneas, Manrope ExtraBold 78 px, blanco con borde marino, palabra activa en celeste, arriba de la zona de la pleca). INICIO = segundo del reel donde empieza cada clip (lo imprime `armar-reel.sh`).
 - Quemar: `ffmpeg -i reel.mp4 -vf "ass=subs.ass:fontsdir=herramientas/video/fonts" -c:a copy …` (la TTF estática de Manrope 800 está en `herramientas/video/fonts/`, generada con fontTools desde la variable woff2).
+
+## Separador de cuadrícula de Instagram (2026-10-17)
+- `herramientas/video/separador-ig.html` (3240×1350) se renderiza con Chrome y se parte en tres de 1080×1350 (4:5, la proporción de las miniaturas de IG). Se publican en orden 1→2→3 porque Instagram coloca el post más nuevo arriba a la izquierda: el "1" es la pieza derecha y el "3" la izquierda. Entregadas en `Desktop/Dr Daniel Mora/Separador Instagram`.
