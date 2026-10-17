@@ -30,7 +30,7 @@
   <script>(function(){try{var t=localStorage.getItem('tema');if(t!=='oscuro'&&t!=='claro'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'oscuro':'claro'}document.documentElement.setAttribute('data-tema',t)}catch(e){document.documentElement.setAttribute('data-tema','claro')}})();</script>
   <link rel="stylesheet" href="fonts/fuentes.css?v=1" />
   <link rel="stylesheet" href="css/styles.css?v=20261014b" />
-  <script src="js/contenido.js?v=7" defer></script>
+  <script src="js/contenido.js?v=8" defer></script>
   <script src="js/comun.js?v=12" defer></script>
 
   <link rel="icon" href="favicon.ico" sizes="48x48" />
@@ -342,6 +342,32 @@
       "about": {
         "@id": "https://www.reumadanmora.com/#physician"
       }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://www.reumadanmora.com/#video-mes-rosa",
+      "name": "Cáncer de mama y reumatología: síndromes paraneoplásicos",
+      "description": "El Dr. Daniel Mora, reumatólogo en León, explica los síndromes paraneoplásicos reumatológicos del cáncer de mama: dermatomiositis, fascitis palmar con poliartritis y poliartritis paraneoplásica. Mes rosa.",
+      "thumbnailUrl": [
+        "https://www.reumadanmora.com/videos/reel-mes-rosa.jpg"
+      ],
+      "uploadDate": "2026-10-17",
+      "duration": "PT1M40S",
+      "contentUrl": "https://www.reumadanmora.com/videos/reel-mes-rosa.mp4",
+      "inLanguage": "es",
+      "isFamilyFriendly": true,
+      "publisher": {
+        "@id": "https://www.reumadanmora.com/#physician"
+      },
+      "about": [
+        {
+          "@id": "https://www.reumadanmora.com/#physician"
+        },
+        {
+          "@type": "MedicalCondition",
+          "name": "Cáncer de mama"
+        }
+      ]
     }
   ]
 }

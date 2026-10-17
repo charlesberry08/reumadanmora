@@ -13,7 +13,16 @@
       <video:publication_date>2026-10-14</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
     </video:video>
-    <lastmod>2026-10-14</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://www.reumadanmora.com/videos/reel-mes-rosa.jpg</video:thumbnail_loc>
+      <video:title>Cáncer de mama y reumatología: síndromes paraneoplásicos</video:title>
+      <video:description>El Dr. Daniel Mora explica los síndromes paraneoplásicos reumatológicos del cáncer de mama.</video:description>
+      <video:content_loc>https://www.reumadanmora.com/videos/reel-mes-rosa.mp4</video:content_loc>
+      <video:duration>100</video:duration>
+      <video:publication_date>2026-10-17</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>

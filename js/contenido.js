@@ -21,7 +21,7 @@
   // Los títulos son temas sugeridos; cambiarlos por los de los videos reales.
   const VIDEOS = [
     { archivo: 'videos/reel-presentacion.mp4', poster: 'videos/reel-presentacion.jpg', titulo: 'Conoce al Dr. Daniel Mora', tema: 'Presentación', grande: true },
-    { id: '', titulo: '¿Cuándo acudir con un reumatólogo?', tema: 'Señales de alerta' },
+    { archivo: 'videos/reel-mes-rosa.mp4', poster: 'videos/reel-mes-rosa.jpg', titulo: 'Cáncer de mama y reumatología', tema: 'Mes rosa · Síndromes paraneoplásicos' },
     { id: '', titulo: 'Qué esperar en tu primera consulta', tema: 'La consulta' }
   ];
   // =====================================================================
