@@ -6,3 +6,4 @@ dist/
 
 # Pruebas de video (pesadas): no se suben
 herramientas/video/*.mp4
+herramientas/video/.venv/
