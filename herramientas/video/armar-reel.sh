@@ -13,6 +13,7 @@ OUTRO_DUR=3.3;  OUTRO_HOLD=1.6                     # cierre: animación + pausa 
 PLECA_IN=0.8; PLECA_DUR=5                          # pleca de nombre: entra 0.8 s después del corte, 5 s
 : ${PLECA2:=}; : ${PLECA2_CLIP:=2}; : ${PLECA2_IN:=0.8}; : ${PLECA2_DUR:=5}   # pleca de tema opcional (PNG de cuadro completo)
 : ${PLECA_SFX_IN:=}; : ${PLECA_SFX_OUT:=}; : ${PLECA_SFX_VOL:=0.75}   # efectos de entrada y salida de pleca (volumen 0–1)
+: ${INTRO_SFX:=}; : ${INTRO_SFX_VOL:=0.9}; : ${OUTRO_SFX:=}; : ${OUTRO_SFX_VOL:=2.5}   # sonidos de intro y cierre (opcionales)
 mkdir -p "$W" && cd "$W"
 
 cuadros() {  # cuadros <html> <carpeta> <dur> <hold> <vel>
@@ -29,8 +30,14 @@ cuadros() {  # cuadros <html> <carpeta> <dur> <hold> <vel>
   ffmpeg -y -loglevel error -framerate $FPS -i $dir/f%04d.png -f lavfi -i anullsrc=r=48000:cl=stereo -shortest \
     -vf "format=yuv420p" -c:v libx264 -preset veryfast -crf 18 -c:a aac -b:a 192k $dir.mp4
 }
-[ -f intro.mp4 ] || cuadros intro.html intro $INTRO_DUR $INTRO_HOLD $INTRO_VEL
-[ -f outro.mp4 ] || cuadros outro.html outro $OUTRO_DUR $OUTRO_HOLD 1
+sonido() {  # sonido <video.mp4> <efecto.mp3> <volumen>: pone el efecto como audio del video, recortado y con fade final
+  local D=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$1")
+  local F=$(python3 -c "print(round($D-0.5,3))")
+  ffmpeg -y -loglevel error -i "$1" -i "$2" -filter_complex "[1:a]aresample=48000,aformat=channel_layouts=stereo,volume=$3,apad,atrim=0:$D,afade=t=out:st=$F:d=0.5[a]" \
+    -map 0:v -map "[a]" -c:v copy -c:a aac -b:a 192k -shortest "$1.tmp.mp4" && mv "$1.tmp.mp4" "$1"
+}
+[ -f intro.mp4 ] || { cuadros intro.html intro $INTRO_DUR $INTRO_HOLD $INTRO_VEL; [ -n "$INTRO_SFX" ] && sonido intro.mp4 "$INTRO_SFX" $INTRO_SFX_VOL; }
+[ -f outro.mp4 ] || { cuadros outro.html outro $OUTRO_DUR $OUTRO_HOLD 1; [ -n "$OUTRO_SFX" ] && sonido outro.mp4 "$OUTRO_SFX" $OUTRO_SFX_VOL; }
 
 if [ ! -f pleca-B.png ]; then
   "$CHROME" --headless=new --no-first-run --disable-gpu --user-data-dir=./perfil --hide-scrollbars \
