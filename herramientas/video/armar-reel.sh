@@ -14,6 +14,7 @@ PLECA_IN=0.8; PLECA_DUR=5                          # pleca de nombre: entra 0.8 
 : ${PLECA2:=}; : ${PLECA2_CLIP:=2}; : ${PLECA2_IN:=0.8}; : ${PLECA2_DUR:=5}   # pleca de tema opcional (PNG de cuadro completo)
 : ${PLECA_SFX_IN:=}; : ${PLECA_SFX_OUT:=}; : ${PLECA_SFX_VOL:=0.75}   # efectos de entrada y salida de pleca (volumen 0–1)
 : ${INTRO_SFX:=}; : ${INTRO_SFX_VOL:=0.9}; : ${OUTRO_SFX:=}; : ${OUTRO_SFX_VOL:=2.5}   # sonidos de intro y cierre (opcionales)
+: ${COLA:=0.9}                                     # cuadro congelado al final del último clip, para que el fundido al cierre no se coma la última palabra
 mkdir -p "$W" && cd "$W"
 
 cuadros() {  # cuadros <html> <carpeta> <dur> <hold> <vel>
@@ -45,6 +46,11 @@ if [ ! -f pleca-B.png ]; then
     --screenshot=pleca-B.png "$BASE/pleca-muestra.html?v=B&solo=1" >/dev/null 2>&1
 fi
 
+# Cola congelada en el último clip (el fundido de 0.6 s al cierre cae sobre el cuadro quieto, no sobre la voz)
+if [ "$COLA" != "0" ]; then
+  U="${CLIPS[-1]}"; ffmpeg -y -loglevel error -i "$U" -vf "tpad=stop_mode=clone:stop_duration=$COLA" -af "apad=pad_dur=$COLA" \
+    -c:v libx264 -preset medium -crf 18 -c:a aac -b:a 192k ultimo-cola.mp4 && CLIPS[-1]=ultimo-cola.mp4
+fi
 # Cadena: intro + clips + outro, con fundidos; la pleca va en el primer clip y en el último
 FILES=(intro.mp4 "${CLIPS[@]}" outro.mp4)
 INPUTS=(); for f in "${FILES[@]}"; do INPUTS+=(-i "$f"); done
