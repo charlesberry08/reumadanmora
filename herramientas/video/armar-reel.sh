@@ -14,7 +14,7 @@ PLECA_IN=0.8; PLECA_DUR=5                          # pleca de nombre: entra 0.8 
 : ${PLECA2:=}; : ${PLECA2_CLIP:=2}; : ${PLECA2_IN:=0.8}; : ${PLECA2_DUR:=5}   # pleca de tema opcional (PNG de cuadro completo)
 : ${PLECA_SFX_IN:=}; : ${PLECA_SFX_OUT:=}; : ${PLECA_SFX_VOL:=0.75}   # efectos de entrada y salida de pleca (volumen 0–1)
 : ${INTRO_SFX:=}; : ${INTRO_SFX_VOL:=0.9}; : ${OUTRO_SFX:=}; : ${OUTRO_SFX_VOL:=2.5}   # sonidos de intro y cierre (opcionales)
-: ${COLA:=0.9}                                     # cuadro congelado al final del último clip, para que el fundido al cierre no se coma la última palabra
+: ${COLA:=0.45}                                    # cola congelada al final del último clip: solo lo que tapa el fundido (0.6 s); más larga se nota como cuadro quieto
 mkdir -p "$W" && cd "$W"
 
 cuadros() {  # cuadros <html> <carpeta> <dur> <hold> <vel>
