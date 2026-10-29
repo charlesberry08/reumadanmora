@@ -9,22 +9,23 @@ CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 BASE="http://localhost:4328/herramientas/video"
 FPS=30; XF=0.6
 INTRO_VEL=1.6; INTRO_DUR=2.1; INTRO_HOLD=0.4      # el preloader del sitio dura 3.3 s; aquí va 1.6× más rápido
-OUTRO_DUR=3.3;  OUTRO_HOLD=1.6                     # cierre: animación + pausa para leer los datos
+OUTRO_DUR=3.3;  : ${OUTRO_HOLD:=1.6}               # cierre: animación + pausa para leer los datos (más si lleva aviso)
 PLECA_IN=0.8; PLECA_DUR=5                          # pleca de nombre: entra 0.8 s después del corte, 5 s
 : ${PLECA2:=}; : ${PLECA2_CLIP:=2}; : ${PLECA2_IN:=0.8}; : ${PLECA2_DUR:=5}   # pleca de tema opcional (PNG de cuadro completo)
 : ${PLECA_SFX_IN:=}; : ${PLECA_SFX_OUT:=}; : ${PLECA_SFX_VOL:=0.75}   # efectos de entrada y salida de pleca (volumen 0–1)
 : ${INTRO_SFX:=}; : ${INTRO_SFX_VOL:=0.9}; : ${OUTRO_SFX:=}; : ${OUTRO_SFX_VOL:=2.5}   # sonidos de intro y cierre (opcionales)
+: ${OUTRO_Q:=}                                    # parámetros extra para outro.html (p. ej. aviso=…), ya codificados
 : ${COLA:=0.45}                                    # cola congelada al final del último clip: solo lo que tapa el fundido (0.6 s); más larga se nota como cuadro quieto
 mkdir -p "$W" && cd "$W"
 
 cuadros() {  # cuadros <html> <carpeta> <dur> <hold> <vel>
-  local html=$1 dir=$2 dur=$3 hold=$4 vel=$5; mkdir -p $dir
+  local html=$1 dir=$2 dur=$3 hold=$4 vel=$5 extra=$6; mkdir -p $dir
   local N=$(python3 -c "print(int($dur*$FPS))")
   for ((i=0;i<N;i++)); do
     local t=$(python3 -c "print(round($i/$FPS,4))")
     "$CHROME" --headless=new --no-first-run --disable-gpu --user-data-dir=./perfil --hide-scrollbars \
       --window-size=1080,1920 --force-device-scale-factor=1 --virtual-time-budget=2500 \
-      --screenshot=$dir/f$(printf %04d $i).png "$BASE/$html?t=$t&vel=$vel" >/dev/null 2>&1
+      --screenshot=$dir/f$(printf %04d $i).png "$BASE/$html?t=$t&vel=$vel${extra:+&$extra}" >/dev/null 2>&1
   done
   local H=$(python3 -c "print(int($hold*$FPS))")
   for ((k=1;k<=H;k++)); do cp $dir/f$(printf %04d $((N-1))).png $dir/f$(printf %04d $((N-1+k))).png; done
@@ -38,7 +39,7 @@ sonido() {  # sonido <video.mp4> <efecto.mp3> <volumen>: pone el efecto como aud
     -map 0:v -map "[a]" -c:v copy -c:a aac -b:a 192k -shortest "$1.tmp.mp4" && mv "$1.tmp.mp4" "$1"
 }
 [ -f intro.mp4 ] || { cuadros intro.html intro $INTRO_DUR $INTRO_HOLD $INTRO_VEL; [ -n "$INTRO_SFX" ] && sonido intro.mp4 "$INTRO_SFX" $INTRO_SFX_VOL; }
-[ -f outro.mp4 ] || { cuadros outro.html outro $OUTRO_DUR $OUTRO_HOLD 1; [ -n "$OUTRO_SFX" ] && sonido outro.mp4 "$OUTRO_SFX" $OUTRO_SFX_VOL; }
+[ -f outro.mp4 ] || { cuadros outro.html outro $OUTRO_DUR $OUTRO_HOLD 1 "$OUTRO_Q"; [ -n "$OUTRO_SFX" ] && sonido outro.mp4 "$OUTRO_SFX" $OUTRO_SFX_VOL; }
 
 if [ ! -f pleca-B.png ]; then
   "$CHROME" --headless=new --no-first-run --disable-gpu --user-data-dir=./perfil --hide-scrollbars \

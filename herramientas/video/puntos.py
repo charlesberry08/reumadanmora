@@ -2,7 +2,8 @@
 """Sobrepone tarjetas de puntos numerados (1, 2, 3…) en el reel, cada una en el momento en que el doctor
 presenta ese punto. Entran subiendo con fundido, se quedan DUR segundos y se van igual.
 
-Uso: puntos.py reel.mp4 salida.mp4 "N|Texto del punto|INICIO|DUR" ["N|Texto|INICIO|DUR" ...] [--de 3] [--eyebrow "Señal de alarma"]
+Uso: puntos.py reel.mp4 salida.mp4 "N|Texto del punto|INICIO|DUR" ["N|Texto|INICIO|DUR" ...] [--de 3] [--eyebrow "Señal de alarma"] [--y 240]
+  --y: altura de la tarjeta en px (780 = pecho; 240 = arriba, sobre la frente, si el doctor está cerca de la cámara).
 Requiere el dev-server en :4328 (sirve puntos.html) y Chrome. Hacerlo ANTES de quemar subtítulos.
 """
 import os, subprocess, sys, tempfile, urllib.parse
@@ -15,6 +16,7 @@ def main():
     args = sys.argv[1:]
     de = args[args.index('--de') + 1] if '--de' in args else ''
     eyebrow = args[args.index('--eyebrow') + 1] if '--eyebrow' in args else None
+    altura = args[args.index('--y') + 1] if '--y' in args else ''
     items = [a for a in args if '|' in a]
     base, salida = args[0], args[1]
     with tempfile.TemporaryDirectory() as tmp:
@@ -24,6 +26,7 @@ def main():
             q = {'n': n, 'texto': texto}
             if de: q['de'] = de
             if eyebrow is not None: q['eyebrow'] = eyebrow
+            if altura: q['y'] = altura
             png = os.path.join(tmp, f'p{i}.png')
             subprocess.run([CHROME, '--headless=new', '--no-first-run', '--disable-gpu', f'--user-data-dir={tmp}/perfil',
                             '--hide-scrollbars', '--window-size=1080,1920', '--force-device-scale-factor=1',

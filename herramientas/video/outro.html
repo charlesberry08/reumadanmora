@@ -27,6 +27,8 @@
   .dato svg{width:30px;height:30px;fill:#1aa7ec}
   .web{margin-top:40px;display:inline-block;padding:18px 38px;border-radius:999px;background:var(--grad-marca);color:#fff;font-size:30px;font-weight:800;letter-spacing:-.3px;opacity:0;transform:scale(.92);animation:aparecer .5s cubic-bezier(.2,.8,.2,1) forwards 2.45s}
   @keyframes aparecer{to{opacity:1;transform:none}}
+  .aviso{position:absolute;left:90px;right:90px;bottom:calc(14vh + 56px);text-align:center;font-size:36px;font-weight:700;line-height:1.35;color:var(--tinta);padding-top:22px;border-top:2px solid var(--celeste-borde);opacity:0;transform:translateY(18px);animation:subir .55s ease forwards 2.7s}
+  .aviso:empty{display:none}
   .barra{position:absolute;left:50%;bottom:14vh;width:300px;height:5px;border-radius:5px;background:var(--celeste-borde);transform:translateX(-50%);overflow:hidden}
   .barra::after{content:"";position:absolute;inset:0;background:var(--grad-marca);transform:translateX(-100%);animation:barra 3s ease forwards .1s}
   @keyframes barra{to{transform:translateX(0)}}
@@ -56,12 +58,14 @@
     </div>
     <div class="web">reumadanmora.com</div>
   </div>
+  <p class="aviso" id="aviso"></p>
   <div class="barra"></div>
 </div>
 <script>
   // ?t=segundos congela las animaciones en ese instante; ?vel= acelera (1.5 = 50 % más rápido)
   const q = new URLSearchParams(location.search);
   const t = parseFloat(q.get('t') || '0'), vel = parseFloat(q.get('vel') || '1');
+  if (q.get('aviso')) document.getElementById('aviso').textContent = q.get('aviso');
   document.fonts.ready.then(() => {
     document.getAnimations().forEach(a => { a.pause(); a.currentTime = t * vel * 1000; });
   });

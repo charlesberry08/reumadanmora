@@ -29,6 +29,7 @@
   if (q.get('de')) document.getElementById('num').dataset.de = '/' + q.get('de');
   if (q.get('texto')) document.getElementById('texto').textContent = q.get('texto');
   if (q.has('eyebrow')) document.getElementById('eyebrow').textContent = q.get('eyebrow');
+  if (q.get('y')) document.querySelector('.tarjeta').style.top = q.get('y') + 'px';   // altura de la tarjeta (por defecto 780)
 </script>
 </body>
 </html>
