@@ -3,6 +3,7 @@
 presenta ese punto. Entran subiendo con fundido, se quedan DUR segundos y se van igual.
 
 Uso: puntos.py reel.mp4 salida.mp4 "N|Texto del punto|INICIO|DUR" ["N|Texto|INICIO|DUR" ...] [--de 3] [--eyebrow "Señal de alarma"] [--y 240]
+  --fundido 0.2: fundido más corto cuando el doctor dice los puntos muy seguidos (por defecto 0.35).
   --y: altura de la tarjeta en px (780 = pecho; 240 = arriba, sobre la frente, si el doctor está cerca de la cámara).
 Requiere el dev-server en :4328 (sirve puntos.html) y Chrome. Hacerlo ANTES de quemar subtítulos.
 """
@@ -17,6 +18,8 @@ def main():
     de = args[args.index('--de') + 1] if '--de' in args else ''
     eyebrow = args[args.index('--eyebrow') + 1] if '--eyebrow' in args else None
     altura = args[args.index('--y') + 1] if '--y' in args else ''
+    global FUNDIDO
+    if '--fundido' in args: FUNDIDO = float(args[args.index('--fundido') + 1])   # más corto si los puntos van muy seguidos
     items = [a for a in args if '|' in a]
     base, salida = args[0], args[1]
     with tempfile.TemporaryDirectory() as tmp:

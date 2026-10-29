@@ -4,6 +4,7 @@ transcripciones de mlx-whisper (JSON con word_timestamps) de cada clip, desplaza
 
 Uso: subtitulos.py salida.ass clip1.json:INICIO1 clip2.json:INICIO2 ...
   INICIO = segundo en el que ese clip empieza dentro del reel (lo imprime armar-reel.sh como "inicios").
+Opción: --arriba INICIO:FIN[:Y] sube los subtítulos en ese tramo del reel (y=230 por defecto).
 Quemar: ffmpeg -i reel.mp4 -vf "ass=salida.ass:fontsdir=<carpeta con Manrope-ExtraBold.ttf>" -c:a copy out.mp4
 """
 import json, re, sys
@@ -71,6 +72,13 @@ def partir_lineas(palabras):
             mejor, mejor_dif = k, abs(a - b)
     return [palabras[:mejor], palabras[mejor:]]
 
+TRAMOS_ARRIBA = []   # [(inicio, fin, y)]: en esos tramos la frase va arriba (anclada por arriba en y)
+
+def posicion(t):
+    for a, b, y in TRAMOS_ARRIBA:
+        if a <= t < b: return f"{{\\an8\\pos({ANCHO // 2},{y})}}"
+    return f"{{\\an2\\pos({ANCHO // 2},{ALTO - MARGEN_INF})}}"
+
 def eventos(palabras, desplazamiento):
     lineas_out = []
     grupos = frases(palabras)
@@ -96,11 +104,15 @@ def eventos(palabras, desplazamiento):
                     n += 1
                 partes.append(' '.join(ws))
             texto = '\\N'.join(partes)
-            lineas_out.append(f"Dialogue: 0,{t_ass(a)},{t_ass(b)},Reel,,0,0,0,,{POS}{texto}")
+            lineas_out.append(f"Dialogue: 0,{t_ass(a)},{t_ass(b)},Reel,,0,0,0,,{posicion(ini)}{texto}")
     return lineas_out
 
 def main():
-    salida = sys.argv[1]; fuentes = sys.argv[2:]
+    args = sys.argv[1:]
+    while '--arriba' in args:   # --arriba INICIO:FIN[:Y] mueve los subtítulos arriba en ese tramo (p. ej. para dejar lugar a una lista)
+        i = args.index('--arriba'); v = args[i + 1].split(':'); del args[i:i + 2]
+        TRAMOS_ARRIBA.append((float(v[0]), float(v[1]), int(v[2]) if len(v) > 2 else 230))
+    salida = args[0]; fuentes = args[1:]
     out = [CABECERA]
     todas = []
     for item in fuentes:

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../fonts/fuentes.css" />
+<style>
+  /* Lista acumulativa para reels: la tarjeta aparece con el primer punto y cada punto se suma cuando el doctor lo dice.
+     ?items=A|B|C&eyebrow=…&y=200&capa=base|1|2…  (base = fondo + título; N = solo el punto N, para animarlo por separado) */
+  :root{--cielo:#7dd6f8;--grad:linear-gradient(135deg,#1aa7ec 0%,#2457c4 55%,#1e2f97 100%)}
+  *{box-sizing:border-box;margin:0}
+  html,body{width:1080px;height:1920px;overflow:hidden;background:transparent;font-family:'Manrope',sans-serif;-webkit-font-smoothing:antialiased}
+  .tarjeta{position:absolute;left:0;right:0;margin-inline:auto;width:fit-content;min-width:640px;top:200px;padding:22px 36px 24px 26px;
+    background:rgba(10,17,36,.82);border:1px solid rgba(255,255,255,.22);border-radius:26px;box-shadow:0 20px 50px rgba(5,10,30,.45)}
+  .eyebrow{font-size:18px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--cielo);margin:0 0 14px 4px}
+  ol{list-style:none;padding:0;display:grid;gap:10px}
+  li{display:flex;align-items:center;gap:18px}
+  li b{width:46px;height:46px;border-radius:12px;background:var(--grad);display:grid;place-items:center;flex:none;
+    font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:400;font-size:34px;line-height:1;color:#fff}
+  li span{font-size:35px;font-weight:800;letter-spacing:-.4px;line-height:1.1;color:#fff;white-space:nowrap}
+  /* sin recuadro: texto con contorno y sombra para leerse sobre cualquier fondo */
+  body.sin-fondo .tarjeta{background:transparent;border-color:transparent;box-shadow:none;padding:0;min-width:0}
+  body.sin-fondo ol{gap:8px}
+  body.sin-fondo li b{width:42px;height:42px;font-size:31px}
+  body.sin-fondo li span{font-size:34px}
+  body.sin-fondo li span,body.sin-fondo .eyebrow{paint-order:stroke fill;-webkit-text-stroke:9px rgba(12,20,52,.92);text-shadow:0 4px 14px rgba(0,0,0,.55)}
+  body.sin-fondo .eyebrow{-webkit-text-stroke:7px rgba(12,20,52,.92)}
+  body.sin-fondo li b{box-shadow:0 6px 16px rgba(0,0,0,.45)}
+  /* capas */
+  body.capa-item .tarjeta{background:transparent;border-color:transparent;box-shadow:none}
+  body.capa-item .eyebrow{visibility:hidden}
+  body.capa-base li, body.capa-item li{visibility:hidden}
+  body.capa-item li.activo{visibility:visible}
+</style>
+</head>
+<body>
+  <div class="tarjeta">
+    <p class="eyebrow" id="eyebrow">También dañan el hígado</p>
+    <ol id="lista"></ol>
+  </div>
+<script>
+  const q = new URLSearchParams(location.search);
+  const items = (q.get('items') || 'Diabetes|Obesidad|Colesterol y triglicéridos altos|Hígado graso|Otros medicamentos').split('|');
+  const ol = document.getElementById('lista');
+  items.forEach((t, i) => { const li = document.createElement('li'); li.innerHTML = `<b>${i + 1}</b><span></span>`; li.querySelector('span').textContent = t; ol.appendChild(li); });
+  if (q.has('eyebrow')) document.getElementById('eyebrow').textContent = q.get('eyebrow');
+  if (q.get('y')) document.querySelector('.tarjeta').style.top = q.get('y') + 'px';
+  if (q.get('fondo') === '0') document.body.classList.add('sin-fondo');
+  const capa = q.get('capa');
+  if (capa === 'base') document.body.classList.add('capa-base');
+  else if (capa) { document.body.classList.add('capa-item'); ol.children[+capa - 1]?.classList.add('activo'); }
+</script>
+</body>
+</html>
