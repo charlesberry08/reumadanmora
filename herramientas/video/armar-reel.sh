@@ -78,8 +78,10 @@ if p2:
     def pleca2(p0):
         p1,p2_,p3=p0+0.6,p0+p2dur,p0+p2dur+0.4
         return f"if(lt(t,{p0:.3f}),-1100,if(lt(t,{p1:.3f}),-1100*pow(1-(t-{p0:.3f})/0.6,3),if(lt(t,{p2_:.3f}),0,if(lt(t,{p3:.3f}),-1100*pow((t-{p2_:.3f})/0.4,3),-1100))))"
-    capa+=f";[vp][{n+1}:v]overlay=eval=frame:x='{pleca2(inicio[p2clip]+p2in)}':y=0:format=auto[vq]"; final='[vq]'
-    t2=inicio[p2clip]+p2in; entradas.append(t2); salidas.append(t2+p2dur)
+    t2=max(inicio[p2clip]+p2in, primero+pdur+0.4+0.5)   # nunca encima de la pleca de nombre (sale en pdur+0.4 s)
+    capa+=f";[vp][{n+1}:v]overlay=eval=frame:x='{pleca2(t2)}':y=0:format=auto[vq]"; final='[vq]'
+    entradas.append(t2); salidas.append(t2+p2dur)
+    print('pleca de tema en', round(t2,2), 's')
 audio=f"{a}loudnorm=I=-16:TP=-1.5:LRA=11[aout]"
 if sfx_in and sfx_out:
     idx=n+1+(1 if p2 else 0)              # entrada = idx, salida = idx+1
