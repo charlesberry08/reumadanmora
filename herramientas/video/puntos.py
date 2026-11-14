@@ -20,6 +20,7 @@ def main():
     altura = args[args.index('--y') + 1] if '--y' in args else ''
     global FUNDIDO
     if '--fundido' in args: FUNDIDO = float(args[args.index('--fundido') + 1])   # más corto si los puntos van muy seguidos
+    grande = '--grande' in args   # tarjeta de frase (sin número, texto grande): "|Texto|INICIO|DUR" --grande
     items = [a for a in args if '|' in a]
     base, salida = args[0], args[1]
     with tempfile.TemporaryDirectory() as tmp:
@@ -30,6 +31,7 @@ def main():
             if de: q['de'] = de
             if eyebrow is not None: q['eyebrow'] = eyebrow
             if altura: q['y'] = altura
+            if grande: q['grande'] = '1'
             png = os.path.join(tmp, f'p{i}.png')
             subprocess.run([CHROME, '--headless=new', '--no-first-run', '--disable-gpu', f'--user-data-dir={tmp}/perfil',
                             '--hide-scrollbars', '--window-size=1080,1920', '--force-device-scale-factor=1',

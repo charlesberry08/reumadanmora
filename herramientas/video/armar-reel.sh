@@ -15,6 +15,8 @@ PLECA_IN=0.8; PLECA_DUR=5                          # pleca de nombre: entra 0.8 
 : ${PLECA_SFX_IN:=}; : ${PLECA_SFX_OUT:=}; : ${PLECA_SFX_VOL:=0.75}   # efectos de entrada y salida de pleca (volumen 0–1)
 : ${INTRO_SFX:=}; : ${INTRO_SFX_VOL:=0.9}; : ${OUTRO_SFX:=}; : ${OUTRO_SFX_VOL:=2.5}   # sonidos de intro y cierre (opcionales)
 : ${OUTRO_Q:=}                                    # parámetros extra para outro.html (p. ej. aviso=…), ya codificados
+: ${FRASE:=}; : ${FRASE_EYEBROW:=}; : ${FRASE_DUR:=1.6}; : ${FRASE_HOLD:=1.6}   # pantalla de frase antes del cierre (frase.html); "|" separa líneas
+# OJO: un sonido sostenido para la pantalla de frase NO va aquí: el loudnorm dinámico de abajo lo sube ~9 dB; se mezcla después con mezclar-sfx.sh
 : ${COLA:=0.45}                                    # cola congelada al final del último clip: solo lo que tapa el fundido (0.6 s); más larga se nota como cuadro quieto
 mkdir -p "$W" && cd "$W"
 
@@ -39,6 +41,10 @@ sonido() {  # sonido <video.mp4> <efecto.mp3> <volumen>: pone el efecto como aud
     -map 0:v -map "[a]" -c:v copy -c:a aac -b:a 192k -shortest "$1.tmp.mp4" && mv "$1.tmp.mp4" "$1"
 }
 [ -f intro.mp4 ] || { cuadros intro.html intro $INTRO_DUR $INTRO_HOLD $INTRO_VEL; [ -n "$INTRO_SFX" ] && sonido intro.mp4 "$INTRO_SFX" $INTRO_SFX_VOL; }
+if [ -n "$FRASE" ] && [ ! -f frase.mp4 ]; then
+  FQ=$(python3 -c "import urllib.parse,sys; print(urllib.parse.urlencode({'texto':sys.argv[1],'eyebrow':sys.argv[2]}))" "$FRASE" "$FRASE_EYEBROW")
+  cuadros frase.html frase $FRASE_DUR $FRASE_HOLD 1 "$FQ"
+fi
 [ -f outro.mp4 ] || { cuadros outro.html outro $OUTRO_DUR $OUTRO_HOLD 1 "$OUTRO_Q"; [ -n "$OUTRO_SFX" ] && sonido outro.mp4 "$OUTRO_SFX" $OUTRO_SFX_VOL; }
 
 if [ ! -f pleca-B.png ]; then
@@ -53,11 +59,12 @@ if [ "$COLA" != "0" ]; then
     -c:v libx264 -preset medium -crf 18 -c:a aac -b:a 192k ultimo-cola.mp4 && CLIPS[-1]=ultimo-cola.mp4
 fi
 # Cadena: intro + clips + outro, con fundidos; la pleca va en el primer clip y en el último
-FILES=(intro.mp4 "${CLIPS[@]}" outro.mp4)
+FILES=(intro.mp4 "${CLIPS[@]}"); [ -n "$FRASE" ] && FILES+=(frase.mp4); FILES+=(outro.mp4)
+FIN=0; [ -n "$FRASE" ] && FIN=1          # pantallas extra entre el último clip y el cierre (la pleca de nombre va en el último clip, no en ellas)
 INPUTS=(); for f in "${FILES[@]}"; do INPUTS+=(-i "$f"); done
-python3 - "$XF" "$PLECA_IN" "$PLECA_DUR" "$PLECA2" "$PLECA2_CLIP" "$PLECA2_IN" "$PLECA2_DUR" "$PLECA_SFX_IN" "$PLECA_SFX_OUT" "$PLECA_SFX_VOL" "${FILES[@]}" <<'PY'
+python3 - "$XF" "$PLECA_IN" "$PLECA_DUR" "$PLECA2" "$PLECA2_CLIP" "$PLECA2_IN" "$PLECA2_DUR" "$PLECA_SFX_IN" "$PLECA_SFX_OUT" "$PLECA_SFX_VOL" "$FIN" "${FILES[@]}" <<'PY'
 import sys, subprocess, json
-xf=float(sys.argv[1]); pin=float(sys.argv[2]); pdur=float(sys.argv[3]); p2=sys.argv[4]; p2clip=int(sys.argv[5]); p2in=float(sys.argv[6]); p2dur=float(sys.argv[7]); sfx_in=sys.argv[8]; sfx_out=sys.argv[9]; sfx_vol=float(sys.argv[10]); files=sys.argv[11:]
+xf=float(sys.argv[1]); pin=float(sys.argv[2]); pdur=float(sys.argv[3]); p2=sys.argv[4]; p2clip=int(sys.argv[5]); p2in=float(sys.argv[6]); p2dur=float(sys.argv[7]); sfx_in=sys.argv[8]; sfx_out=sys.argv[9]; sfx_vol=float(sys.argv[10]); fin=int(sys.argv[11]); files=sys.argv[12:]
 dur=[float(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','csv=p=0',f]).decode().strip()) for f in files]
 v='[0:v]'; a='[0:a]'; t=0; partes=[]; inicio=[0.0]
 for i in range(1,len(files)):
@@ -66,11 +73,12 @@ for i in range(1,len(files)):
     partes.append(f"{a}[{i}:a]acrossfade=d={xf}[a{i}]")
     v=f'[v{i}]'; a=f'[a{i}]'
 primero=inicio[1]+pin                       # pleca en el primer clip
-ultimo=inicio[-2]+1.0                       # pleca en el último clip, 1 s después de su corte
+ult=-2-fin                                  # índice del último clip (antes de la frase y el cierre)
+ultimo=inicio[ult]+1.0                      # pleca en el último clip, 1 s después de su corte
 def pleca(p0):
     p1,p2,p3=p0+0.6,p0+pdur,p0+pdur+0.4
     return f"if(lt(t,{p0:.3f}),-1100,if(lt(t,{p1:.3f}),-1100*pow(1-(t-{p0:.3f})/0.6,3),if(lt(t,{p2:.3f}),0,if(lt(t,{p3:.3f}),-1100*pow((t-{p2:.3f})/0.4,3),-1100))))"
-x=f"if(lt(t,{inicio[-2]:.3f}),{pleca(primero)},{pleca(ultimo)})"
+x=f"if(lt(t,{inicio[ult]:.3f}),{pleca(primero)},{pleca(ultimo)})"
 n=len(files)
 capa=f"{v}[{n}:v]overlay=eval=frame:x='{x}':y=0:format=auto[vp]"; final='[vp]'
 entradas=[primero, ultimo]; salidas=[primero+pdur, ultimo+pdur]   # momentos de entrada y salida de pleca (para los efectos)

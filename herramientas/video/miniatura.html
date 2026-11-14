@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../fonts/fuentes.css" />
+<style>
+  /* Miniatura vertical 1080×1920 para Shorts / portada de reel. El texto vive en la banda central (y 285–1635),
+     que es lo que Instagram conserva al recortar la portada a 4:5 en la cuadrícula.
+     ?img=img/foto.jpg&zoom=1.2&eyebrow=…&l1=…&l2=…&l3=…  (l2 va en Fraunces cursiva celeste, es la palabra fuerte) */
+  :root{--cielo:#7dd6f8;--azul:#1aa7ec;--marino:#1e2f97;--tinta:#121a45;--grad:linear-gradient(135deg,#1aa7ec 0%,#2457c4 55%,#1e2f97 100%)}
+  *{box-sizing:border-box;margin:0}
+  html,body{width:1080px;height:1920px;overflow:hidden;background:#0a1124;font-family:'Manrope',sans-serif;-webkit-font-smoothing:antialiased;color:#fff}
+  .foto{position:absolute;inset:0;overflow:hidden}
+  .foto img{width:100%;height:100%;object-fit:cover;transform-origin:50% 12%;filter:saturate(1.05) contrast(1.04)}
+  .velo{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,14,38,.97) 0%,rgba(8,14,38,.9) 28%,rgba(8,14,38,.45) 52%,rgba(8,14,38,0) 70%)}
+  .eyebrow{position:absolute;right:72px;top:200px;display:inline-flex;align-items:center;gap:14px;padding:14px 26px 14px 18px;border-radius:999px;
+    background:rgba(10,17,36,.78);border:1px solid rgba(255,255,255,.22);font-size:26px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+  .eyebrow i{width:14px;height:14px;border-radius:50%;background:#ff5a5f;box-shadow:0 0 0 6px rgba(255,90,95,.3)}
+  .titulo{position:absolute;left:72px;right:72px;bottom:490px;line-height:.92;letter-spacing:-2px;text-shadow:0 6px 30px rgba(0,0,0,.45)}
+  .titulo .l1,.titulo .l3{font-size:96px;font-weight:800;white-space:nowrap}
+  .titulo .l2{display:block;font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:500;font-size:190px;line-height:.9;color:var(--cielo);letter-spacing:-4px;margin:4px 0 8px}
+  .barra{position:absolute;left:72px;bottom:440px;width:180px;height:10px;border-radius:10px;background:linear-gradient(90deg,var(--cielo),var(--azul))}
+  .firma{position:absolute;left:72px;right:72px;bottom:320px;display:flex;align-items:center;gap:22px}
+  .firma .cuadro{width:92px;height:92px;border-radius:22px;background:var(--grad);display:grid;place-items:center;flex:none}
+  .firma svg{width:62px;height:62px}
+  .firma svg path{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:9}
+  .firma .n{font-size:40px;font-weight:800;letter-spacing:-.5px}
+  .firma .r{font-size:22px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--cielo);margin-top:4px}
+  .firma .w{margin-left:auto;font-size:26px;font-weight:700;color:rgba(255,255,255,.75)}
+</style>
+</head>
+<body>
+  <div class="foto"><img id="img" src="img/miniatura-manifestaciones.jpg" alt=""></div>
+  <div class="velo"></div>
+  <div class="eyebrow" id="eyebrow"><i></i><span>Cuándo ir a urgencias</span></div>
+  <div class="titulo"><span class="l1" id="l1">5 manifestaciones</span><span class="l2" id="l2">raras</span><span class="l3" id="l3">del lupus</span></div>
+  <div class="barra"></div>
+  <div class="firma">
+    <div class="cuadro"><svg viewBox="0 0 100 100"><g stroke="#fff"><path d="M43 92 V62 C43 54 40 49 35 42 L23 24"/><path d="M57 92 V62 C57 54 60 49 65 42 L77 24"/></g><g stroke="#7dd6f8"><path d="M30.5 59 L12.5 30"/><path d="M69.5 59 L87.5 30"/></g></svg></div>
+    <div><div class="n">Dr. Daniel Mora</div><div class="r">Reumatólogo</div></div>
+    <div class="w">reumadanmora.com</div>
+  </div>
+<script>
+  const q = new URLSearchParams(location.search);
+  if (q.get('img')) document.getElementById('img').src = q.get('img');
+  document.getElementById('img').style.transform = `scale(${q.get('zoom') || 1.06})`;
+  for (const k of ['l1','l2','l3']) if (q.has(k)) document.getElementById(k).textContent = q.get(k);
+  // las líneas largas se encogen para no salirse de los 936 px útiles (ancho medio: Manrope 800 ≈ .58 em, Fraunces cursiva ≈ .47 em)
+  const ajusta = (id, max, k) => { const el = document.getElementById(id); const n = el.textContent.length; el.style.fontSize = Math.min(max, Math.floor(936 / (n * k))) + 'px'; };
+  ajusta('l1', 96, .58); ajusta('l3', 96, .58); ajusta('l2', 190, .47);
+  if (q.get('acento')) { document.documentElement.style.setProperty('--cielo', q.get('acento')); document.querySelector('.barra').style.background = q.get('acento'); }
+  if (q.has('eyebrow')) document.querySelector('#eyebrow span').textContent = q.get('eyebrow');
+  if (q.get('eyebrow') === '') document.getElementById('eyebrow').style.display = 'none';   // sin etiqueta
+  if (q.get('pill') === 'izq') { const e = document.getElementById('eyebrow'); e.style.right = 'auto'; e.style.left = '72px'; }   // la etiqueta al lado donde haya pared y no pelo
+</script>
+</body>
+</html>
